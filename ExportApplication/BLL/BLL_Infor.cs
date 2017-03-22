@@ -14,5 +14,6 @@ namespace BLL
         public DataTable GetToListView() {
             return dal_infor.GetToListView();
         }
+        //test commit
     }
 }
