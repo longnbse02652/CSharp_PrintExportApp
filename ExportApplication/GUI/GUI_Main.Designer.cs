@@ -40,9 +40,9 @@
             // 
             // bt_addNew
             // 
-            this.bt_addNew.Location = new System.Drawing.Point(43, 147);
+            this.bt_addNew.Location = new System.Drawing.Point(43, 136);
             this.bt_addNew.Name = "bt_addNew";
-            this.bt_addNew.Size = new System.Drawing.Size(86, 48);
+            this.bt_addNew.Size = new System.Drawing.Size(86, 44);
             this.bt_addNew.TabIndex = 0;
             this.bt_addNew.Text = "新入登録";
             this.bt_addNew.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(168, 147);
+            this.listView1.Location = new System.Drawing.Point(168, 136);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(393, 256);
+            this.listView1.Size = new System.Drawing.Size(393, 237);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -79,41 +79,41 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(43, 215);
+            this.button2.Location = new System.Drawing.Point(43, 198);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 40);
+            this.button2.Size = new System.Drawing.Size(86, 37);
             this.button2.TabIndex = 2;
             this.button2.Text = "編集";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(43, 364);
+            this.button3.Location = new System.Drawing.Point(43, 336);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 40);
+            this.button3.Size = new System.Drawing.Size(86, 37);
             this.button3.TabIndex = 3;
             this.button3.Text = "終了";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 92);
+            this.textBox1.Location = new System.Drawing.Point(213, 85);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 20);
+            this.textBox1.Size = new System.Drawing.Size(311, 19);
             this.textBox1.TabIndex = 4;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 459);
+            this.ClientSize = new System.Drawing.Size(602, 424);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bt_addNew);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "社員管理システム";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

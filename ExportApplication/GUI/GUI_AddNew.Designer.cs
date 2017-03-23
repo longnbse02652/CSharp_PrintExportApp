@@ -53,7 +53,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_Address = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tb_ZipCode = new System.Windows.Forms.TextBox();
             this.dtpicker_InCompanyDate = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.tb_Phone = new System.Windows.Forms.TextBox();
@@ -455,6 +454,7 @@
             this.textBox93 = new System.Windows.Forms.TextBox();
             this.textBox94 = new System.Windows.Forms.TextBox();
             this.textBox95 = new System.Windows.Forms.TextBox();
+            this.textBox96 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -597,7 +597,7 @@
             this.textBox42.Location = new System.Drawing.Point(101, 47);
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(123, 19);
-            this.textBox42.TabIndex = 4;
+            this.textBox42.TabIndex = 22;
             // 
             // label107
             // 
@@ -613,7 +613,7 @@
             this.textBox41.Location = new System.Drawing.Point(100, 22);
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(274, 19);
-            this.textBox41.TabIndex = 2;
+            this.textBox41.TabIndex = 21;
             // 
             // label106
             // 
@@ -664,7 +664,7 @@
             this.comboBox2.Location = new System.Drawing.Point(381, 50);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(45, 20);
-            this.comboBox2.TabIndex = 44;
+            this.comboBox2.TabIndex = 18;
             this.comboBox2.Text = "-";
             // 
             // label14
@@ -690,7 +690,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(303, 83);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(123, 19);
-            this.dateTimePicker2.TabIndex = 41;
+            this.dateTimePicker2.TabIndex = 20;
             // 
             // label59
             // 
@@ -706,7 +706,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(103, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(123, 19);
-            this.dateTimePicker1.TabIndex = 39;
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // label15
             // 
@@ -734,7 +734,7 @@
             this.comboBox1.Location = new System.Drawing.Point(103, 51);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(123, 20);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 17;
             // 
             // label13
             // 
@@ -748,9 +748,10 @@
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(103, 22);
+            this.textBox12.MaxLength = 20;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(123, 19);
-            this.textBox12.TabIndex = 1;
+            this.textBox12.TabIndex = 16;
             // 
             // label7
             // 
@@ -763,9 +764,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox96);
             this.groupBox2.Controls.Add(this.tb_Address);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.tb_ZipCode);
             this.groupBox2.Controls.Add(this.dtpicker_InCompanyDate);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.tb_Phone);
@@ -798,7 +799,7 @@
             this.tb_Address.MaxLength = 100;
             this.tb_Address.Name = "tb_Address";
             this.tb_Address.Size = new System.Drawing.Size(270, 19);
-            this.tb_Address.TabIndex = 41;
+            this.tb_Address.TabIndex = 8;
             // 
             // label8
             // 
@@ -809,20 +810,12 @@
             this.label8.TabIndex = 40;
             this.label8.Text = "現住所";
             // 
-            // tb_ZipCode
-            // 
-            this.tb_ZipCode.Location = new System.Drawing.Point(101, 121);
-            this.tb_ZipCode.MaxLength = 8;
-            this.tb_ZipCode.Name = "tb_ZipCode";
-            this.tb_ZipCode.Size = new System.Drawing.Size(52, 19);
-            this.tb_ZipCode.TabIndex = 39;
-            // 
             // dtpicker_InCompanyDate
             // 
             this.dtpicker_InCompanyDate.Location = new System.Drawing.Point(103, 177);
             this.dtpicker_InCompanyDate.Name = "dtpicker_InCompanyDate";
             this.dtpicker_InCompanyDate.Size = new System.Drawing.Size(123, 19);
-            this.dtpicker_InCompanyDate.TabIndex = 38;
+            this.dtpicker_InCompanyDate.TabIndex = 11;
             // 
             // label12
             // 
@@ -839,7 +832,7 @@
             this.tb_Phone.MaxLength = 15;
             this.tb_Phone.Name = "tb_Phone";
             this.tb_Phone.Size = new System.Drawing.Size(112, 19);
-            this.tb_Phone.TabIndex = 36;
+            this.tb_Phone.TabIndex = 10;
             // 
             // label11
             // 
@@ -856,7 +849,7 @@
             this.tb_MobliePhone.MaxLength = 15;
             this.tb_MobliePhone.Name = "tb_MobliePhone";
             this.tb_MobliePhone.Size = new System.Drawing.Size(124, 19);
-            this.tb_MobliePhone.TabIndex = 34;
+            this.tb_MobliePhone.TabIndex = 9;
             // 
             // label10
             // 
@@ -881,7 +874,7 @@
             this.dtpicker_Birth.Location = new System.Drawing.Point(102, 96);
             this.dtpicker_Birth.Name = "dtpicker_Birth";
             this.dtpicker_Birth.Size = new System.Drawing.Size(124, 19);
-            this.dtpicker_Birth.TabIndex = 31;
+            this.dtpicker_Birth.TabIndex = 6;
             // 
             // label5
             // 
@@ -904,9 +897,10 @@
             // tb_Age
             // 
             this.tb_Age.Location = new System.Drawing.Point(317, 73);
+            this.tb_Age.MaxLength = 3;
             this.tb_Age.Name = "tb_Age";
             this.tb_Age.Size = new System.Drawing.Size(60, 19);
-            this.tb_Age.TabIndex = 29;
+            this.tb_Age.TabIndex = 5;
             // 
             // cb_Sex
             // 
@@ -917,7 +911,7 @@
             this.cb_Sex.Location = new System.Drawing.Point(317, 46);
             this.cb_Sex.Name = "cb_Sex";
             this.cb_Sex.Size = new System.Drawing.Size(60, 20);
-            this.cb_Sex.TabIndex = 27;
+            this.cb_Sex.TabIndex = 4;
             // 
             // label4
             // 
@@ -934,7 +928,7 @@
             this.tb_FuriganaName.MaxLength = 15;
             this.tb_FuriganaName.Name = "tb_FuriganaName";
             this.tb_FuriganaName.Size = new System.Drawing.Size(124, 19);
-            this.tb_FuriganaName.TabIndex = 6;
+            this.tb_FuriganaName.TabIndex = 3;
             // 
             // tb_RomajiName
             // 
@@ -942,7 +936,7 @@
             this.tb_RomajiName.MaxLength = 15;
             this.tb_RomajiName.Name = "tb_RomajiName";
             this.tb_RomajiName.Size = new System.Drawing.Size(123, 19);
-            this.tb_RomajiName.TabIndex = 5;
+            this.tb_RomajiName.TabIndex = 2;
             // 
             // tb_IDCode
             // 
@@ -950,7 +944,7 @@
             this.tb_IDCode.MaxLength = 10;
             this.tb_IDCode.Name = "tb_IDCode";
             this.tb_IDCode.Size = new System.Drawing.Size(72, 19);
-            this.tb_IDCode.TabIndex = 4;
+            this.tb_IDCode.TabIndex = 1;
             // 
             // label3
             // 
@@ -999,10 +993,10 @@
             // tb_CompanyName
             // 
             this.tb_CompanyName.Location = new System.Drawing.Point(102, 45);
-            this.tb_CompanyName.MaxLength = 15;
+            this.tb_CompanyName.MaxLength = 100;
             this.tb_CompanyName.Name = "tb_CompanyName";
             this.tb_CompanyName.Size = new System.Drawing.Size(324, 19);
-            this.tb_CompanyName.TabIndex = 25;
+            this.tb_CompanyName.TabIndex = 13;
             // 
             // label17
             // 
@@ -1025,7 +1019,7 @@
             this.cb_ClosingDate.Location = new System.Drawing.Point(314, 74);
             this.cb_ClosingDate.Name = "cb_ClosingDate";
             this.cb_ClosingDate.Size = new System.Drawing.Size(60, 20);
-            this.cb_ClosingDate.TabIndex = 23;
+            this.cb_ClosingDate.TabIndex = 15;
             // 
             // cb_WorkType
             // 
@@ -1037,7 +1031,7 @@
             this.cb_WorkType.Location = new System.Drawing.Point(102, 74);
             this.cb_WorkType.Name = "cb_WorkType";
             this.cb_WorkType.Size = new System.Drawing.Size(124, 20);
-            this.cb_WorkType.TabIndex = 22;
+            this.cb_WorkType.TabIndex = 14;
             // 
             // tb_CompanyCode
             // 
@@ -1045,7 +1039,7 @@
             this.tb_CompanyCode.MaxLength = 10;
             this.tb_CompanyCode.Name = "tb_CompanyCode";
             this.tb_CompanyCode.Size = new System.Drawing.Size(72, 19);
-            this.tb_CompanyCode.TabIndex = 5;
+            this.tb_CompanyCode.TabIndex = 12;
             // 
             // label19
             // 
@@ -1212,7 +1206,7 @@
             this.textBox40.MaxLength = 1;
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(48, 19);
-            this.textBox40.TabIndex = 1;
+            this.textBox40.TabIndex = 76;
             this.textBox40.Text = "0";
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1257,7 +1251,7 @@
             this.textBox38.MaxLength = 1;
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(48, 19);
-            this.textBox38.TabIndex = 1;
+            this.textBox38.TabIndex = 74;
             this.textBox38.Text = "0";
             this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1302,7 +1296,7 @@
             this.textBox39.MaxLength = 1;
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(48, 19);
-            this.textBox39.TabIndex = 1;
+            this.textBox39.TabIndex = 75;
             this.textBox39.Text = "0";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1413,7 +1407,7 @@
             this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(0);
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(140, 19);
-            this.dateTimePicker7.TabIndex = 9;
+            this.dateTimePicker7.TabIndex = 73;
             // 
             // dateTimePicker6
             // 
@@ -1422,7 +1416,7 @@
             this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(0);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(140, 19);
-            this.dateTimePicker6.TabIndex = 8;
+            this.dateTimePicker6.TabIndex = 72;
             // 
             // label98
             // 
@@ -1526,7 +1520,7 @@
             this.comboBox8.Location = new System.Drawing.Point(63, 10);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(46, 20);
-            this.comboBox8.TabIndex = 7;
+            this.comboBox8.TabIndex = 68;
             // 
             // tlp_TravelType
             // 
@@ -1559,7 +1553,7 @@
             this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(0);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(139, 19);
-            this.dateTimePicker5.TabIndex = 7;
+            this.dateTimePicker5.TabIndex = 71;
             // 
             // textBox37
             // 
@@ -1570,7 +1564,7 @@
             this.textBox37.MaxLength = 100;
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(192, 19);
-            this.textBox37.TabIndex = 22;
+            this.textBox37.TabIndex = 69;
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox35
@@ -1582,7 +1576,7 @@
             this.textBox35.MaxLength = 100;
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(47, 19);
-            this.textBox35.TabIndex = 21;
+            this.textBox35.TabIndex = 70;
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label91
@@ -1702,7 +1696,7 @@
             this.textBox27.MaxLength = 100;
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(156, 19);
-            this.textBox27.TabIndex = 21;
+            this.textBox27.TabIndex = 59;
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox26
@@ -1714,7 +1708,7 @@
             this.textBox26.MaxLength = 100;
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(156, 19);
-            this.textBox26.TabIndex = 20;
+            this.textBox26.TabIndex = 58;
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label82
@@ -1830,7 +1824,7 @@
             this.comboBox7.Location = new System.Drawing.Point(123, 3);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(33, 20);
-            this.comboBox7.TabIndex = 7;
+            this.comboBox7.TabIndex = 54;
             // 
             // textBox23
             // 
@@ -1841,7 +1835,7 @@
             this.textBox23.MaxLength = 100;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(117, 19);
-            this.textBox23.TabIndex = 2;
+            this.textBox23.TabIndex = 53;
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel46
@@ -1875,7 +1869,7 @@
             this.comboBox6.Location = new System.Drawing.Point(123, 3);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(33, 20);
-            this.comboBox6.TabIndex = 6;
+            this.comboBox6.TabIndex = 56;
             // 
             // textBox24
             // 
@@ -1886,7 +1880,7 @@
             this.textBox24.MaxLength = 100;
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(117, 19);
-            this.textBox24.TabIndex = 2;
+            this.textBox24.TabIndex = 55;
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox25
@@ -1898,7 +1892,7 @@
             this.textBox25.MaxLength = 100;
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(152, 19);
-            this.textBox25.TabIndex = 19;
+            this.textBox25.TabIndex = 57;
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel47
@@ -1943,7 +1937,7 @@
             this.textBox34.MaxLength = 1;
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(17, 19);
-            this.textBox34.TabIndex = 12;
+            this.textBox34.TabIndex = 67;
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox32
@@ -1955,7 +1949,7 @@
             this.textBox32.MaxLength = 1;
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(17, 19);
-            this.textBox32.TabIndex = 11;
+            this.textBox32.TabIndex = 66;
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox33
@@ -1967,7 +1961,7 @@
             this.textBox33.MaxLength = 1;
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(17, 19);
-            this.textBox33.TabIndex = 10;
+            this.textBox33.TabIndex = 65;
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox36
@@ -1979,7 +1973,7 @@
             this.textBox36.MaxLength = 1;
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(17, 19);
-            this.textBox36.TabIndex = 9;
+            this.textBox36.TabIndex = 64;
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label89
@@ -2005,7 +1999,7 @@
             this.textBox30.MaxLength = 1;
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(17, 19);
-            this.textBox30.TabIndex = 6;
+            this.textBox30.TabIndex = 62;
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox28
@@ -2017,7 +2011,7 @@
             this.textBox28.MaxLength = 1;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(17, 19);
-            this.textBox28.TabIndex = 3;
+            this.textBox28.TabIndex = 60;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
@@ -2029,7 +2023,7 @@
             this.textBox29.MaxLength = 1;
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(17, 19);
-            this.textBox29.TabIndex = 4;
+            this.textBox29.TabIndex = 61;
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox31
@@ -2041,7 +2035,7 @@
             this.textBox31.MaxLength = 1;
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(17, 19);
-            this.textBox31.TabIndex = 7;
+            this.textBox31.TabIndex = 63;
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel30
@@ -2163,7 +2157,7 @@
             this.textBox22.MaxLength = 7;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(98, 19);
-            this.textBox22.TabIndex = 5;
+            this.textBox22.TabIndex = 52;
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label64
@@ -2223,7 +2217,7 @@
             this.textBox21.MaxLength = 7;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(98, 19);
-            this.textBox21.TabIndex = 5;
+            this.textBox21.TabIndex = 51;
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label65
@@ -2297,7 +2291,7 @@
             this.textBox20.MaxLength = 7;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(98, 19);
-            this.textBox20.TabIndex = 5;
+            this.textBox20.TabIndex = 50;
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label77
@@ -2365,7 +2359,7 @@
             this.comboBox3.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(94, 21);
-            this.comboBox3.TabIndex = 1;
+            this.comboBox3.TabIndex = 47;
             this.comboBox3.Text = "  正社員";
             // 
             // tableLayoutPanel29
@@ -2393,14 +2387,14 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(3, 3);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(140, 19);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dateTimePicker3.TabIndex = 48;
             // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.Location = new System.Drawing.Point(188, 3);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(140, 19);
-            this.dateTimePicker4.TabIndex = 1;
+            this.dateTimePicker4.TabIndex = 49;
             // 
             // label62
             // 
@@ -2683,7 +2677,7 @@
             this.cb_HakenRyokinType.Margin = new System.Windows.Forms.Padding(0);
             this.cb_HakenRyokinType.Name = "cb_HakenRyokinType";
             this.cb_HakenRyokinType.Size = new System.Drawing.Size(47, 20);
-            this.cb_HakenRyokinType.TabIndex = 7;
+            this.cb_HakenRyokinType.TabIndex = 24;
             this.cb_HakenRyokinType.Text = "選択";
             // 
             // label25
@@ -2710,7 +2704,7 @@
             this.tb_HakenRyokin.MaxLength = 7;
             this.tb_HakenRyokin.Name = "tb_HakenRyokin";
             this.tb_HakenRyokin.Size = new System.Drawing.Size(70, 19);
-            this.tb_HakenRyokin.TabIndex = 5;
+            this.tb_HakenRyokin.TabIndex = 23;
             this.tb_HakenRyokin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lb_
@@ -2840,7 +2834,7 @@
             this.textBox11.MaxLength = 7;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(113, 19);
-            this.textBox11.TabIndex = 0;
+            this.textBox11.TabIndex = 38;
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label52
@@ -2886,7 +2880,7 @@
             this.textBox10.MaxLength = 7;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(113, 19);
-            this.textBox10.TabIndex = 0;
+            this.textBox10.TabIndex = 37;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label51
@@ -2932,7 +2926,7 @@
             this.textBox9.MaxLength = 7;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(113, 19);
-            this.textBox9.TabIndex = 0;
+            this.textBox9.TabIndex = 36;
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label50
@@ -2978,7 +2972,7 @@
             this.textBox8.MaxLength = 7;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(113, 19);
-            this.textBox8.TabIndex = 0;
+            this.textBox8.TabIndex = 35;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label49
@@ -3024,7 +3018,7 @@
             this.textBox7.MaxLength = 7;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(113, 19);
-            this.textBox7.TabIndex = 0;
+            this.textBox7.TabIndex = 34;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label48
@@ -3070,7 +3064,7 @@
             this.textBox6.MaxLength = 7;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(113, 19);
-            this.textBox6.TabIndex = 0;
+            this.textBox6.TabIndex = 33;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label47
@@ -3116,7 +3110,7 @@
             this.textBox5.MaxLength = 7;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(113, 19);
-            this.textBox5.TabIndex = 0;
+            this.textBox5.TabIndex = 32;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label46
@@ -3162,7 +3156,7 @@
             this.textBox4.MaxLength = 7;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(113, 19);
-            this.textBox4.TabIndex = 0;
+            this.textBox4.TabIndex = 31;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label45
@@ -3208,7 +3202,7 @@
             this.textBox3.MaxLength = 7;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(113, 19);
-            this.textBox3.TabIndex = 0;
+            this.textBox3.TabIndex = 30;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label44
@@ -3254,7 +3248,7 @@
             this.textBox2.MaxLength = 7;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(113, 19);
-            this.textBox2.TabIndex = 0;
+            this.textBox2.TabIndex = 29;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
@@ -3486,7 +3480,7 @@
             this.textBox1.MaxLength = 7;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(63, 19);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 28;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox11
@@ -3505,7 +3499,7 @@
             this.comboBox11.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(50, 20);
-            this.comboBox11.TabIndex = 8;
+            this.comboBox11.TabIndex = 27;
             this.comboBox11.Text = "月給";
             // 
             // tableLayoutPanel12
@@ -3633,7 +3627,7 @@
             this.comboBox4.Location = new System.Drawing.Point(4, 25);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(107, 20);
-            this.comboBox4.TabIndex = 2;
+            this.comboBox4.TabIndex = 25;
             // 
             // comboBox5
             // 
@@ -3646,7 +3640,7 @@
             this.comboBox5.Location = new System.Drawing.Point(120, 25);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(50, 20);
-            this.comboBox5.TabIndex = 3;
+            this.comboBox5.TabIndex = 26;
             // 
             // tableLayoutPanel15
             // 
@@ -3748,7 +3742,7 @@
             this.textBox18.MaxLength = 7;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(55, 19);
-            this.textBox18.TabIndex = 1;
+            this.textBox18.TabIndex = 44;
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel34
@@ -3794,7 +3788,7 @@
             this.textBox15.MaxLength = 7;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(55, 19);
-            this.textBox15.TabIndex = 1;
+            this.textBox15.TabIndex = 41;
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel33
@@ -3840,7 +3834,7 @@
             this.textBox14.MaxLength = 7;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(55, 19);
-            this.textBox14.TabIndex = 1;
+            this.textBox14.TabIndex = 40;
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label53
@@ -3970,7 +3964,7 @@
             this.textBox13.MaxLength = 7;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(55, 19);
-            this.textBox13.TabIndex = 1;
+            this.textBox13.TabIndex = 39;
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel35
@@ -4016,7 +4010,7 @@
             this.textBox16.MaxLength = 7;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(55, 19);
-            this.textBox16.TabIndex = 1;
+            this.textBox16.TabIndex = 42;
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel36
@@ -4064,7 +4058,7 @@
             this.textBox17.MaxLength = 7;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(55, 19);
-            this.textBox17.TabIndex = 1;
+            this.textBox17.TabIndex = 43;
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label76
@@ -4124,7 +4118,7 @@
             this.textBox19.MaxLength = 7;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(55, 19);
-            this.textBox19.TabIndex = 1;
+            this.textBox19.TabIndex = 45;
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel39
@@ -4168,7 +4162,7 @@
             this.tb_TongTienKhauTru.MaxLength = 7;
             this.tb_TongTienKhauTru.Name = "tb_TongTienKhauTru";
             this.tb_TongTienKhauTru.Size = new System.Drawing.Size(54, 19);
-            this.tb_TongTienKhauTru.TabIndex = 1;
+            this.tb_TongTienKhauTru.TabIndex = 46;
             this.tb_TongTienKhauTru.Text = "0";
             this.tb_TongTienKhauTru.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6719,6 +6713,14 @@
             this.textBox95.TabIndex = 58;
             this.textBox95.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBox96
+            // 
+            this.textBox96.Location = new System.Drawing.Point(103, 121);
+            this.textBox96.MaxLength = 7;
+            this.textBox96.Name = "textBox96";
+            this.textBox96.Size = new System.Drawing.Size(52, 19);
+            this.textBox96.TabIndex = 7;
+            // 
             // GUI_AddNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6920,7 +6922,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tb_Address;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tb_ZipCode;
         private System.Windows.Forms.DateTimePicker dtpicker_InCompanyDate;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Phone;
@@ -7341,6 +7342,7 @@
         private System.Windows.Forms.TextBox textBox87;
         private System.Windows.Forms.TextBox textBox86;
         private System.Windows.Forms.TextBox textBox85;
+        private System.Windows.Forms.TextBox textBox96;
 
     }
 
