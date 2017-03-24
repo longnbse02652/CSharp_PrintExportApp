@@ -21,7 +21,7 @@ namespace ExportApplication
             InitializeComponent();
         }
 
-        //hàm này để load dữ liệu lên ListView khi run app
+        //hàm này để load dữ liệu lên ListView khi run system
         private void Main_Load(object sender, EventArgs e)
         {
             DataTable dt = bll_infor.GetToListView();

@@ -15,13 +15,12 @@ namespace ExportApplication
         public GUI_AddNew()
         {
             InitializeComponent();
-            
+           
         }
 
         private void GUI_AddNew_Load(object sender, EventArgs e)
         {
             this.ActiveControl = tb_IDCode;
-            
         }
 
         private void bt_Save_Click(object sender, EventArgs e)
