@@ -5,14 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
-    public class BLL_Infor
+    public class BLL_AllInfor
     {
-        DAL_Infor dal_infor = new DAL_Infor();
+        DAL_AllInfor dal_infor = new DAL_AllInfor();
         public DataTable GetToListView() {
             return dal_infor.GetToListView();
+        }
+        public bool Insert(DTO_AllInfor dto_AllInfor) {
+            return dal_infor.Insert(dto_AllInfor);
         }
         //test commit
     }
