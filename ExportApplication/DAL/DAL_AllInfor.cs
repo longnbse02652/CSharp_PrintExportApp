@@ -14,11 +14,13 @@ namespace DAL
     {
         public SqlDataAdapter adapter;
         public SqlCommand command;
-        public DataTable GetToListView()
+        DataTable dt = new DataTable();
+
+        public DataTable GetDataToView()
         {
             try
             {
-                adapter = new SqlDataAdapter("select RomajiName, FuriganaName, Birth from Information", _cn);
+                adapter = new SqlDataAdapter("select RomajiName as '氏名', FuriganaName as 'ふりがな', Birth as '生年月日' from Information", _cn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 return dt;
@@ -29,26 +31,23 @@ namespace DAL
             }
         }
 
-        DataTable dt = new DataTable();
-
         //Insert dữ liệu vô database
         public bool Insert(DTO_AllInfor dto_AllInfor) {
             try
             {
-                adapter = new SqlDataAdapter("select * from Information", _cn); //con join tables nua, day chi test thoi
-                adapter.Fill(dt);
-                DataRow dr = dt.NewRow();
-                dr["RomajiName"] = dto_AllInfor.romaji;
-                dr["FuriganaName"] = dto_AllInfor.furigana;
-                dr["Birth"] = dto_AllInfor.birth;
+                command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "insert into Information values ('','"+dto_AllInfor.romaji+"','"+dto_AllInfor.furigana+"','','','','','','','','','','','','','','','','','','');"+
+                                      "insert into Contract values ('"+dto_AllInfor.romaji+"','','','','','','','','');";
+                command.Connection = _cn;
 
-                dt.Rows.Add(dr);
-                SqlCommandBuilder cm = new SqlCommandBuilder(adapter);
-                adapter.Update(dt);
+                _cn.Open();
+                command.ExecuteNonQuery();
+                _cn.Close();
                 return true;
             }
             catch (Exception ex){
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, "Error Message");
                 return false;
             }
         }

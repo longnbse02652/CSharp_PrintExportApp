@@ -28,10 +28,10 @@ namespace DTO
             set { _birth = value; }
         }
 
-        public DTO_AllInfor(string pFurigana, string pRomaji, string pBirth)
+        public DTO_AllInfor(string pRomaji, string pFurigana, string pBirth)
         {
-            this._furigana = pFurigana;
             this._romaji = pRomaji;
+            this._furigana = pFurigana;
             this._birth = pBirth;
         }
     }

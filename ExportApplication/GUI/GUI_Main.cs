@@ -25,23 +25,32 @@ namespace ExportApplication
         //hàm này để load dữ liệu lên ListView khi run system
         private void Main_Load(object sender, EventArgs e)
         {
+            LoadGridView();
+        }
+        public void LoadGridView() {
             DataTable dt = bll_infor.GetToListView();
             dtGridView.DataSource = dt;
         }
 
-       
+        //Click Nút 新規登録
         private void bt_addNew_Click(object sender, EventArgs e)
         {
             GUI_AddNew gui_addnew = new GUI_AddNew();
             gui_addnew.Show();
         }
 
+        //Click nút 終了
         private void bt_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        public void ResetForm() {
-            this.Invalidate();
+
+        //Double click vao mỗi Nhân viên
+        private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            GUI_AddNew gui_view = new GUI_AddNew();
+            gui_view.tb_IDCode.Enabled = false;
+            gui_view.Show();
         }
         
     }

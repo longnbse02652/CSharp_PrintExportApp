@@ -20,7 +20,6 @@ namespace ExportApplication
         public GUI_AddNew()
         {
             InitializeComponent();
-
         }
         
         private void GUI_AddNew_Load(object sender, EventArgs e)
@@ -36,15 +35,16 @@ namespace ExportApplication
             {
                 string romaji = tb_RomajiName.Text;
                 string furigana = tb_FuriganaName.Text;
-                string birth = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtpicker_Birth);
-
+                string birth = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_Birth);
                 DTO_AllInfor dto_allInfo = new DTO_AllInfor(romaji, furigana, birth);
+
                 if (bll_allInfo.Insert(dto_allInfo))
                 {
                     MessageBox.Show("登録しました。");
+                    GUI_Main obj = (GUI_Main)Application.OpenForms["GUI_Main"];
+                    obj.LoadGridView();
+                    
                     this.Close();
-                    GUI_Main main = new GUI_Main();
-                    main.dtGridView.Refresh();
                 }
                 else
                 {
@@ -64,8 +64,6 @@ namespace ExportApplication
         {
             this.Close();
         }
-
-
 
     }
 }

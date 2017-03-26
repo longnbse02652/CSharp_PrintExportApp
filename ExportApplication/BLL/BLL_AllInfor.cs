@@ -13,7 +13,7 @@ namespace BLL
     {
         DAL_AllInfor dal_infor = new DAL_AllInfor();
         public DataTable GetToListView() {
-            return dal_infor.GetToListView();
+            return dal_infor.GetDataToView();
         }
         public bool Insert(DTO_AllInfor dto_AllInfor) {
             return dal_infor.Insert(dto_AllInfor);
