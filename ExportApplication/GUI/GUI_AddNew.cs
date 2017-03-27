@@ -33,17 +33,38 @@ namespace ExportApplication
             DialogResult dialogResult = MessageBox.Show("登録を行います。よろしいですか？", "確認", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string romaji = tb_RomajiName.Text;
-                string furigana = tb_FuriganaName.Text;
-                string birth = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_Birth);
-                DTO_AllInfor dto_allInfo = new DTO_AllInfor(romaji, furigana, birth);
+                string _idCode = tb_IDCode.Text;
+                string _romaji = tb_RomajiName.Text;
+                string _furigana = tb_FuriganaName.Text;
+                string _sex = cb_Sex.SelectedItem.ToString();
+                int _age = Int32.Parse(tb_Age.Text); 
+                string _birth = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_Birth);
+                string _nationality = tb_Nationality.Text;
+                string _inCompanyDate = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_InCompanyDate);
+                string _cardType = cb_CardType.SelectedItem.ToString();
+                string _cardTime = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_CardTime);
+                string _cardTimeOut = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp_CardTimeOut);
+                string _outTime = cb_OutTime.SelectedItem.ToString();
+                string _companyCode = tb_CompanyCode.Text;
+                string _companyName = tb_CompanyName.Text;
+                string _workType = cb_WorkType.SelectedItem.ToString();
+                string _closingDate = cb_ClosingDate.SelectedItem.ToString();
+                int _zipCode = Int32.Parse(tb_ZipCode.Text);
+                string _address = tb_Address.Text;
+                string _mobliePhone = tb_MobliePhone.Text;
+                string _phone = tb_Phone.Text;
+                string _createPeople = tb_CreatePeople.Text;
+                string _position = tb_Position.Text;
+
+                DTO_AllInfor dto_allInfo = new DTO_AllInfor(_idCode, _romaji, _furigana, _sex, _age, _birth, _nationality,
+                    _inCompanyDate, _cardType, _cardTime, _cardTimeOut, _outTime, _companyCode, _companyName, _workType,
+                    _closingDate, _zipCode, _address, _mobliePhone, _phone, _createPeople, _position);
 
                 if (bll_allInfo.Insert(dto_allInfo))
                 {
                     MessageBox.Show("登録しました。");
                     GUI_Main obj = (GUI_Main)Application.OpenForms["GUI_Main"];
                     obj.LoadGridView();
-                    
                     this.Close();
                 }
                 else
