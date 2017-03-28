@@ -48,10 +48,23 @@ namespace ExportApplication
         //Double click vao mỗi Nhân viên
         private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            GUI_AddNew gui_view = new GUI_AddNew();
-            gui_view.tb_IDCode.Enabled = false;
-            gui_view.Show();
+            if (dtGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                MessageBox.Show(dtGridView.Rows[e.RowIndex].Cells["氏名"].Value.ToString());
+                GUI_AddNew gui_view = new GUI_AddNew();
+
+            }
         }
-        
+
+
+        //public delegate void delPassData(string text);
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            GUI_EditOption gui_editoption = new GUI_EditOption();
+            gui_editoption.Show();
+   
+        }
+
     }
 }

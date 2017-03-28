@@ -11,10 +11,10 @@ namespace DTO
         private string _idCode;
         public string idCode    {get { return _idCode; }set { _idCode = value; }}
 
-        private string _romaji;
+        private string _romaji = string.Empty;
         public string romaji    {get { return _romaji; }set { _romaji = value; }}
 
-        private string _furigana;
+        private string _furigana = string.Empty;
         public string furigana  {get { return _furigana; }set { _furigana = value; }}
 
         private string _sex;

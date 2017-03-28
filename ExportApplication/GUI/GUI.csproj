@@ -66,6 +66,18 @@
     <Compile Include="GUI_AddNew.Designer.cs">
       <DependentUpon>GUI_AddNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Edit.Designer.cs">
+      <DependentUpon>GUI_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_EditOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_EditOption.Designer.cs">
+      <DependentUpon>GUI_EditOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +88,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI_AddNew.resx">
       <DependentUpon>GUI_AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_EditOption.resx">
+      <DependentUpon>GUI_EditOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Main.resx">
       <DependentUpon>GUI_Main.cs</DependentUpon>

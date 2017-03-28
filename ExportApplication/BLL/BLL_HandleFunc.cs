@@ -40,5 +40,20 @@ namespace BLL
             return datetime;
         }
 
+        //ham nay de xuat hien Error neu user ko nhap du lieu vao textbox
+        public bool ValidateControls(Control control, ErrorProvider errorProvider)
+        {
+            bool bStatus = true;
+            if (control.Text == "" || control.Text == null)
+            {
+                errorProvider.SetError(control, "ここに入力してください");
+                bStatus = false;
+               // control.Focus();
+            }
+            else
+                errorProvider.SetError(control, "");
+            return bStatus;
+        }
+
     }
 }
