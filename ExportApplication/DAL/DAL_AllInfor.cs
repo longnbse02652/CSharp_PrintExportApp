@@ -46,8 +46,8 @@ namespace DAL
                 command.Parameters.AddWithValue("@Nationality", dto_AllInfor.nationality);
                 command.Parameters.AddWithValue("@InCompanyDate", dto_AllInfor.inCompanyDate);
                 command.Parameters.AddWithValue("@CardType", dto_AllInfor.cardType);
-                command.Parameters.AddWithValue("@CardTime", dto_AllInfor.cardTime);
-                command.Parameters.AddWithValue("@CardTimeOut",dto_AllInfor.cardTimeOut);
+                command.Parameters.AddWithValue("@@CardTimeStart", dto_AllInfor.cardTime);
+                command.Parameters.AddWithValue("@@CardTimeOver", dto_AllInfor.cardTimeOut);
                 command.Parameters.AddWithValue("@OutTime",dto_AllInfor.outTime);
                 command.Parameters.AddWithValue("@CompanyCode",dto_AllInfor.companyCode);
                 command.Parameters.AddWithValue("@CompanyName",dto_AllInfor.companyName);
