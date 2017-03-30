@@ -35,11 +35,11 @@ namespace DTO
         private string _cardType;
         public string cardType { get { return _cardType; } set { _cardType = value; } }
 
-        private string _cardTime;
-        public string cardTime { get { return _cardTime; } set { _cardTime = value; } }
+        private string _cardTimeStart;
+        public string cardTimeStart { get { return _cardTimeStart; } set { _cardTimeStart = value; } }
 
-        private string _cardTimeOut;
-        public string cardTimeOut { get { return _cardTimeOut; } set { _cardTimeOut = value; } }
+        private string _cardTimeOver;
+        public string cardTimeOver { get { return _cardTimeOver; } set { _cardTimeOver = value; } }
 
         private string _outTime;
         public string outTime { get { return _outTime; } set { _outTime = value; } }
@@ -428,8 +428,38 @@ namespace DTO
         private int _totalMoneyTrans;
         public int totalMoneyTrans { get { return _totalMoneyTrans; } set { _totalMoneyTrans = value; } }
 
+        private string _reason;
+        public string reason { get { return _reason; } set { _reason = value; } }
+
+        private string _changeDateFrom;
+        public string changeDateFrom { get { return _changeDateFrom; } set { _changeDateFrom = value; } }
+
+        private string _changeDate;
+        public string changeDate { get { return _changeDate; } set { _changeDate = value; } }
+
+        private double _genkaritsu;
+        public double genkaritsu { get { return _genkaritsu; } set { _genkaritsu = value; } }
+
+        private int _teateGaku;
+        public int teateGaku { get { return _teateGaku; } set { _teateGaku = value; } }
+
+        private string _accountCode;
+        public string accountCode { get { return _accountCode; } set { _accountCode = value; } }
+
+        private int _chingin;
+        public int chingin { get { return _chingin; } set { _chingin = value; } }
+
+        private string _chinginType;
+        public string chinginType { get { return _chinginType; } set { _chinginType = value; } }
+
+        private int _kyuyoKojoGaku;
+        public int kyuyoKojoGaku { get { return _kyuyoKojoGaku; } set { _kyuyoKojoGaku = value; } }
+
+        private int _workTime;
+        public int workTime { get { return _workTime; } set { _workTime = value; } }
+
         public DTO_AllInfor(string pIdcode,string pRomaji, string pFurigana, string pSex, int pAge,string pBirth, string pNationality,
-            string pInCompanyDate, string pCardType, string pCardTime, string pCardTimeOut, string pOutTime, string pCompanyCode,
+            string pInCompanyDate, string pCardType, string pCardTimeStart, string pCardTimeOver, string pOutTime, string pCompanyCode,
             string pCompanyName, string pWorkType, string pClosingDate, int pZipCode,string pAddress,string pMobliePhone,
             string pPhone, string pCreatePeople, string pPosition, string HakenRyokin, string HakenRyokinType, string ShiharaiType
             , string Tax, string SalaryType, int BasicSalary, int SeikinTeate, int GaikinTeate, int GijutsuTeate
@@ -451,7 +481,9 @@ namespace DTO
             , string DependentPeopleBirth6, string Relationship6, string Living6, string Trainsportation1, string BeginTrain1, string EndTrain1
             , int MonthRegular1, string Trainsportation2, string BeginTrain2, string EndTrain2, int MonthRegular2
             , string Trainsportation3, string BeginTrain3, string EndTrain3, int MonthRegular3
-            , string Trainsportation4, string BeginTrain4, string EndTrain4, int MonthRegular4, string Carkm, int CarMoney, int TotalMoneyTrans)
+            , string Trainsportation4, string BeginTrain4, string EndTrain4, int MonthRegular4, string Carkm, int CarMoney, int TotalMoneyTrans
+            , string Reason, string ChangeDateFrom, string ChangeDate, double Genkaritsu, int TeateGaku, string AccountCode
+            , int Chingin, string ChinginType, int KyuyoKojoGaku, int WorkTime)
         {
             this._idCode = pIdcode;
             this._romaji = pRomaji;
@@ -462,8 +494,8 @@ namespace DTO
             this._nationality = pNationality;
             this._inCompanyDate = pInCompanyDate;
             this._cardType = pCardType;
-            this._cardTime = pCardTime;
-            this._cardTimeOut = pCardTimeOut;
+            this._cardTimeStart = pCardTimeStart;
+            this._cardTimeOver = pCardTimeOver;
             this._outTime = pOutTime;
             this._companyCode = pCompanyCode;
             this._companyName = pCompanyName;
@@ -593,7 +625,16 @@ namespace DTO
             this._carkm = Carkm;
             this._carMoney = CarMoney;
             this._totalMoneyTrans = TotalMoneyTrans;
-
+            this._reason = Reason;
+            this._changeDateFrom = ChangeDateFrom;
+            this._changeDate = ChangeDate;
+            this._genkaritsu = Genkaritsu;
+            this._teateGaku = TeateGaku;
+            this._accountCode = AccountCode;
+            this._chingin = Chingin;
+            this._chinginType = ChinginType;
+            this._kyuyoKojoGaku = KyuyoKojoGaku;
+            this._workTime = WorkTime;
 
         }
     }

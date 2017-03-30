@@ -33,6 +33,7 @@
             this.bt_Exit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtGridView = new System.Windows.Forms.DataGridView();
+            this.bt_print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,7 @@
             // 
             this.bt_addNew.Location = new System.Drawing.Point(43, 136);
             this.bt_addNew.Name = "bt_addNew";
-            this.bt_addNew.Size = new System.Drawing.Size(86, 44);
+            this.bt_addNew.Size = new System.Drawing.Size(86, 37);
             this.bt_addNew.TabIndex = 0;
             this.bt_addNew.Text = "新入登録";
             this.bt_addNew.UseVisualStyleBackColor = true;
@@ -48,7 +49,7 @@
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(43, 198);
+            this.btEdit.Location = new System.Drawing.Point(43, 189);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(86, 37);
             this.btEdit.TabIndex = 2;
@@ -86,11 +87,22 @@
             this.dtGridView.TabIndex = 5;
             this.dtGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGridView_CellMouseDoubleClick);
             // 
+            // bt_print
+            // 
+            this.bt_print.Location = new System.Drawing.Point(43, 244);
+            this.bt_print.Name = "bt_print";
+            this.bt_print.Size = new System.Drawing.Size(86, 37);
+            this.bt_print.TabIndex = 6;
+            this.bt_print.Text = "印刷";
+            this.bt_print.UseVisualStyleBackColor = true;
+            this.bt_print.Click += new System.EventHandler(this.bt_print_Click);
+            // 
             // GUI_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 424);
+            this.Controls.Add(this.bt_print);
             this.Controls.Add(this.dtGridView);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bt_Exit);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.Button bt_Exit;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dtGridView;
+        private System.Windows.Forms.Button bt_print;
     }
 }
 

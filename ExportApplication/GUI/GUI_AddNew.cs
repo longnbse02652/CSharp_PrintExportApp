@@ -90,7 +90,14 @@ namespace ExportApplication
                 string _idCode = tb_IDCode.Text;
                 string _romaji = tb_RomajiName.Text;
                 string _furigana = tb_FuriganaName.Text;
-                string _sex = cb_Sex.SelectedItem.ToString();
+                string _sex;
+                if (cb_Sex.SelectedItem != null)
+                {
+                    _sex = cb_Sex.SelectedItem.ToString();
+                }
+                else {
+                    _sex = null;
+                }
                 int _age;
                 bool result_age = int.TryParse(tb_Age.Text, out _age);
                 string _birth = CheckDateTime(dtp_Birth);
@@ -111,6 +118,7 @@ namespace ExportApplication
                 string _phone = tb_Phone.Text;
                 string _createPeople = tb_CreatePeople.Text;
                 string _position = tb_Position.Text;
+
                 string _hakenRyokin = tb_HakenRyokin.Text;
                 string _hakenRyokinType = cb_HakenRyokinType.SelectedItem.ToString();
                 string _shiharaiType = cb_ShiharaiType.SelectedItem.ToString();
@@ -240,6 +248,7 @@ namespace ExportApplication
                 string _dependentPeopleBirth6 = CheckDateTime(dtp_DependentPeopleBirth6);
                 string _relationship6 = tb_Relationship6.Text;
                 string _living6 = cb_Living6.SelectedItem.ToString();
+
                 string _trainsportation1 = tb_Trainsportation1.Text;
                 string _beginTrain1 = tb_BeginTrain1.Text;
                 string _endTrain1 = tb_EndTrain1.Text;
@@ -264,7 +273,22 @@ namespace ExportApplication
                 int _carMoney;
                 bool result_carMoney = int.TryParse(tb_CarMoney.Text,out _carMoney);
                 int _totalMoneyTrans = _monthRegular1 + _monthRegular2 + _monthRegular3 + _monthRegular4;
-                bool result_totalMoneyTrans = int.TryParse(lb_TotalMoneyTrans.Text, out _totalMoneyTrans);
+               
+                string _reason = string.Empty;
+                string _changeDateFrom = string.Empty;
+                string _changeDate = string.Empty;
+                double _genkaritsu;
+                bool result_genkaritsu = double.TryParse("", out _genkaritsu);
+                int _teateGaku;
+                bool result_teateGaku = int.TryParse("", out _teateGaku);
+                string _accountCode = string.Empty;
+                int _chingin = _basicSalary + _seikinTeate + _gaikinTeate + _gijutsuTeate + _shikakuTeate + _yakushokuTeate + _eigyoTeate;;
+                string _chinginType = string.Empty;
+                int _kyuyoKojoGaku ;
+                bool result_kyuyoKojoGaku = int.TryParse("", out _kyuyoKojoGaku);
+                int _workTime ;
+                bool result_workTime = int.TryParse("", out _workTime);
+
 
                 dto_allInfo = new DTO_AllInfor(_idCode, _romaji, _furigana, _sex, _age, _birth, _nationality,
                         _inCompanyDate, _cardType, _cardTime, _cardTimeOut, _outTime, _companyCode, _companyName, _workType,
@@ -286,7 +310,8 @@ namespace ExportApplication
                         _relationship6,_living6,_trainsportation1,_beginTrain1,_endTrain1,_monthRegular1,
                         _trainsportation2,_beginTrain2,_endTrain2,_monthRegular2,
                         _trainsportation3,_beginTrain3,_endTrain3,_monthRegular3,
-                        _trainsportation4,_beginTrain4,_endTrain4,_monthRegular4,_carkm,_carMoney,_totalMoneyTrans);
+                        _trainsportation4,_beginTrain4,_endTrain4,_monthRegular4,_carkm,_carMoney,_totalMoneyTrans,
+                        _reason, _changeDateFrom, _changeDate, _genkaritsu, _teateGaku, _accountCode, _chingin, _chinginType, _kyuyoKojoGaku, _workTime);
 
             }
             else {
@@ -445,6 +470,92 @@ namespace ExportApplication
         private void dtp_DependentPeopleBirth6_ValueChanged(object sender, EventArgs e)
         {
             dtp_DependentPeopleBirth6.Format = DateTimePickerFormat.Long;
+        }
+
+        private void tb_Park_TextChanged(object sender, EventArgs e)
+        {
+            int park_money;
+            bool result_tb_park = int.TryParse(tb_Park.Text, out park_money);
+            int dormitoryFee;
+            bool result_dormitoryFee = int.TryParse(tb_DormitoryFee.Text, out dormitoryFee);
+            int water_money;
+            bool result_water_money = int.TryParse(tb_WaterFee.Text, out water_money);
+            lb_tongtienkhautru.Text = (park_money + dormitoryFee + water_money).ToString();
+        }
+
+        private void tb_DormitoryFee_TextChanged(object sender, EventArgs e)
+        {
+            int park_money;
+            bool result_tb_park = int.TryParse(tb_Park.Text, out park_money);
+            int dormitoryFee;
+            bool result_dormitoryFee = int.TryParse(tb_DormitoryFee.Text, out dormitoryFee);
+            int water_money;
+            bool result_water_money = int.TryParse(tb_WaterFee.Text, out water_money);
+            lb_tongtienkhautru.Text = (park_money + dormitoryFee + water_money).ToString();
+        }
+
+        private void tb_WaterFee_TextChanged(object sender, EventArgs e)
+        {
+            int park_money;
+            bool result_tb_park = int.TryParse(tb_Park.Text, out park_money);
+            int dormitoryFee;
+            bool result_dormitoryFee = int.TryParse(tb_DormitoryFee.Text, out dormitoryFee);
+            int water_money;
+            bool result_water_money = int.TryParse(tb_WaterFee.Text, out water_money);
+            lb_tongtienkhautru.Text = (park_money + dormitoryFee + water_money).ToString();
+        }
+
+        private void total_chingin() {
+            int _basicSalary;
+            bool result_basicSalary = int.TryParse(tb_BasicSalary.Text, out _basicSalary);
+            int _seikinTeate;
+            bool result_seikinTeate = int.TryParse(tb_SeikinTeate.Text, out _seikinTeate);
+            int _gaikinTeate;
+            bool result_gaikinTeate = int.TryParse(tb_GaikinTeate.Text, out _gaikinTeate);
+            int _gijutsuTeate;
+            bool result_gijutsuTeate = int.TryParse(tb_GijutsuTeate.Text, out _gijutsuTeate);
+            int _shikakuTeate;
+            bool result_shikakuTeate = int.TryParse(tb_ShikakuTeate.Text, out _shikakuTeate);
+            int _yakushokuTeate;
+            bool result_yakushokuTeate = int.TryParse(tb_YakushokuTeate.Text, out _yakushokuTeate);
+            int _eigyoTeate;
+            bool result_eigyoTeate = int.TryParse(tb_EigyoTeate.Text, out _eigyoTeate);
+            lb_chingin.Text = string.Format("{0:n0}", (_basicSalary + _seikinTeate + _gaikinTeate + _gijutsuTeate + _shikakuTeate + _yakushokuTeate + _eigyoTeate));
+
+        }
+        private void tb_BasicSalary_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_SeikinTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_GaikinTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_GijutsuTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_ShikakuTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_YakushokuTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
+        }
+
+        private void tb_EigyoTeate_TextChanged(object sender, EventArgs e)
+        {
+            total_chingin();
         }
 
     }
