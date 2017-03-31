@@ -85,32 +85,63 @@ namespace ExportApplication
         }
 
         public DTO_AllInfor getAllData() {
-            if (tb_RomajiName.Text != string.Empty && tb_FuriganaName.Text != string.Empty)
+            if (tb_RomajiName.Text != string.Empty)
             {
                 string _idCode = tb_IDCode.Text;
                 string _romaji = tb_RomajiName.Text;
                 string _furigana = tb_FuriganaName.Text;
                 string _sex;
-                if (cb_Sex.SelectedItem != null)
+                if (cb_Sex.SelectedIndex != -1)
                 {
                     _sex = cb_Sex.SelectedItem.ToString();
                 }
-                else {
-                    _sex = null;
+                else
+                {
+                    _sex = string.Empty;
                 }
-                int _age;
-                bool result_age = int.TryParse(tb_Age.Text, out _age);
                 string _birth = CheckDateTime(dtp_Birth);
                 string _nationality = tb_Nationality.Text;
                 string _inCompanyDate = CheckDateTime(dtp_InCompanyDate);
-                string _cardType = cb_CardType.SelectedItem.ToString();
+                string _cardType;
+                if (cb_CardType.SelectedIndex != -1)
+                {
+                    _cardType = cb_CardType.SelectedItem.ToString();
+                }
+                else
+                {
+                    _cardType = string.Empty;
+                }
                 string _cardTime = CheckDateTime(dtp_CardTimeStart);
                 string _cardTimeOut = CheckDateTime(dtp_CardTimeOver);
-                string _outTime = cb_OutTime.SelectedItem.ToString();
+                string _outTime = string.Empty;
+                if (cb_OutTime.SelectedIndex != -1)
+                {
+                    _outTime = cb_OutTime.SelectedItem.ToString();
+                }
+                else
+                {
+                    _outTime = string.Empty;
+                }
                 string _companyCode = tb_CompanyCode.Text;
                 string _companyName = tb_CompanyName.Text;
-                string _workType = cb_WorkType.SelectedItem.ToString();
-                string _closingDate = cb_ClosingDate.SelectedItem.ToString();
+                string _workType;
+                if (cb_WorkType.SelectedIndex != -1)
+                {
+                    _workType = cb_WorkType.SelectedItem.ToString();
+                }
+                else
+                {
+                    _workType = string.Empty;
+                }
+                string _closingDate;
+                if (cb_ClosingDate.SelectedIndex != -1)
+                {
+                    _closingDate = cb_ClosingDate.SelectedItem.ToString();
+                }
+                else
+                {
+                    _closingDate = string.Empty;
+                }
                 int _zipCode;
                 bool result_zipcode = int.TryParse(tb_ZipCode.Text, out _zipCode);
                 string _address = tb_Address.Text;
@@ -182,8 +213,25 @@ namespace ExportApplication
                 bool result_residentPeople = int.TryParse(tb_ResidentPeople.Text,out _residentPeople);
                 int _healthInsurancePeople;
                 bool result_healthInsurancePeople = int.TryParse(tb_HealthInsurancePeople.Text,out _healthInsurancePeople);
-                string _contractType = cb_ContractType.SelectedItem.ToString();
-                string _contractRequire = cb_ContractRequire.SelectedItem.ToString() ;
+
+                string _contractType = string.Empty;
+                if (cb_ContractType.SelectedIndex != -1)
+                {
+                    _contractType = cb_ContractType.SelectedItem.ToString();
+                }
+                else
+                {
+                    _contractType = string.Empty;
+                }
+                string _contractRequire = string.Empty;
+                if (cb_ContractRequire.SelectedIndex != -1)
+                {
+                    _contractRequire = cb_ContractRequire.SelectedItem.ToString();
+                }
+                else
+                {
+                    _contractRequire = string.Empty;
+                }
                 string _myCompany = tb_MyCompany.Text;
                 string _workContent = tb_WorkContent.Text;
                 int _workTime1;
@@ -196,7 +244,15 @@ namespace ExportApplication
                 bool result_workTime4 = int.TryParse(tb_WorkTime4.Text,out _workTime4);
                 int _relaxTime;
                 bool result_relaxTime = int.TryParse(tb_RelaxTime.Text,out _relaxTime);
-                string _insureCard = cb_InsureCard.SelectedItem.ToString();
+                string _insureCard = string.Empty;
+                if (cb_InsureCard.SelectedIndex != -1)
+                {
+                    _insureCard = cb_InsureCard.SelectedItem.ToString();
+                }
+                else
+                {
+                    _insureCard = string.Empty;
+                }
                 string _pastCompany1 = tb_PastCompany1.Text;
                 string _nienhieu1 = cb_Nienhieu1.SelectedItem.ToString();
                 int _beginYear1;
@@ -217,7 +273,15 @@ namespace ExportApplication
                 bool result_endYear2 = int.TryParse(tb_EndYear2.Text,out _endYear2);
                 int _endMonth2;
                 bool result_endMonth2 = int.TryParse(tb_EndMonth2.Text,out _endMonth2);
-                string _pensionBook = cb_PensionBook.SelectedItem.ToString();
+                string _pensionBook = string.Empty;
+                if (cb_PensionBook.SelectedIndex != -1)
+                {
+                    _pensionBook = cb_PensionBook.SelectedItem.ToString();
+                }
+                else
+                {
+                    _pensionBook = string.Empty;
+                }
                 string _dependentPeopleKana1 = tb_DependentPeopleKana1.Text;
                 string _dependentPeopleShimei1 = tb_DependentPeopleShimei1.Text;
                 string _dependentPeopleBirth1 = CheckDateTime(dtp_DependentPeopleBirth1);
@@ -290,7 +354,7 @@ namespace ExportApplication
                 bool result_workTime = int.TryParse("", out _workTime);
 
 
-                dto_allInfo = new DTO_AllInfor(_idCode, _romaji, _furigana, _sex, _age, _birth, _nationality,
+                dto_allInfo = new DTO_AllInfor(_idCode, _romaji, _furigana, _sex, _birth, _nationality,
                         _inCompanyDate, _cardType, _cardTime, _cardTimeOut, _outTime, _companyCode, _companyName, _workType,
                         _closingDate, _zipCode, _address, _mobliePhone, _phone, _createPeople, _position,_hakenRyokin,_hakenRyokinType,
                         _shiharaiType,_tax,_salaryType,_basicSalary,_seikinTeate,_gaikinTeate,_gijutsuTeate,_shikakuTeate,
@@ -326,20 +390,23 @@ namespace ExportApplication
             this.Close();
         }
 
+        //Xu ly combobox cho phep insert string empty to database
+        public string HandleCombobox(ComboBox cbox, string text) {
+            if (cbox.SelectedIndex != -1)
+            {
+                text = cb_Sex.SelectedItem.ToString();
+            }
+            else
+            {
+                text = string.Empty;
+            }
+            return text;
+        }
+
         //Validate ko nhap name, age, sex
         private void tb_RomajiName_Validating(object sender, CancelEventArgs e)
         {
             bll_handleFunc.ValidateControls(tb_RomajiName, errorProvider);
-        }
-
-        private void tb_FuriganaName_Validating(object sender, CancelEventArgs e)
-        {
-            bll_handleFunc.ValidateControls(tb_FuriganaName, errorProvider);
-        }
-
-        private void tb_Age_Validating(object sender, CancelEventArgs e)
-        {
-            bll_handleFunc.ValidateControls(tb_Age, errorProvider);
         }
 
         private void cb_Sex_Validating(object sender, CancelEventArgs e)

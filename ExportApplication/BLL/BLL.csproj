@@ -43,6 +43,7 @@
     <Compile Include="BLL_AllInfor.cs" />
     <Compile Include="BLL_Edit.cs" />
     <Compile Include="BLL_HandleFunc.cs" />
+    <Compile Include="BLL_Print.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

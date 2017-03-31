@@ -12,7 +12,7 @@ namespace BLL
     {
         //ham nay la de chuyen dinh dang cua Nhat ve YYMMDD de them vao database
         public string ConvertFromDatetimePicker_ToYYMMDD(DateTimePicker dtPicker) {
-            string date = dtPicker.Value.ToString("yyyy-MM-dd");
+            string date = dtPicker.Value.ToString("yyyy/MM/dd");
             return date;
         }
         //hàm này là để chuyển định dang datime thông thường sang datetime của Nhật de hien thi len

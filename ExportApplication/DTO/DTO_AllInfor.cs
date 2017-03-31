@@ -20,9 +20,6 @@ namespace DTO
         private string _sex;
         public string sex   {get { return _sex; }set { _sex = value; }}
 
-        private int _age;
-        public int age   {get { return _age; }set { _age = value; }}
-
         private string _birth;
         public string birth {get { return _birth; }set { _birth = value; }}
 
@@ -458,7 +455,7 @@ namespace DTO
         private int _workTime;
         public int workTime { get { return _workTime; } set { _workTime = value; } }
 
-        public DTO_AllInfor(string pIdcode,string pRomaji, string pFurigana, string pSex, int pAge,string pBirth, string pNationality,
+        public DTO_AllInfor(string pIdcode,string pRomaji, string pFurigana, string pSex,string pBirth, string pNationality,
             string pInCompanyDate, string pCardType, string pCardTimeStart, string pCardTimeOver, string pOutTime, string pCompanyCode,
             string pCompanyName, string pWorkType, string pClosingDate, int pZipCode,string pAddress,string pMobliePhone,
             string pPhone, string pCreatePeople, string pPosition, string HakenRyokin, string HakenRyokinType, string ShiharaiType
@@ -489,7 +486,6 @@ namespace DTO
             this._romaji = pRomaji;
             this._furigana = pFurigana;
             this._sex = pSex;
-            this._age = pAge;
             this._birth = pBirth;
             this._nationality = pNationality;
             this._inCompanyDate = pInCompanyDate;

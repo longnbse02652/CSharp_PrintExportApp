@@ -41,7 +41,6 @@ namespace DAL
                 command.Parameters.AddWithValue("@RomajiName", dto_AllInfor.romaji);
                 command.Parameters.AddWithValue("@FuriganaName", dto_AllInfor.furigana);
                 command.Parameters.AddWithValue("@Sex", dto_AllInfor.sex);
-                command.Parameters.AddWithValue("@Age", dto_AllInfor.age);
                 command.Parameters.AddWithValue("@Birth", dto_AllInfor.birth);
                 command.Parameters.AddWithValue("@Nationality", dto_AllInfor.nationality);
                 command.Parameters.AddWithValue("@InCompanyDate", dto_AllInfor.inCompanyDate);
