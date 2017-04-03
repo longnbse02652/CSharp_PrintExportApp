@@ -71,8 +71,8 @@ namespace DTO
         private string _position;
         public string position { get { return _position; } set { _position = value; } }
 
-        private string _hakenRyokin;
-        public string hakenRyokin { get { return _hakenRyokin; } set { _hakenRyokin = value; } }
+        private int _hakenRyokin;
+        public int hakenRyokin { get { return _hakenRyokin; } set { _hakenRyokin = value; } }
 
         private string _hakenRyokinType;
         public string hakenRyokinType { get { return _hakenRyokinType; } set { _hakenRyokinType = value; } }
@@ -221,20 +221,20 @@ namespace DTO
         private string _workContent;
         public string workContent { get { return _workContent; } set { _workContent = value; } }
 
-        private int _workTime1;
-        public int workTime1 { get { return _workTime1; } set { _workTime1 = value; } }
+        private string _workTime1;
+        public string workTime1 { get { return _workTime1; } set { _workTime1 = value; } }
 
-        private int _workTime2;
-        public int workTime2 { get { return _workTime2; } set { _workTime2 = value; } }
+        private string _workTime2;
+        public string workTime2 { get { return _workTime2; } set { _workTime2 = value; } }
 
-        private int _workTime3;
-        public int workTime3 { get { return _workTime3; } set { _workTime3 = value; } }
+        private string _workTime3;
+        public string workTime3 { get { return _workTime3; } set { _workTime3 = value; } }
 
-        private int _workTime4;
-        public int workTime4 { get { return _workTime4; } set { _workTime4 = value; } }
+        private string _workTime4;
+        public string workTime4 { get { return _workTime4; } set { _workTime4 = value; } }
 
-        private int _relaxTime;
-        public int relaxTime { get { return _relaxTime; } set { _relaxTime = value; } }
+        private string _relaxTime;
+        public string relaxTime { get { return _relaxTime; } set { _relaxTime = value; } }
 
         private string _insureCard;
         public string insureCard { get { return _insureCard; } set { _insureCard = value; } }
@@ -458,7 +458,7 @@ namespace DTO
         public DTO_AllInfor(string pIdcode,string pRomaji, string pFurigana, string pSex,string pBirth, string pNationality,
             string pInCompanyDate, string pCardType, string pCardTimeStart, string pCardTimeOver, string pOutTime, string pCompanyCode,
             string pCompanyName, string pWorkType, string pClosingDate, int pZipCode,string pAddress,string pMobliePhone,
-            string pPhone, string pCreatePeople, string pPosition, string HakenRyokin, string HakenRyokinType, string ShiharaiType
+            string pPhone, string pCreatePeople, string pPosition, int HakenRyokin, string HakenRyokinType, string ShiharaiType
             , string Tax, string SalaryType, int BasicSalary, int SeikinTeate, int GaikinTeate, int GijutsuTeate
             , int ShikakuTeate, int YakushokuTeate, int EigyoTeate, int KazokuTeate, int JutakuTeate, int BekkyoTeate
             , int TsukinTeate, int Park, int DormitoryFee, int WaterFee, string EmployStatus, string EmployTime1
@@ -466,8 +466,8 @@ namespace DTO
             , string BankCode, string BranchCode, string AccountCode1, string AccountCode2, string AccountCode3, string AccountCode4
             , string AccountCode5, string AccountCode6, string AccountCode7, string AccountCode8, string TravelType, string HouseName
             , string Room, string InHouseDate, string Kouyouhoken, string Shakaihoken, int DependentPeople, int ResidentPeople
-            , int HealthInsurancePeople, string ContractType, string ContractRequire, string MyCompany, string WorkContent, int WorkTime1
-            , int WorkTime2, int WorkTime3, int WorkTime4, int RelaxTime, string InsureCard, string PastCompany1, string Nienhieu1
+            , int HealthInsurancePeople, string ContractType, string ContractRequire, string MyCompany, string WorkContent, string WorkTime1
+            , string WorkTime2, string WorkTime3, string WorkTime4, string RelaxTime, string InsureCard, string PastCompany1, string Nienhieu1
             , int BeginYear1, int BeginMonth1, int EndYear1, int EndMonth1, string PastCompany2, string Nienhieu2, int BeginYear2
             , int BeginMonth2, int EndYear2, int EndMonth2, string PensionBook, string DependentPeopleKana1, string DependentPeopleShimei1
             , string DependentPeopleBirth1, string Relationship1, string Living1,string DependentPeopleKana2, string DependentPeopleShimei2

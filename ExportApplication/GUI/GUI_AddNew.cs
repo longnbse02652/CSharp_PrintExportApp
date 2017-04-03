@@ -85,6 +85,7 @@ namespace ExportApplication
         }
 
         public DTO_AllInfor getAllData() {
+            
             if (tb_RomajiName.Text != string.Empty)
             {
                 string _idCode = tb_IDCode.Text;
@@ -148,9 +149,17 @@ namespace ExportApplication
                 string _mobliePhone = tb_MobliePhone.Text;
                 string _phone = tb_Phone.Text;
                 string _createPeople = tb_CreatePeople.Text;
-                string _position = tb_Position.Text;
-
-                string _hakenRyokin = tb_HakenRyokin.Text;
+                string _position;
+                if (cb_Position.SelectedIndex != -1 && cb_Position.SelectedText !="")
+                {
+                    _position = cb_ClosingDate.SelectedItem.ToString();
+                }
+                else
+                {
+                    _position = string.Empty;
+                }
+                int _hakenRyokin;
+                bool result_hakenRyokin = int.TryParse(tb_HakenRyokin.Text, out _hakenRyokin);
                 string _hakenRyokinType = cb_HakenRyokinType.SelectedItem.ToString();
                 string _shiharaiType = cb_ShiharaiType.SelectedItem.ToString();
                 string _tax = cb_Tax.SelectedItem.ToString();
@@ -234,16 +243,11 @@ namespace ExportApplication
                 }
                 string _myCompany = tb_MyCompany.Text;
                 string _workContent = tb_WorkContent.Text;
-                int _workTime1;
-                bool result_workTime1 = int.TryParse(tb_WorkTime1.Text,out _workTime1);
-                int _workTime2;
-                bool result_workTime2 = int.TryParse(tb_WorkTime2.Text,out _workTime2);
-                int _workTime3;
-                bool result_workTime3 = int.TryParse(tb_WorkTime3.Text,out _workTime3);
-                int _workTime4;
-                bool result_workTime4 = int.TryParse(tb_WorkTime4.Text,out _workTime4);
-                int _relaxTime;
-                bool result_relaxTime = int.TryParse(tb_RelaxTime.Text,out _relaxTime);
+                string _workTime1 = tb_WorkTime1.Text;
+                string _workTime2 = tb_WorkTime2.Text;
+                string _workTime3 = tb_WorkTime3.Text;
+                string _workTime4 = tb_WorkTime4.Text;
+                string _relaxTime = tb_RelaxTime.Text;
                 string _insureCard = string.Empty;
                 if (cb_InsureCard.SelectedIndex != -1)
                 {
@@ -347,6 +351,7 @@ namespace ExportApplication
                 bool result_teateGaku = int.TryParse("", out _teateGaku);
                 string _accountCode = string.Empty;
                 int _chingin = _basicSalary + _seikinTeate + _gaikinTeate + _gijutsuTeate + _shikakuTeate + _yakushokuTeate + _eigyoTeate;;
+                
                 string _chinginType = string.Empty;
                 int _kyuyoKojoGaku ;
                 bool result_kyuyoKojoGaku = int.TryParse("", out _kyuyoKojoGaku);
@@ -384,7 +389,8 @@ namespace ExportApplication
             
             return dto_allInfo;
         }
-        
+
+    
         private void bt_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -623,6 +629,22 @@ namespace ExportApplication
         private void tb_EigyoTeate_TextChanged(object sender, EventArgs e)
         {
             total_chingin();
+        }
+
+        private void cb_EmployStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_EmployStatus.SelectedIndex == 0)
+            {
+                tbl_employTime.Enabled = false;
+                dtp_EmployTime1.CustomFormat = " ";
+                dtp_EmployTime1.Format = DateTimePickerFormat.Custom;
+                dtp_EmployTime2.CustomFormat = " ";
+                dtp_EmployTime1.Format = DateTimePickerFormat.Custom;
+            }
+            else
+            {
+                tbl_employTime.Enabled = true;
+            }
         }
 
     }

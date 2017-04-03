@@ -18,7 +18,7 @@ namespace BLL
         //hàm này là để chuyển định dang datime thông thường sang datetime của Nhật de hien thi len
         public string ConvertJapaneseCalendar(string datetime)
         {
-            //string datetime = "1993-10-14";
+            //string datetime = "1993/10/14";
             DateTime dt = Convert.ToDateTime(datetime);
             JapaneseCalendar myCal = new JapaneseCalendar();
 

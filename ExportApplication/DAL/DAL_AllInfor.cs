@@ -29,6 +29,13 @@ namespace DAL
                 return null;
             }
         }
+        //check int
+        private object ValueOrDBNullIfZero(int val)
+        {
+            if (val == 0) return DBNull.Value;
+            return val;
+        }
+
 
         //Insert dữ liệu vô database
         public bool Insert(DTO_AllInfor dto_AllInfor) {
@@ -52,32 +59,32 @@ namespace DAL
                 command.Parameters.AddWithValue("@CompanyName",dto_AllInfor.companyName);
                 command.Parameters.AddWithValue("@WorkType",dto_AllInfor.workType);
                 command.Parameters.AddWithValue("@ClosingDate",dto_AllInfor.closingDate);
-                command.Parameters.AddWithValue("@ZipCode",dto_AllInfor.zipCode);
+                command.Parameters.AddWithValue("@ZipCode", ValueOrDBNullIfZero(dto_AllInfor.zipCode));
                 command.Parameters.AddWithValue("@Address",dto_AllInfor.address);
                 command.Parameters.AddWithValue("@MobliePhone",dto_AllInfor.mobliePhone);
                 command.Parameters.AddWithValue("@Phone",dto_AllInfor.phone);
                 command.Parameters.AddWithValue("@CreatePeople",dto_AllInfor.createPeople);
                 command.Parameters.AddWithValue("@Position",dto_AllInfor.position);
-                
-                command.Parameters.AddWithValue("@HakenRyokin", dto_AllInfor.hakenRyokin);
+
+                command.Parameters.AddWithValue("@HakenRyokin", ValueOrDBNullIfZero(dto_AllInfor.hakenRyokin));
                 command.Parameters.AddWithValue("@HakenRyokinType", dto_AllInfor.hakenRyokinType);
                 command.Parameters.AddWithValue("@ShiharaiType", dto_AllInfor.shiharaiType);
                 command.Parameters.AddWithValue("@Tax", dto_AllInfor.tax);
                 command.Parameters.AddWithValue("@SalaryType", dto_AllInfor.salaryType);
-                command.Parameters.AddWithValue("@BasicSalary", dto_AllInfor.basicSalary);
-                command.Parameters.AddWithValue("@SeikinTeate", dto_AllInfor.seikinTeate);
-                command.Parameters.AddWithValue("@GaikinTeate", dto_AllInfor.gaikinTeate);
-                command.Parameters.AddWithValue("@GijutsuTeate", dto_AllInfor.gijutsuTeate);
-                command.Parameters.AddWithValue("@ShikakuTeate", dto_AllInfor.shikakuTeate);
-                command.Parameters.AddWithValue("@YakushokuTeate", dto_AllInfor.yakushokuTeate);
-                command.Parameters.AddWithValue("@EigyoTeate", dto_AllInfor.eigyoTeate);
-                command.Parameters.AddWithValue("@KazokuTeate", dto_AllInfor.kazokuTeate);
-                command.Parameters.AddWithValue("@JutakuTeate", dto_AllInfor.jutakuTeate);
-                command.Parameters.AddWithValue("@BekkyoTeate", dto_AllInfor.bekkyoTeate);
-                command.Parameters.AddWithValue("@TsukinTeate", dto_AllInfor.tsukinTeate);
-                command.Parameters.AddWithValue("@Park", dto_AllInfor.park);
-                command.Parameters.AddWithValue("@DormitoryFee", dto_AllInfor.dormitoryFee);
-                command.Parameters.AddWithValue("@WaterFee", dto_AllInfor.waterFee);
+                command.Parameters.AddWithValue("@BasicSalary", ValueOrDBNullIfZero(dto_AllInfor.basicSalary));
+                command.Parameters.AddWithValue("@SeikinTeate", ValueOrDBNullIfZero(dto_AllInfor.seikinTeate));
+                command.Parameters.AddWithValue("@GaikinTeate", ValueOrDBNullIfZero(dto_AllInfor.gaikinTeate));
+                command.Parameters.AddWithValue("@GijutsuTeate", ValueOrDBNullIfZero(dto_AllInfor.gijutsuTeate));
+                command.Parameters.AddWithValue("@ShikakuTeate", ValueOrDBNullIfZero(dto_AllInfor.shikakuTeate));
+                command.Parameters.AddWithValue("@YakushokuTeate", ValueOrDBNullIfZero(dto_AllInfor.yakushokuTeate));
+                command.Parameters.AddWithValue("@EigyoTeate", ValueOrDBNullIfZero(dto_AllInfor.eigyoTeate));
+                command.Parameters.AddWithValue("@KazokuTeate", ValueOrDBNullIfZero(dto_AllInfor.kazokuTeate));
+                command.Parameters.AddWithValue("@JutakuTeate", ValueOrDBNullIfZero(dto_AllInfor.jutakuTeate));
+                command.Parameters.AddWithValue("@BekkyoTeate", ValueOrDBNullIfZero(dto_AllInfor.bekkyoTeate));
+                command.Parameters.AddWithValue("@TsukinTeate", ValueOrDBNullIfZero(dto_AllInfor.tsukinTeate));
+                command.Parameters.AddWithValue("@Park", ValueOrDBNullIfZero(dto_AllInfor.park));
+                command.Parameters.AddWithValue("@DormitoryFee", ValueOrDBNullIfZero(dto_AllInfor.dormitoryFee));
+                command.Parameters.AddWithValue("@WaterFee", ValueOrDBNullIfZero(dto_AllInfor.waterFee));
                 command.Parameters.AddWithValue("@EmployStatus", dto_AllInfor.employStatus);
                 command.Parameters.AddWithValue("@EmployTime1", dto_AllInfor.employTime1);
                 command.Parameters.AddWithValue("@EmployTime2", dto_AllInfor.employTime2);
@@ -105,29 +112,30 @@ namespace DAL
                 command.Parameters.AddWithValue("@DependentPeople", dto_AllInfor.dependentPeople);
                 command.Parameters.AddWithValue("@ResidentPeople", dto_AllInfor.residentPeople);
                 command.Parameters.AddWithValue("@HealthInsurancePeople", dto_AllInfor.healthInsurancePeople);
+
                 command.Parameters.AddWithValue("@ContractType", dto_AllInfor.contractType);
                 command.Parameters.AddWithValue("@ContractRequire", dto_AllInfor.contractRequire);
                 command.Parameters.AddWithValue("@MyCompany", dto_AllInfor.myCompany);
                 command.Parameters.AddWithValue("@WorkContent", dto_AllInfor.workContent);
-                command.Parameters.AddWithValue("@WorkTime1", dto_AllInfor.workTime1);
-                command.Parameters.AddWithValue("@WorkTime2", dto_AllInfor.workTime2);
-                command.Parameters.AddWithValue("@WorkTime3", dto_AllInfor.workTime3);
-                command.Parameters.AddWithValue("@WorkTime4", dto_AllInfor.workTime4);
-                command.Parameters.AddWithValue("@RelaxTime", dto_AllInfor.relaxTime);
+                command.Parameters.AddWithValue("@WorkTime1", (dto_AllInfor.workTime1));
+                command.Parameters.AddWithValue("@WorkTime2", (dto_AllInfor.workTime2));
+                command.Parameters.AddWithValue("@WorkTime3", (dto_AllInfor.workTime3));
+                command.Parameters.AddWithValue("@WorkTime4", (dto_AllInfor.workTime4));
+                command.Parameters.AddWithValue("@RelaxTime", (dto_AllInfor.relaxTime));
 
                 command.Parameters.AddWithValue("@InsureCard", dto_AllInfor.insureCard);
                 command.Parameters.AddWithValue("@PastCompany1", dto_AllInfor.pastCompany1);
                 command.Parameters.AddWithValue("@Nienhieu1", dto_AllInfor.nienhieu1);
-                command.Parameters.AddWithValue("@BeginYear1", dto_AllInfor.beginYear1);
-                command.Parameters.AddWithValue("@BeginMonth1", dto_AllInfor.beginMonth1);
-                command.Parameters.AddWithValue("@EndYear1", dto_AllInfor.endYear1);
-                command.Parameters.AddWithValue("@EndMonth1", dto_AllInfor.endMonth1);
+                command.Parameters.AddWithValue("@BeginYear1", ValueOrDBNullIfZero(dto_AllInfor.beginYear1));
+                command.Parameters.AddWithValue("@BeginMonth1", ValueOrDBNullIfZero(dto_AllInfor.beginMonth1));
+                command.Parameters.AddWithValue("@EndYear1", ValueOrDBNullIfZero(dto_AllInfor.endYear1));
+                command.Parameters.AddWithValue("@EndMonth1", ValueOrDBNullIfZero(dto_AllInfor.endMonth1));
                 command.Parameters.AddWithValue("@PastCompany2", dto_AllInfor.pastCompany2);
                 command.Parameters.AddWithValue("@Nienhieu2", dto_AllInfor.nienhieu2);
-                command.Parameters.AddWithValue("@BeginYear2", dto_AllInfor.beginYear2);
-                command.Parameters.AddWithValue("@BeginMonth2", dto_AllInfor.beginMonth2);
-                command.Parameters.AddWithValue("@EndYear2", dto_AllInfor.endYear2);
-                command.Parameters.AddWithValue("@EndMonth2", dto_AllInfor.endMonth2);
+                command.Parameters.AddWithValue("@BeginYear2", ValueOrDBNullIfZero(dto_AllInfor.beginYear2));
+                command.Parameters.AddWithValue("@BeginMonth2", ValueOrDBNullIfZero(dto_AllInfor.beginMonth2));
+                command.Parameters.AddWithValue("@EndYear2",ValueOrDBNullIfZero( dto_AllInfor.endYear2));
+                command.Parameters.AddWithValue("@EndMonth2", ValueOrDBNullIfZero(dto_AllInfor.endMonth2));
                 command.Parameters.AddWithValue("@PensionBook", dto_AllInfor.pensionBook);
                 command.Parameters.AddWithValue("@DependentPeopleKana1", dto_AllInfor.dependentPeopleKana1);
                 command.Parameters.AddWithValue("@DependentPeopleShimei1", dto_AllInfor.dependentPeopleShimei1);
@@ -163,33 +171,33 @@ namespace DAL
                 command.Parameters.AddWithValue("@Trainsportation1", dto_AllInfor.trainsportation1);
                 command.Parameters.AddWithValue("@BeginTrain1", dto_AllInfor.beginTrain1);
                 command.Parameters.AddWithValue("@EndTrain1", dto_AllInfor.endTrain1);
-                command.Parameters.AddWithValue("@MonthRegular1", dto_AllInfor.monthRegular1);
+                command.Parameters.AddWithValue("@MonthRegular1", ValueOrDBNullIfZero(dto_AllInfor.monthRegular1));
                 command.Parameters.AddWithValue("@Trainsportation2", dto_AllInfor.trainsportation2);
                 command.Parameters.AddWithValue("@BeginTrain2", dto_AllInfor.beginTrain2);
                 command.Parameters.AddWithValue("@EndTrain2", dto_AllInfor.endTrain2);
-                command.Parameters.AddWithValue("@MonthRegular2", dto_AllInfor.monthRegular2);
+                command.Parameters.AddWithValue("@MonthRegular2", ValueOrDBNullIfZero(dto_AllInfor.monthRegular2));
                 command.Parameters.AddWithValue("@Trainsportation3", dto_AllInfor.trainsportation3);
                 command.Parameters.AddWithValue("@BeginTrain3", dto_AllInfor.beginTrain3);
                 command.Parameters.AddWithValue("@EndTrain3", dto_AllInfor.endTrain3);
-                command.Parameters.AddWithValue("@MonthRegular3", dto_AllInfor.monthRegular3);
+                command.Parameters.AddWithValue("@MonthRegular3",ValueOrDBNullIfZero(dto_AllInfor.monthRegular3));
                 command.Parameters.AddWithValue("@Trainsportation4", dto_AllInfor.trainsportation4);
                 command.Parameters.AddWithValue("@BeginTrain4", dto_AllInfor.beginTrain4);
                 command.Parameters.AddWithValue("@EndTrain4", dto_AllInfor.endTrain4);
-                command.Parameters.AddWithValue("@MonthRegular4", dto_AllInfor.monthRegular4);
+                command.Parameters.AddWithValue("@MonthRegular4", ValueOrDBNullIfZero(dto_AllInfor.monthRegular4));
                 command.Parameters.AddWithValue("@Carkm", dto_AllInfor.carkm);
                 command.Parameters.AddWithValue("@CarMoney", dto_AllInfor.carMoney);
-                command.Parameters.AddWithValue("@TotalMoneyTrans", dto_AllInfor.totalMoneyTrans);
+                command.Parameters.AddWithValue("@TotalMoneyTrans", ValueOrDBNullIfZero(dto_AllInfor.totalMoneyTrans));
 
                 command.Parameters.AddWithValue("@Reason", dto_AllInfor.reason);
                 command.Parameters.AddWithValue("@ChangeDateFrom", dto_AllInfor.changeDateFrom);
                 command.Parameters.AddWithValue("@ChangeDate", dto_AllInfor.changeDate);
                 command.Parameters.AddWithValue("@Genkaritsu", dto_AllInfor.genkaritsu);
-                command.Parameters.AddWithValue("@TeateGaku", dto_AllInfor.teateGaku);
+                command.Parameters.AddWithValue("@TeateGaku", ValueOrDBNullIfZero(dto_AllInfor.teateGaku));
                 command.Parameters.AddWithValue("@AccountCode", dto_AllInfor.accountCode);
-                command.Parameters.AddWithValue("@Chingin", dto_AllInfor.chingin);
+                command.Parameters.AddWithValue("@Chingin", ValueOrDBNullIfZero(dto_AllInfor.chingin));
                 command.Parameters.AddWithValue("@ChinginType", dto_AllInfor.chinginType);
-                command.Parameters.AddWithValue("@KyuyoKojoGaku", dto_AllInfor.kyuyoKojoGaku);
-                command.Parameters.AddWithValue("@WorkTime", dto_AllInfor.workTime);
+                command.Parameters.AddWithValue("@KyuyoKojoGaku", ValueOrDBNullIfZero(dto_AllInfor.kyuyoKojoGaku));
+                command.Parameters.AddWithValue("@WorkTime", ValueOrDBNullIfZero(dto_AllInfor.workTime));
                 //
                 _cn.Open();
                 command.ExecuteNonQuery();
