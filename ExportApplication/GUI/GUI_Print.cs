@@ -87,6 +87,7 @@ namespace ExportApplication
                                                  Type.Missing, Type.Missing, Type.Missing, Type.Missing);
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
+                xlWorkSheet.Cells[8, "G"] = dt.Rows[0].Field<string>("IDCode");
                 xlWorkSheet.Cells[10, "X"] = dt.Rows[0].Field<string>("RomajiName");
                 xlWorkSheet.Cells[8, "X"] = dt.Rows[0].Field<string>("FuriganaName");
                 xlWorkSheet.Cells[10, "AY"] = dt.Rows[0].Field<string>("Sex");
@@ -343,6 +344,139 @@ namespace ExportApplication
                 xlWorkSheet.Cells[40, "P"] = dt.Rows[0].Field<int?>("DormitoryFee");
                 xlWorkSheet.Cells[42, "N"] = dt.Rows[0].Field<string>("ClosingDate");
                 xlWorkSheet.Cells[40, "P"] = dt.Rows[0].Field<int?>("DormitoryFee");
+
+                //cho nay de xu ly may in default
+                var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+                int printerIndex = 0;
+                foreach (String s in printers)
+                {
+                    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+                    {
+                        break;
+                    }
+                    printerIndex++;
+                }
+
+                // Print out 1 copy to the default printer:
+                xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+
+                // Cleanup:
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                Marshal.FinalReleaseComObject(xlWorkSheet);
+
+                xlWorkBook.Close(false, Type.Missing, Type.Missing);
+                Marshal.FinalReleaseComObject(xlWorkBook);
+
+                xlApp.Quit();
+                Marshal.FinalReleaseComObject(xlApp);
+                MessageBox.Show("印刷完了");
+            }
+            catch (Exception e)
+            {
+                // Cleanup Memory
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                Marshal.FinalReleaseComObject(xlWorkSheet);
+
+                xlWorkBook.Close(false, Type.Missing, Type.Missing);
+                Marshal.FinalReleaseComObject(xlWorkBook);
+
+                xlApp.Quit();
+                Marshal.FinalReleaseComObject(xlApp);
+                MessageBox.Show(e.Message, "エラー");
+            }
+        }
+
+        private void hoken() {
+            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+            try
+            {
+
+                xlApp = new Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Open(path + @"\File\template.xls",
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(2);
+
+                xlWorkSheet.Cells[2, "AP"] = dt.Rows[0].Field<string>("Position");
+                xlWorkSheet.Cells[4, "AP"] = dt.Rows[0].Field<string>("CreatePeople");
+                xlWorkSheet.Cells[11, "D"] = dt.Rows[0].Field<string>("IDCode");
+                xlWorkSheet.Cells[12, "S"] = dt.Rows[0].Field<string>("RomajiName");
+                xlWorkSheet.Cells[11, "S"] = dt.Rows[0].Field<string>("FuriganaName");
+                xlWorkSheet.Cells[12, "AP"] = dt.Rows[0].Field<string>("Sex");
+                xlWorkSheet.Cells[14, "S"] = dt.Rows[0].Field<string>("CompanyName");
+                xlWorkSheet.Cells[15, "AL"] = dt.Rows[0].Field<string>("ClosingDate");
+                //Birthday
+                string birth = dt.Rows[0].Field<string>("Birth");
+                string[] convert1 = birth.Split('/');
+                string convert_birth = bll_handle.ConvertJapaneseCalendar(birth);
+                xlWorkSheet.Cells[12, "AS"] = convert_birth.Substring(0, 2);
+                xlWorkSheet.Cells[12, "AT"] = convert_birth.Substring(2, convert_birth.IndexOf("年") - 2);
+                xlWorkSheet.Cells[12, "AW"] = convert1[1];
+                xlWorkSheet.Cells[12, "BA"] = convert1[2];
+                //Age
+                DateTime dt_birth = Convert.ToDateTime(birth);
+                DateTime now = DateTime.Now;
+                int age = now.Year - dt_birth.Year;
+                if (now < dt_birth.AddYears(age)) age--;
+                xlWorkSheet.Cells[12, "AL"] = age.ToString();
+                //Join company day
+                string joindate = dt.Rows[0].Field<string>("InCompanyDate");
+                string[] joindate_temps = joindate.Split('/');
+                xlWorkSheet.Cells[10, "I"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
+                xlWorkSheet.Cells[10, "K"] = joindate_temps[1];
+                xlWorkSheet.Cells[10, "M"] = joindate_temps[2];
+                //koyouhoken
+                string koyouhoken = dt.Rows[0].Field<string>("Kouyouhoken");
+                string[] koyouhoken_temp = koyouhoken.Split('/');
+                xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
+                xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
+                xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
+                //ko co ng bao chung
+                if (dt.Rows[0].Field<string>("InsureCard")!="有り") {
+                    xlWorkSheet.Cells[24, "N"] = "□";
+                    xlWorkSheet.Cells[24, "X"] = "☑";
+                    xlWorkSheet.Cells[33, "D"] = dt.Rows[0].Field<string>("PastCompany1");
+                    xlWorkSheet.Cells[33, "AH"] = dt.Rows[0].Field<string>("Nienhieu1");
+                    xlWorkSheet.Cells[33, "AK"] = dt.Rows[0].Field<string>("BeginYear1");
+                    xlWorkSheet.Cells[33, "AP"] = dt.Rows[0].Field<string>("BeginMonth1");
+                    xlWorkSheet.Cells[33, "AV"] = dt.Rows[0].Field<string>("EndYear1");
+                    xlWorkSheet.Cells[33, "BA"] = dt.Rows[0].Field<string>("EndMonth1");
+
+                    xlWorkSheet.Cells[36, "D"] = dt.Rows[0].Field<string>("PastCompany2");
+                    xlWorkSheet.Cells[36, "AH"] = dt.Rows[0].Field<string>("Nienhieu2");
+                    xlWorkSheet.Cells[36, "AK"] = dt.Rows[0].Field<string>("BeginYear2");
+                    xlWorkSheet.Cells[36, "AP"] = dt.Rows[0].Field<string>("BeginMonth2");
+                    xlWorkSheet.Cells[36, "AV"] = dt.Rows[0].Field<string>("EndYear2");
+                    xlWorkSheet.Cells[36, "BA"] = dt.Rows[0].Field<string>("EndMonth2");
+                }
+                //Quoc tich va tu cach luu tru, thoi gian
+                xlWorkSheet.Cells[39, "D"] = dt.Rows[0].Field<string>("Nationality");
+                xlWorkSheet.Cells[39, "AP"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTime"));
+                xlWorkSheet.Cells[39, "AP"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTimeOut"));
+                //shakaihoken
+                string shakaihoken = dt.Rows[0].Field<string>("Shakaihoken");
+                string[] shakaihoken_temp = koyouhoken.Split('/');
+                xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
+                xlWorkSheet.Cells[45, "X"] = shakaihoken_temp[1];
+                xlWorkSheet.Cells[45, "AF"] = shakaihoken_temp[2];
+                //so buu dien va dia chi
+                string zipcode = (dt.Rows[0].Field<int?>("ZipCode")).ToString();
+                if (zipcode.Length == 7)
+                {
+                    string temp1_zipcode = zipcode.Substring(0, 3);
+                    string temp2_zipcode = zipcode.Substring(3, 4);
+                    xlWorkSheet.Cells[49, "A"] = temp1_zipcode;
+                    xlWorkSheet.Cells[49, "G"] = temp2_zipcode;
+                }   
+
+
 
                 //cho nay de xu ly may in default
                 var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
