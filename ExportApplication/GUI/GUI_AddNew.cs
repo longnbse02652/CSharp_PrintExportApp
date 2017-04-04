@@ -145,14 +145,34 @@ namespace ExportApplication
                 }
                 int _zipCode;
                 bool result_zipcode = int.TryParse(tb_ZipCode.Text, out _zipCode);
-                string _address = tb_Address.Text;
+                string _address1 = tb_Address1.Text;
+                string _address2;
+                if (cb_Address2.SelectedIndex != -1 && cb_Address2.SelectedText != "")
+                {
+                    _address2 = cb_Address2.SelectedItem.ToString();
+                }
+                else
+                {
+                    _address2 = string.Empty;
+                }
+                string _address3 = tb_Address3.Text;
+                string _address4;
+                if (cb_Address4.SelectedIndex != -1 && cb_Address4.SelectedText != "")
+                {
+                    _address4 = cb_Address4.SelectedItem.ToString();
+                }
+                else
+                {
+                    _address4 = string.Empty;
+                }
+                string _address5 = tb_Address5.Text;
                 string _mobliePhone = tb_MobliePhone.Text;
                 string _phone = tb_Phone.Text;
                 string _createPeople = tb_CreatePeople.Text;
                 string _position;
                 if (cb_Position.SelectedIndex != -1 && cb_Position.SelectedText !="")
                 {
-                    _position = cb_ClosingDate.SelectedItem.ToString();
+                    _position = cb_Position.SelectedItem.ToString();
                 }
                 else
                 {
@@ -357,11 +377,11 @@ namespace ExportApplication
                 bool result_kyuyoKojoGaku = int.TryParse("", out _kyuyoKojoGaku);
                 int _workTime ;
                 bool result_workTime = int.TryParse("", out _workTime);
-
+                string _teateType = string.Empty;
 
                 dto_allInfo = new DTO_AllInfor(_idCode, _romaji, _furigana, _sex, _birth, _nationality,
                         _inCompanyDate, _cardType, _cardTime, _cardTimeOut, _outTime, _companyCode, _companyName, _workType,
-                        _closingDate, _zipCode, _address, _mobliePhone, _phone, _createPeople, _position,_hakenRyokin,_hakenRyokinType,
+                        _closingDate, _zipCode, _address1, _address2, _address3, _address4, _address5, _mobliePhone, _phone, _createPeople, _position, _hakenRyokin, _hakenRyokinType,
                         _shiharaiType,_tax,_salaryType,_basicSalary,_seikinTeate,_gaikinTeate,_gijutsuTeate,_shikakuTeate,
                         _yakushokuTeate,_eigyoTeate,_kazokuTeate,_jutakuTeate,_bekkyoTeate,_tsukinTeate,_park,_dormitoryFee,
                         _waterFee,_employStatus,_employTime1,_employTime2,_bankName,_bankNameType,_branchName,_branchNameType,
@@ -380,7 +400,7 @@ namespace ExportApplication
                         _trainsportation2,_beginTrain2,_endTrain2,_monthRegular2,
                         _trainsportation3,_beginTrain3,_endTrain3,_monthRegular3,
                         _trainsportation4,_beginTrain4,_endTrain4,_monthRegular4,_carkm,_carMoney,_totalMoneyTrans,
-                        _reason, _changeDateFrom, _changeDate, _genkaritsu, _teateGaku, _accountCode, _chingin, _chinginType, _kyuyoKojoGaku, _workTime);
+                        _reason, _changeDateFrom, _changeDate, _genkaritsu, _teateGaku, _accountCode, _chingin, _chinginType, _kyuyoKojoGaku, _workTime,_teateType);
 
             }
             else {

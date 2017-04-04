@@ -93,10 +93,19 @@
     <Compile Include="GUI_Print.Designer.cs">
       <DependentUpon>GUI_Print.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Travel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Travel.Designer.cs">
+      <DependentUpon>GUI_Travel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI_AddNew.resx">
       <DependentUpon>GUI_AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Edit.resx">
+      <DependentUpon>GUI_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_EditOption.resx">
       <DependentUpon>GUI_EditOption.cs</DependentUpon>
@@ -106,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Print.resx">
       <DependentUpon>GUI_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Travel.resx">
+      <DependentUpon>GUI_Travel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,6 +130,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="File\template.xls" />
+    <None Include="File\template_export.xls" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

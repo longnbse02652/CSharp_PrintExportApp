@@ -59,11 +59,25 @@ namespace ExportApplication
 
         //public delegate void delPassData(string text);
 
+        // Click Add Button and get name of people who was clicked
+        public delegate void delPassData(string text);
+
         private void btEdit_Click(object sender, EventArgs e)
         {
             GUI_EditOption gui_editoption = new GUI_EditOption();
             gui_editoption.Show();
-   
+            List<String> list = new List<String>();
+            if (dtGridView.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtGridView.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["氏名"].Value);
+                GUI_Edit edit = new GUI_Edit();
+                delPassData del = new delPassData(edit.funData);
+                del(a);
+
+            }
+
         }
 
         private void bt_print_Click(object sender, EventArgs e)

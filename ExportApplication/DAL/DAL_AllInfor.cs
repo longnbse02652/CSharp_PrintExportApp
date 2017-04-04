@@ -60,7 +60,11 @@ namespace DAL
                 command.Parameters.AddWithValue("@WorkType",dto_AllInfor.workType);
                 command.Parameters.AddWithValue("@ClosingDate",dto_AllInfor.closingDate);
                 command.Parameters.AddWithValue("@ZipCode", ValueOrDBNullIfZero(dto_AllInfor.zipCode));
-                command.Parameters.AddWithValue("@Address",dto_AllInfor.address);
+                command.Parameters.AddWithValue("@Address1",dto_AllInfor.address1);
+                command.Parameters.AddWithValue("@Address2", dto_AllInfor.address2);
+                command.Parameters.AddWithValue("@Address3", dto_AllInfor.address3);
+                command.Parameters.AddWithValue("@Address4", dto_AllInfor.address4);
+                command.Parameters.AddWithValue("@Address5", dto_AllInfor.address5);
                 command.Parameters.AddWithValue("@MobliePhone",dto_AllInfor.mobliePhone);
                 command.Parameters.AddWithValue("@Phone",dto_AllInfor.phone);
                 command.Parameters.AddWithValue("@CreatePeople",dto_AllInfor.createPeople);
@@ -198,6 +202,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@ChinginType", dto_AllInfor.chinginType);
                 command.Parameters.AddWithValue("@KyuyoKojoGaku", ValueOrDBNullIfZero(dto_AllInfor.kyuyoKojoGaku));
                 command.Parameters.AddWithValue("@WorkTime", ValueOrDBNullIfZero(dto_AllInfor.workTime));
+                command.Parameters.AddWithValue("@TeateType", dto_AllInfor.teateType);
                 //
                 _cn.Open();
                 command.ExecuteNonQuery();

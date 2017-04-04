@@ -56,8 +56,20 @@ namespace DTO
         private int _zipCode;
         public int zipCode { get { return _zipCode; } set { _zipCode = value; } }
 
-        private string _address;
-        public string address { get { return _address; } set { _address = value; } }
+        private string _address1;
+        public string address1 { get { return _address1; } set { _address1 = value; } }
+
+        private string _address2;
+        public string address2 { get { return _address2; } set { _address2 = value; } }
+
+        private string _address3;
+        public string address3 { get { return _address3; } set { _address3 = value; } }
+
+        private string _address4;
+        public string address4 { get { return _address4; } set { _address4 = value; } }
+
+        private string _address5;
+        public string address5 { get { return _address5; } set { _address5 = value; } }
 
         private string _mobliePhone;
         public string mobliePhone { get { return _mobliePhone; } set { _mobliePhone = value; } }
@@ -455,9 +467,12 @@ namespace DTO
         private int _workTime;
         public int workTime { get { return _workTime; } set { _workTime = value; } }
 
+        private string _teateType;
+        public string teateType { get { return _teateType; } set { _teateType = value; } }
+
         public DTO_AllInfor(string pIdcode,string pRomaji, string pFurigana, string pSex,string pBirth, string pNationality,
             string pInCompanyDate, string pCardType, string pCardTimeStart, string pCardTimeOver, string pOutTime, string pCompanyCode,
-            string pCompanyName, string pWorkType, string pClosingDate, int pZipCode,string pAddress,string pMobliePhone,
+            string pCompanyName, string pWorkType, string pClosingDate, int pZipCode, string pAddress1, string pAddress2, string pAddress3, string pAddress4, string pAddress5, string pMobliePhone,
             string pPhone, string pCreatePeople, string pPosition, int HakenRyokin, string HakenRyokinType, string ShiharaiType
             , string Tax, string SalaryType, int BasicSalary, int SeikinTeate, int GaikinTeate, int GijutsuTeate
             , int ShikakuTeate, int YakushokuTeate, int EigyoTeate, int KazokuTeate, int JutakuTeate, int BekkyoTeate
@@ -480,7 +495,7 @@ namespace DTO
             , string Trainsportation3, string BeginTrain3, string EndTrain3, int MonthRegular3
             , string Trainsportation4, string BeginTrain4, string EndTrain4, int MonthRegular4, string Carkm, int CarMoney, int TotalMoneyTrans
             , string Reason, string ChangeDateFrom, string ChangeDate, double Genkaritsu, int TeateGaku, string AccountCode
-            , int Chingin, string ChinginType, int KyuyoKojoGaku, int WorkTime)
+            , int Chingin, string ChinginType, int KyuyoKojoGaku, int WorkTime, string TeateType)
         {
             this._idCode = pIdcode;
             this._romaji = pRomaji;
@@ -498,7 +513,11 @@ namespace DTO
             this._workType = pWorkType;
             this._closingDate = pClosingDate;
             this._zipCode = pZipCode;
-            this._address = pAddress;
+            this._address1 = pAddress1;
+            this._address2 = pAddress2;
+            this._address3 = pAddress3;
+            this._address4 = pAddress4;
+            this._address5 = pAddress5;
             this._mobliePhone = pMobliePhone;
             this._phone = pPhone;
             this._createPeople = pCreatePeople;
@@ -631,7 +650,7 @@ namespace DTO
             this._chinginType = ChinginType;
             this._kyuyoKojoGaku = KyuyoKojoGaku;
             this._workTime = WorkTime;
-
+            this._teateType = TeateType;
         }
     }
 }

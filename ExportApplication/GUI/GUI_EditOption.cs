@@ -19,7 +19,7 @@ namespace ExportApplication
 
         public void btNext_Click(object sender, EventArgs e)
         {
-            // this.Hide();
+
             // Lay tung gia tri da duoc selected trong listcheckbox
             IList<int> list = new List<int>();
             for (int i = 0; i < clbEditOption.CheckedIndices.Count; i++)
@@ -30,10 +30,7 @@ namespace ExportApplication
             GUI_Edit gui_edit = new GUI_Edit();
             gui_edit.TakeThis(list);
             gui_edit.Show();
-        }
-        public void TakeThis(IList<int> list)
-        {
-
+            this.Hide();
         }
         private void btCancel_Click(object sender, EventArgs e)
         {
