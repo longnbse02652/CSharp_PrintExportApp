@@ -185,7 +185,7 @@ namespace DTO
             this._ChangeDate = eChangeDate;
             this._ChangeDateFrom = eChangeDateFrom;
             this._ZipCode = eZipCode;
-            this._Address = eAddress;
+            this._Address1 = eAddress;
             this._Address2 = eAddress2;
             this._Address3 = eAddress3;
             this._Address4 = eAddress4;

@@ -17,7 +17,7 @@ namespace DAL
         {
             try
             {
-                adapter = new SqlDataAdapter("select * from Information where RomajiName = '" + name+ "'", _cn);
+                adapter = new SqlDataAdapter("select * from Information where RomajiName = N'" + name+ "'", _cn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 return dt;

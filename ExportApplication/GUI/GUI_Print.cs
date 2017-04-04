@@ -79,28 +79,38 @@ namespace ExportApplication
                 xlWorkSheet.Cells[10, "X"] = dt.Rows[0].Field<string>("RomajiName");
                 xlWorkSheet.Cells[8, "X"] = dt.Rows[0].Field<string>("FuriganaName");
                 xlWorkSheet.Cells[10, "AY"] = dt.Rows[0].Field<string>("Sex");
+                if (dt.Rows[0].Field<string>("Birth") != " ")
+                {
                     xlWorkSheet.Cells[7, "DK"] = dt.Rows[0].Field<string>("Birth");
-                xlWorkSheet.Cells[11, "DK"] = dt.Rows[0].Field<string>("InCompanyDate");
-                //
+                }
+
+                if (dt.Rows[0].Field<string>("InCompanyDate") != " ")
+                {
+                    xlWorkSheet.Cells[11, "DK"] = dt.Rows[0].Field<string>("InCompanyDate");
+                }
+
+
                 if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
                 {
                     xlWorkSheet.Cells[11, "H"] = "日本以外は国名記入";
                     xlWorkSheet.Cells[13, "H"] = dt.Rows[0].Field<string>("Nationality");
                 }
-                else {
+                else
+                {
                     xlWorkSheet.Cells[11, "H"] = "日本";
                 }
-                //
-               
-                //if (dt.Rows[0].Field<string>("CardType") == "定住者")
-                //{
-                //xlWorkSheet.Shapes.AddShape(Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, 441, 57, 117, 90);
-                //}
-                string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
-                string[] temps = temp_zairyuukigen.Split('/');
-                xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
-                xlWorkSheet.Cells[12, "BP"] = temps[1];
-                xlWorkSheet.Cells[12, "BT"] = temps[2];
+
+                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
+                {
+                    string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
+                    if (temp_zairyuukigen != " ")
+                    {
+                        string[] temps = temp_zairyuukigen.Split('/');
+                        xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[12, "BP"] = temps[1];
+                        xlWorkSheet.Cells[12, "BT"] = temps[2];
+                    }
+                }
 
                 xlWorkSheet.Cells[12, "BX"] = dt.Rows[0].Field<string>("OutTime");
                 xlWorkSheet.Cells[17, "Y"] = dt.Rows[0].Field<string>("CompanyName");
@@ -132,16 +142,22 @@ namespace ExportApplication
                 if (dt.Rows[0].Field<string>("EmployStatus") != "正社員")
                 {
                     string temp_time1 = dt.Rows[0].Field<string>("EmployTime1");
-                    string[] Time1_temps = temp_time1.Split('/');
-                    xlWorkSheet.Cells[41, "AG"] = (Convert.ToInt32(Time1_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[41, "AL"] = Time1_temps[1];
-                    xlWorkSheet.Cells[41, "AP"] = Time1_temps[2];
-
+                    if (temp_time1 != " ")
+                    {
+                        string[] Time1_temps = temp_time1.Split('/');
+                        xlWorkSheet.Cells[41, "AG"] = (Convert.ToInt32(Time1_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[41, "AL"] = Time1_temps[1];
+                        xlWorkSheet.Cells[41, "AP"] = Time1_temps[2];
+                    }
                     string temp_time2 = dt.Rows[0].Field<string>("EmployTime2");
-                    string[] Time2_temps = temp_time2.Split('/');
-                    xlWorkSheet.Cells[41, "AX"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[41, "BC"] = Time2_temps[1];
-                    xlWorkSheet.Cells[41, "BG"] = Time2_temps[2];
+                    if (temp_time2 != " ")
+                    {
+                        string[] Time2_temps = temp_time2.Split('/');
+                        xlWorkSheet.Cells[41, "AX"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[41, "BC"] = Time2_temps[1];
+                        xlWorkSheet.Cells[41, "BG"] = Time2_temps[2];
+                    }
+
                 }
 
                 xlWorkSheet.Cells[53, "C"] = dt.Rows[0].Field<string>("BankName");
@@ -161,7 +177,7 @@ namespace ExportApplication
                 xlWorkSheet.Cells[56, "CA"] = dt.Rows[0].Field<string>("AccountCode7");
                 xlWorkSheet.Cells[56, "CD"] = dt.Rows[0].Field<string>("AccountCode8");
 
-                if (dt.Rows[0].Field<string>("TravelType") == "通勤")
+                if (dt.Rows[0].Field<string>("TravelType") != "入寮")
                 {
                     xlWorkSheet.Cells[59, "F"] = "☑";
                 }
@@ -169,15 +185,24 @@ namespace ExportApplication
                 {
                     xlWorkSheet.Cells[61, "R"] = dt.Rows[0].Field<string>("HouseName");
                     xlWorkSheet.Cells[61, "AY"] = dt.Rows[0].Field<string>("Room");
-                    string inhousedate = dt.Rows[0].Field<string>("InHouseDate");
-                    string[] inhousedate_split = inhousedate.Split('/');
-                    xlWorkSheet.Cells[61, "BR"] = (Convert.ToInt32(inhousedate_split[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[61, "BW"] = inhousedate_split[1];
-                    xlWorkSheet.Cells[61, "CB"] = inhousedate_split[2];
+                    if (dt.Rows[0].Field<string>("InHouseDate") != " ")
+                    {
+                        string inhousedate = dt.Rows[0].Field<string>("InHouseDate");
+                        string[] inhousedate_split = inhousedate.Split('/');
+                        xlWorkSheet.Cells[61, "BR"] = (Convert.ToInt32(inhousedate_split[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[61, "BW"] = inhousedate_split[1];
+                        xlWorkSheet.Cells[61, "CB"] = inhousedate_split[2];
+                    }
                 }
 
-                xlWorkSheet.Cells[65, "AH"] = dt.Rows[0].Field<string>("Kouyouhoken");
-                xlWorkSheet.Cells[67, "AH"] = dt.Rows[0].Field<string>("Shakaihoken");
+                if (dt.Rows[0].Field<string>("Kouyouhoken") != " ")
+                {
+                    xlWorkSheet.Cells[65, "AH"] = dt.Rows[0].Field<string>("Kouyouhoken");
+                }
+                if (dt.Rows[0].Field<string>("Shakaihoken") != " ")
+                {
+                    xlWorkSheet.Cells[67, "AH"] = dt.Rows[0].Field<string>("Shakaihoken");
+                }
                 xlWorkSheet.Cells[67, "BC"] = dt.Rows[0].Field<int?>("DependentPeople");
                 xlWorkSheet.Cells[67, "BM"] = dt.Rows[0].Field<int?>("ResidentPeople");
                 xlWorkSheet.Cells[67, "BW"] = dt.Rows[0].Field<int?>("HealthInsurancePeople");
@@ -227,7 +252,7 @@ namespace ExportApplication
 
                 xlApp.Quit();
                 Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "Error Message");
+                MessageBox.Show(e.Message, "エラー！印刷できません！");
             }
         }
 
@@ -249,13 +274,16 @@ namespace ExportApplication
                 xlWorkSheet.Cells[5, "T"] = dt.Rows[0].Field<string>("Sex");
                 //Birthday
                 string birth = dt.Rows[0].Field<string>("Birth");
-                string[] convert1 = birth.Split('/');
-                string convert_birth = bll_handle.ConvertJapaneseCalendar(birth);
-                xlWorkSheet.Cells[4, "Z"] = convert_birth.Substring(0, 2); 
-                xlWorkSheet.Cells[4, "AB"] = convert_birth.Substring(2, convert_birth.IndexOf("年")-2);
-                xlWorkSheet.Cells[4, "AD"] = convert1[1];
-                xlWorkSheet.Cells[4, "AG"] = convert1[2];
-
+                if (birth!= " ")
+                {
+                    string[] convert1 = birth.Split('/');
+                    string convert_birth = bll_handle.ConvertJapaneseCalendar(birth);
+                    xlWorkSheet.Cells[4, "Z"] = convert_birth.Substring(0, 2);
+                    xlWorkSheet.Cells[4, "AB"] = convert_birth.Substring(2, convert_birth.IndexOf("年") - 2);
+                    xlWorkSheet.Cells[4, "AD"] = convert1[1];
+                    xlWorkSheet.Cells[4, "AG"] = convert1[2];
+                }
+                
                 //Zipcode
                 string zipcode = (dt.Rows[0].Field<int?>("ZipCode")).ToString();
                 if(zipcode.Length == 7){
@@ -293,7 +321,7 @@ namespace ExportApplication
                 }
                 //Join company Date
                 string joindate = dt.Rows[0].Field<string>("InCompanyDate");
-                if (dt.Rows[0].Field<string>("InCompanyDate")!=string.Empty)
+                if (dt.Rows[0].Field<string>("InCompanyDate")!= " ")
                 {
                     string[] joindate_temps = joindate.Split('/');
                     xlWorkSheet.Cells[10, "I"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
@@ -306,10 +334,13 @@ namespace ExportApplication
                     xlWorkSheet.Cells[10, "Q"] = "□";
                     xlWorkSheet.Cells[10, "V"] = "☑";
                     string temp_time2 = dt.Rows[0].Field<string>("EmployTime2");
-                    string[] Time2_temps = temp_time2.Split('/');
-                    xlWorkSheet.Cells[10, "AB"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[10, "AD"] = Time2_temps[1];
-                    xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
+                    if (temp_time2!= " ")
+                    {
+                        string[] Time2_temps = temp_time2.Split('/');
+                        xlWorkSheet.Cells[10, "AB"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[10, "AD"] = Time2_temps[1];
+                        xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
+                    }
                 }
                 //ContracType
                 //ContractRequire
@@ -382,7 +413,7 @@ namespace ExportApplication
 
                 xlApp.Quit();
                 Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー");
+                MessageBox.Show(e.Message, "エラー!印刷できません！");
             }
         }
 
@@ -409,30 +440,43 @@ namespace ExportApplication
                 xlWorkSheet.Cells[15, "AL"] = dt.Rows[0].Field<string>("ClosingDate");
                 //Birthday
                 string birth = dt.Rows[0].Field<string>("Birth");
-                string[] convert1 = birth.Split('/');
-                string convert_birth = bll_handle.ConvertJapaneseCalendar(birth);
-                xlWorkSheet.Cells[12, "AS"] = convert_birth.Substring(0, 2);
-                xlWorkSheet.Cells[12, "AT"] = convert_birth.Substring(2, convert_birth.IndexOf("年") - 2);
-                xlWorkSheet.Cells[12, "AW"] = convert1[1];
-                xlWorkSheet.Cells[12, "BA"] = convert1[2];
-                //Age
-                DateTime dt_birth = Convert.ToDateTime(birth);
-                DateTime now = DateTime.Now;
-                int age = now.Year - dt_birth.Year;
-                if (now < dt_birth.AddYears(age)) age--;
-                xlWorkSheet.Cells[12, "AL"] = age.ToString();
+                if (birth!= " ")
+                {
+                    string[] convert1 = birth.Split('/');
+                    string convert_birth = bll_handle.ConvertJapaneseCalendar(birth);
+                    xlWorkSheet.Cells[12, "AS"] = convert_birth.Substring(0, 2);
+                    xlWorkSheet.Cells[12, "AT"] = convert_birth.Substring(2, convert_birth.IndexOf("年") - 2);
+                    xlWorkSheet.Cells[12, "AW"] = convert1[1];
+                    xlWorkSheet.Cells[12, "BA"] = convert1[2];
+
+                    //Age
+                    DateTime dt_birth = Convert.ToDateTime(birth);
+                    DateTime now = DateTime.Now;
+                    int age = now.Year - dt_birth.Year;
+                    if (now < dt_birth.AddYears(age)) age--;
+                    xlWorkSheet.Cells[12, "AL"] = age.ToString();
+                }
+                
                 //Join company day
                 string joindate = dt.Rows[0].Field<string>("InCompanyDate");
-                string[] joindate_temps = joindate.Split('/');
-                xlWorkSheet.Cells[15, "AT"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
-                xlWorkSheet.Cells[15, "AW"] = joindate_temps[1];
-                xlWorkSheet.Cells[15, "BA"] = joindate_temps[2];
+                if (joindate!= " ")
+                {
+                    string[] joindate_temps = joindate.Split('/');
+                    xlWorkSheet.Cells[15, "AT"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[15, "AW"] = joindate_temps[1];
+                    xlWorkSheet.Cells[15, "BA"] = joindate_temps[2];
+                }
+                
                 //koyouhoken
                 string koyouhoken = dt.Rows[0].Field<string>("Kouyouhoken");
-                string[] koyouhoken_temp = koyouhoken.Split('/');
-                xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
-                xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
-                xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
+                if (koyouhoken != " ")
+                {
+                    string[] koyouhoken_temp = koyouhoken.Split('/');
+                    xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
+                    xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
+                }
+                
                 //ko co ng bao chung
                 if (dt.Rows[0].Field<string>("InsureCard") != "有り" && dt.Rows[0].Field<string>("InsureCard") != string.Empty)
                 {
@@ -454,14 +498,24 @@ namespace ExportApplication
                 }
                 //Quoc tich va tu cach luu tru, thoi gian
                 xlWorkSheet.Cells[39, "D"] = dt.Rows[0].Field<string>("Nationality");
-                xlWorkSheet.Cells[39, "AP"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTime"));
-                xlWorkSheet.Cells[39, "AP"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTimeOut"));
+                if (dt.Rows[0].Field<string>("CardTime")!= " ")
+                {
+                    xlWorkSheet.Cells[39, "AP"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTime"));
+                }
+                if (dt.Rows[0].Field<string>("CardTimeOut") != " ")
+                {
+                    xlWorkSheet.Cells[39, "AW"] = bll_handle.ConvertJapaneseCalendar(dt.Rows[0].Field<string>("CardTimeOut"));
+                }
+                
                 //shakaihoken
                 string shakaihoken = dt.Rows[0].Field<string>("Shakaihoken");
-                string[] shakaihoken_temp = koyouhoken.Split('/');
-                xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
-                xlWorkSheet.Cells[45, "X"] = shakaihoken_temp[1];
-                xlWorkSheet.Cells[45, "AF"] = shakaihoken_temp[2];
+                if (shakaihoken!= " ")
+                {
+                    string[] shakaihoken_temp = koyouhoken.Split('/');
+                    xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[45, "X"] = shakaihoken_temp[1];
+                    xlWorkSheet.Cells[45, "AF"] = shakaihoken_temp[2];
+                }
                 //buu dien
                 string zipcode = (dt.Rows[0].Field<int?>("ZipCode")).ToString();
                 if (zipcode.Length == 7)
@@ -486,13 +540,13 @@ namespace ExportApplication
                 //被扶養者
                 xlWorkSheet.Cells[54, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana1");
                 xlWorkSheet.Cells[55, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei1");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth1")!=string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth1")!= " ")
                 {
                     string depend1 = dt.Rows[0].Field<string>("DependentPeopleBirth1");
                     string[] convert_depend1 = depend1.Split('/');
                     string convert_japanStyle1 = bll_handle.ConvertJapaneseCalendar(depend1);
                     xlWorkSheet.Cells[54, "AD"] = convert_japanStyle1.Substring(0, 2);　//平成、昭和
-                    xlWorkSheet.Cells[54, "AG"] = convert_japanStyle1.Substring(2, convert_birth.IndexOf("年") - 2); //年
+                    xlWorkSheet.Cells[54, "AG"] = convert_japanStyle1.Substring(2, convert_japanStyle1.IndexOf("年") - 2); //年
                     xlWorkSheet.Cells[54, "AK"] = convert_depend1[1]; //月
                     xlWorkSheet.Cells[54, "AO"] = convert_depend1[2]; //日
                     xlWorkSheet.Cells[54, "AS"] = dt.Rows[0].Field<string>("Relationship1");
@@ -502,7 +556,7 @@ namespace ExportApplication
 
                 xlWorkSheet.Cells[57, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana2");
                 xlWorkSheet.Cells[58, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei2");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth2") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth2") != " ")
                 {
                     string depend2 = dt.Rows[0].Field<string>("DependentPeopleBirth2");
                     string[] convert_depend2 = depend2.Split('/');
@@ -517,7 +571,7 @@ namespace ExportApplication
 
                 xlWorkSheet.Cells[60, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana3");
                 xlWorkSheet.Cells[61, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei3");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth3") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth3") != " ")
                 {
                     string depend3 = dt.Rows[0].Field<string>("DependentPeopleBirth3");
                     string[] convert_depend3 = depend3.Split('/');
@@ -532,7 +586,7 @@ namespace ExportApplication
                 
                 xlWorkSheet.Cells[63, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana4");
                 xlWorkSheet.Cells[64, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei4");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth4") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth4") != " ")
                 {
                     string depend4 = dt.Rows[0].Field<string>("DependentPeopleBirth4");
                     string[] convert_depend4 = depend4.Split('/');
@@ -547,7 +601,7 @@ namespace ExportApplication
 
                 xlWorkSheet.Cells[66, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana5");
                 xlWorkSheet.Cells[67, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei5");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth5") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth5") != " ")
                 {
                     string depend5 = dt.Rows[0].Field<string>("DependentPeopleBirth5");
                     string[] convert_depend5 = depend5.Split('/');
@@ -562,7 +616,7 @@ namespace ExportApplication
                 
                 xlWorkSheet.Cells[69, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana6");
                 xlWorkSheet.Cells[70, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei6");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth6") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth6") != " ")
                 {
                     string depend6 = dt.Rows[0].Field<string>("DependentPeopleBirth6");
                     string[] convert_depend6 = depend6.Split('/');
@@ -617,7 +671,7 @@ namespace ExportApplication
 
                 xlApp.Quit();
                 Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー");
+                MessageBox.Show(e.Message, "エラー！印刷できません！");
             }
         }
 
@@ -707,7 +761,7 @@ namespace ExportApplication
 
                 xlApp.Quit();
                 Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー");
+                MessageBox.Show(e.Message, "エラー！印刷できません！");
             }
         }
 
@@ -728,8 +782,16 @@ namespace ExportApplication
                 xlWorkSheet.Cells[10, "X"] = dt.Rows[0].Field<string>("RomajiName");
                 xlWorkSheet.Cells[8, "X"] = dt.Rows[0].Field<string>("FuriganaName");
                 xlWorkSheet.Cells[10, "AY"] = dt.Rows[0].Field<string>("Sex");
-                xlWorkSheet.Cells[7, "DK"] = dt.Rows[0].Field<string>("Birth");
-                xlWorkSheet.Cells[11, "DK"] = dt.Rows[0].Field<string>("InCompanyDate");
+                if (dt.Rows[0].Field<string>("Birth") != string.Empty)
+                {
+                    xlWorkSheet.Cells[7, "DK"] = dt.Rows[0].Field<string>("Birth");
+                }
+                
+                if (dt.Rows[0].Field<string>("InCompanyDate")!= string.Empty)
+                {
+                    xlWorkSheet.Cells[11, "DK"] = dt.Rows[0].Field<string>("InCompanyDate");
+                }
+                
                 
                 if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
                 {
@@ -740,18 +802,16 @@ namespace ExportApplication
                 {
                     xlWorkSheet.Cells[11, "H"] = "日本";
                 }
+
+                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
+                {
+                    string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
+                    string[] temps = temp_zairyuukigen.Split('/');
+                    xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[12, "BP"] = temps[1];
+                    xlWorkSheet.Cells[12, "BT"] = temps[2];
+                }
                 
-
-                //if (dt.Rows[0].Field<string>("CardType") == "定住者")
-                //{
-                //xlWorkSheet.Shapes.AddShape(Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, 441, 57, 117, 90);
-                //}
-                string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
-                string[] temps = temp_zairyuukigen.Split('/');
-                xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
-                xlWorkSheet.Cells[12, "BP"] = temps[1];
-                xlWorkSheet.Cells[12, "BT"] = temps[2];
-
                 xlWorkSheet.Cells[12, "BX"] = dt.Rows[0].Field<string>("OutTime");
                 xlWorkSheet.Cells[17, "Y"] = dt.Rows[0].Field<string>("CompanyName");
                 xlWorkSheet.Cells[19, "BI"] = dt.Rows[0].Field<string>("WorkType");
@@ -782,16 +842,22 @@ namespace ExportApplication
                 if (dt.Rows[0].Field<string>("EmployStatus") != "正社員")
                 {
                     string temp_time1 = dt.Rows[0].Field<string>("EmployTime1");
-                    string[] Time1_temps = temp_time1.Split('/');
-                    xlWorkSheet.Cells[41, "AG"] = (Convert.ToInt32(Time1_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[41, "AL"] = Time1_temps[1];
-                    xlWorkSheet.Cells[41, "AP"] = Time1_temps[2];
-
+                    if (temp_time1!= string.Empty)
+                    {
+                        string[] Time1_temps = temp_time1.Split('/');
+                        xlWorkSheet.Cells[41, "AG"] = (Convert.ToInt32(Time1_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[41, "AL"] = Time1_temps[1];
+                        xlWorkSheet.Cells[41, "AP"] = Time1_temps[2];
+                    }
                     string temp_time2 = dt.Rows[0].Field<string>("EmployTime2");
-                    string[] Time2_temps = temp_time2.Split('/');
-                    xlWorkSheet.Cells[41, "AX"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[41, "BC"] = Time2_temps[1];
-                    xlWorkSheet.Cells[41, "BG"] = Time2_temps[2];
+                    if (temp_time2!= string.Empty)
+                    {
+                        string[] Time2_temps = temp_time2.Split('/');
+                        xlWorkSheet.Cells[41, "AX"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[41, "BC"] = Time2_temps[1];
+                        xlWorkSheet.Cells[41, "BG"] = Time2_temps[2];
+                    }
+
                 }
 
                 xlWorkSheet.Cells[53, "C"] = dt.Rows[0].Field<string>("BankName");
@@ -811,7 +877,7 @@ namespace ExportApplication
                 xlWorkSheet.Cells[56, "CA"] = dt.Rows[0].Field<string>("AccountCode7");
                 xlWorkSheet.Cells[56, "CD"] = dt.Rows[0].Field<string>("AccountCode8");
 
-                if (dt.Rows[0].Field<string>("TravelType") == "通勤")
+                if (dt.Rows[0].Field<string>("TravelType") != "入寮")
                 {
                     xlWorkSheet.Cells[59, "F"] = "☑";
                 }
@@ -819,15 +885,24 @@ namespace ExportApplication
                 {
                     xlWorkSheet.Cells[61, "R"] = dt.Rows[0].Field<string>("HouseName");
                     xlWorkSheet.Cells[61, "AY"] = dt.Rows[0].Field<string>("Room");
-                    string inhousedate = dt.Rows[0].Field<string>("InHouseDate");
-                    string[] inhousedate_split = inhousedate.Split('/');
-                    xlWorkSheet.Cells[61, "BR"] = (Convert.ToInt32(inhousedate_split[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[61, "BW"] = inhousedate_split[1];
-                    xlWorkSheet.Cells[61, "CB"] = inhousedate_split[2];
+                    if (dt.Rows[0].Field<string>("InHouseDate") != " ")
+                    {
+                        string inhousedate = dt.Rows[0].Field<string>("InHouseDate");
+                        string[] inhousedate_split = inhousedate.Split('/');
+                        xlWorkSheet.Cells[61, "BR"] = (Convert.ToInt32(inhousedate_split[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[61, "BW"] = inhousedate_split[1];
+                        xlWorkSheet.Cells[61, "CB"] = inhousedate_split[2];
+                    }
                 }
 
-                xlWorkSheet.Cells[65, "AH"] = dt.Rows[0].Field<string>("Kouyouhoken");
-                xlWorkSheet.Cells[67, "AH"] = dt.Rows[0].Field<string>("Shakaihoken");
+                if (dt.Rows[0].Field<string>("Kouyouhoken") != string.Empty)
+                {
+                    xlWorkSheet.Cells[65, "AH"] = dt.Rows[0].Field<string>("Kouyouhoken");
+                }
+                if (dt.Rows[0].Field<string>("Shakaihoken") != string.Empty)
+                {
+                    xlWorkSheet.Cells[67, "AH"] = dt.Rows[0].Field<string>("Shakaihoken");
+                }
                 xlWorkSheet.Cells[67, "BC"] = dt.Rows[0].Field<int?>("DependentPeople");
                 xlWorkSheet.Cells[67, "BM"] = dt.Rows[0].Field<int?>("ResidentPeople");
                 xlWorkSheet.Cells[67, "BW"] = dt.Rows[0].Field<int?>("HealthInsurancePeople");
@@ -836,8 +911,8 @@ namespace ExportApplication
                 xlWorkSheet.Cells[3, "BG"] = dt.Rows[0].Field<string>("Position");
 
 
-                //////////////////////Export keiyaku
-                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(3);
+                ////////////////////////Export keiyaku
+                //xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(3);
                 //Zipcode
                 string zipcode = (dt.Rows[0].Field<int?>("ZipCode")).ToString();
                 if (zipcode.Length == 7)
@@ -878,10 +953,14 @@ namespace ExportApplication
                 }
                 //Join company Date
                 string joindate = dt.Rows[0].Field<string>("InCompanyDate");
-                string[] joindate_temps = joindate.Split('/');
-                xlWorkSheet.Cells[10, "I"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
-                xlWorkSheet.Cells[10, "K"] = joindate_temps[1];
-                xlWorkSheet.Cells[10, "M"] = joindate_temps[2];
+                if (joindate!= " ")
+                {
+                    string[] joindate_temps = joindate.Split('/');
+                    xlWorkSheet.Cells[10, "I"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[10, "K"] = joindate_temps[1];
+                    xlWorkSheet.Cells[10, "M"] = joindate_temps[2];
+                }
+                
                 //keiyaku time
                 if (dt.Rows[0].Field<string>("EmployStatus") != "正社員")
                 {
@@ -893,8 +972,8 @@ namespace ExportApplication
                     xlWorkSheet.Cells[10, "AD"] = Time2_temps[1];
                     xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
                 }
-                //ContracType
-                //ContractRequire
+                ////ContracType
+                ////ContractRequire
 
                 //My company
                 xlWorkSheet.Cells[14, "N"] = dt.Rows[0].Field<string>("MyCompany");
@@ -910,10 +989,14 @@ namespace ExportApplication
                 /////////////////////Export hoken
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(6);
                 string koyouhoken = dt.Rows[0].Field<string>("Kouyouhoken");
+                if (koyouhoken != " ")
+                {
                 string[] koyouhoken_temp = koyouhoken.Split('/');
                 xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
                 xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
                 xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
+                }
+
                 //ko co ng bao chung
                 if (dt.Rows[0].Field<string>("InsureCard") != "有り" && dt.Rows[0].Field<string>("InsureCard") != string.Empty)
                 {
@@ -935,10 +1018,14 @@ namespace ExportApplication
                 }
                 //shakaihoken
                 string shakaihoken = dt.Rows[0].Field<string>("Shakaihoken");
-                string[] shakaihoken_temp = koyouhoken.Split('/');
-                xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
-                xlWorkSheet.Cells[45, "X"] = shakaihoken_temp[1];
-                xlWorkSheet.Cells[45, "AF"] = shakaihoken_temp[2];
+                if (shakaihoken!= " ")
+                {
+                    string[] shakaihoken_temp = koyouhoken.Split('/');
+                    xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[45, "X"] = shakaihoken_temp[1];
+                    xlWorkSheet.Cells[45, "AF"] = shakaihoken_temp[2];
+                }
+
                 //buu dien
                 if (zipcode.Length == 7)
                 {
@@ -962,7 +1049,7 @@ namespace ExportApplication
                 //被扶養者
                 xlWorkSheet.Cells[54, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana1");
                 xlWorkSheet.Cells[55, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei1");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth1") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth1") != " ")
                 {
                     string depend1 = dt.Rows[0].Field<string>("DependentPeopleBirth1");
                     string[] convert_depend1 = depend1.Split('/');
@@ -974,10 +1061,10 @@ namespace ExportApplication
                     xlWorkSheet.Cells[54, "AS"] = dt.Rows[0].Field<string>("Relationship1");
                     xlWorkSheet.Cells[54, "AX"] = dt.Rows[0].Field<string>("Living1");
                 }
-                
+
                 xlWorkSheet.Cells[57, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana2");
                 xlWorkSheet.Cells[58, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei2");
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth2") != string.Empty)
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth2") != " ")
                 {
                     string depend2 = dt.Rows[0].Field<string>("DependentPeopleBirth2");
                     string[] convert_depend2 = depend2.Split('/');
@@ -990,10 +1077,11 @@ namespace ExportApplication
                     xlWorkSheet.Cells[57, "AX"] = dt.Rows[0].Field<string>("Living2");
                 }
 
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth3") != string.Empty)
+                
+                xlWorkSheet.Cells[60, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana3");
+                xlWorkSheet.Cells[61, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei3");
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth3") != " ")
                 {
-                    xlWorkSheet.Cells[60, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana3");
-                    xlWorkSheet.Cells[61, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei3");
                     string depend3 = dt.Rows[0].Field<string>("DependentPeopleBirth3");
                     string[] convert_depend3 = depend3.Split('/');
                     string convert_japanStyle3 = bll_handle.ConvertJapaneseCalendar(depend3);
@@ -1005,10 +1093,11 @@ namespace ExportApplication
                     xlWorkSheet.Cells[60, "AX"] = dt.Rows[0].Field<string>("Living3");
                 }
 
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth4") != string.Empty)
+                
+                xlWorkSheet.Cells[63, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana4");
+                xlWorkSheet.Cells[64, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei4");
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth4") != " ")
                 {
-                    xlWorkSheet.Cells[63, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana4");
-                    xlWorkSheet.Cells[64, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei4");
                     string depend4 = dt.Rows[0].Field<string>("DependentPeopleBirth4");
                     string[] convert_depend4 = depend4.Split('/');
                     string convert_japanStyle4 = bll_handle.ConvertJapaneseCalendar(depend4);
@@ -1020,10 +1109,10 @@ namespace ExportApplication
                     xlWorkSheet.Cells[63, "AX"] = dt.Rows[0].Field<string>("Living4");
                 }
 
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth5") != string.Empty)
+                xlWorkSheet.Cells[66, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana5");
+                xlWorkSheet.Cells[67, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei5");
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth5") != " ")
                 {
-                    xlWorkSheet.Cells[66, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana5");
-                    xlWorkSheet.Cells[67, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei5");
                     string depend5 = dt.Rows[0].Field<string>("DependentPeopleBirth5");
                     string[] convert_depend5 = depend5.Split('/');
                     string convert_japanStyle5 = bll_handle.ConvertJapaneseCalendar(depend5);
@@ -1035,10 +1124,10 @@ namespace ExportApplication
                     xlWorkSheet.Cells[66, "AX"] = dt.Rows[0].Field<string>("Living5");
                 }
 
-                if (dt.Rows[0].Field<string>("DependentPeopleBirth6") != string.Empty)
+                xlWorkSheet.Cells[69, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana6");
+                xlWorkSheet.Cells[70, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei6");
+                if (dt.Rows[0].Field<string>("DependentPeopleBirth6") != " ")
                 {
-                    xlWorkSheet.Cells[69, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana6");
-                    xlWorkSheet.Cells[70, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei6");
                     string depend6 = dt.Rows[0].Field<string>("DependentPeopleBirth6");
                     string[] convert_depend6 = depend6.Split('/');
                     string convert_japanStyle6 = bll_handle.ConvertJapaneseCalendar(depend6);
@@ -1050,8 +1139,8 @@ namespace ExportApplication
                     xlWorkSheet.Cells[69, "AX"] = dt.Rows[0].Field<string>("Living6");
                 }
 
-                
-                
+
+
                 ////Export koutsu
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(5);
                 xlWorkSheet.Cells[87, "C"] = dt.Rows[0].Field<string>("Trainsportation1");
@@ -1104,7 +1193,7 @@ namespace ExportApplication
                 }
                
             }
-            catch 
+            catch (Exception error)
             {
                 // Cleanup Memory
                 GC.Collect();
@@ -1117,7 +1206,7 @@ namespace ExportApplication
 
                 xlApp.Quit();
                 Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show("エラー!出力できません！");
+                MessageBox.Show(error.Message, "エラー！出力できません！");
             }
         }
 

@@ -17,7 +17,7 @@ namespace BLL
             return dal_edit.EditForm(name);
         }
 
-        public bool Insert(DTO_Edit dto_Edit)
+        public bool Update(DTO_Edit dto_Edit)
         {
             return dal_edit.Update(dto_Edit);
         }

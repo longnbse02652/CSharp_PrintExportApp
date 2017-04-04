@@ -19,7 +19,7 @@ namespace DAL
         {
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Information where RomajiName = '" + name + "'", _cn);
+                SqlDataAdapter da = new SqlDataAdapter("select * from Information where RomajiName = N'" + name + "'", _cn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
@@ -53,7 +53,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@ChangeDate", dto_Edit.ChangeDate);
                 command.Parameters.AddWithValue("@ChangeDateFrom", dto_Edit.ChangeDateFrom);
                 command.Parameters.AddWithValue("@ZipCode", dto_Edit.ZipCode);
-                command.Parameters.AddWithValue("@Address", dto_Edit.Address);
+                command.Parameters.AddWithValue("@Address1", dto_Edit.Address1);
                 command.Parameters.AddWithValue("@Address2", dto_Edit.Address2);
                 command.Parameters.AddWithValue("@Address3", dto_Edit.Address3);
                 command.Parameters.AddWithValue("@Address4", dto_Edit.Address4);

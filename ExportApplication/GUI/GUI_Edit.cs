@@ -15,6 +15,7 @@ namespace ExportApplication
     public partial class GUI_Edit : Form
     {
         BLL_Edit bll_edit = new BLL_Edit();
+        BLL_HandleFunc bll_handleFunc = new BLL_HandleFunc();
         // Enable and disable nhung truong duoc chon de edit
         public void TakeThis(IList<int> list)
         {
@@ -84,7 +85,7 @@ namespace ExportApplication
                         break;
                     case 12:
                         TB_ZipCode.Enabled = true;
-                        TB_Address.Enabled = true;
+                        TB_Address1.Enabled = true;
                         TB_Address3.Enabled = true;
                         TB_Address5.Enabled = true;
                         CB_Address2.Enabled = true;
@@ -221,7 +222,7 @@ namespace ExportApplication
         public GUI_Edit()
         {
             InitializeComponent();
-
+            
         }
         // get name lay tu dataGridView de gui len DAL
         public static string name;
@@ -244,7 +245,7 @@ namespace ExportApplication
                 TB_CompanyCode.Text = dt.Rows[0].Field<string>("CompanyCode");
                 TB_CompanyName.Text = dt.Rows[0].Field<string>("CompanyName");
                 TB_Reason.Text = dt.Rows[0].Field<string>("Reason");
-                TB_Address.Text = dt.Rows[0].Field<string>("Address1");// la cho hang t2 trong bang edit
+                TB_Address1.Text = dt.Rows[0].Field<string>("Address1");// la cho hang t2 trong bang edit
                 TB_Address3.Text = dt.Rows[0].Field<string>("Address3");
              //   TB_Address1.Text = dt.Rows[0].Field<string>("Address1");
                 TB_Address5.Text = dt.Rows[0].Field<string>("Address5");
@@ -429,7 +430,7 @@ namespace ExportApplication
             string _IDCode = TB_IDCode.Text;
             string _RomajiName = TB_RomajiName.Text;
             string _FuriganaName = TB_FuriganaName.Text;
-            string _Address = TB_Address.Text;
+            string _Address1 = TB_Address1.Text;
             string _Address3 = TB_Address3.Text;
             string _Address5 = TB_Address5.Text;
             string _CompanyCode = TB_CompanyCode.Text;
@@ -443,14 +444,14 @@ namespace ExportApplication
             string _AccountCode = TB_AccountCode.Text;
             string _CompanyInsureDate = DTP_CompanyInsureDate.Text;
             string _KoyoHokenDate = DTP_KoyoHokenDate.Text;
-            string _Birth = DTP_Birth.Text;
+            string _Birth = CheckDateTime(DTP_Birth); ;
             string _Reason = TB_Reason.Text;
-            string _ChangeDate = DTP_ChangeDate.Text;
+            string _ChangeDate = CheckDateTime(DTP_ChangeDate);
             string _ChangeDateFrom = DTP_ChangeDateFrom.Text;
-            string _EmployTime1 = DTP_EmployTime1.Text;
-            string _EmployTime2 = DTP_EmployTime2.Text;
-            string _CardTimeOver = DTP_CardTimeOver.Text;
-            string _CardTimeStart = DTP_CardTimeStart.Text;
+            string _EmployTime1 = CheckDateTime(DTP_EmployTime1);
+            string _EmployTime2 = CheckDateTime(DTP_EmployTime2) ;
+            string _CardTimeOver = CheckDateTime(DTP_CardTimeOver);
+            string _CardTimeStart = CheckDateTime(DTP_CardTimeStart);
 
             int _ZipCode;
             bool result_zipcode = int.TryParse(TB_ZipCode.Text, out _ZipCode);
@@ -475,23 +476,23 @@ namespace ExportApplication
 
             string _WorkType, _Tax, _ShiharaiType, _Sex, _TravelType, _CardType, _ClosingDate, _HakenRyokinType,
                  _ChinginType, _TeateType, _BankNameType, _BranchNameType, _Address2, _Address4;
-            if (CB_Address2.SelectedIndex == -1) { _Address2 = ""; } else { _Address2 = CB_Address2.SelectedItem.ToString(); }
-            if (CB_Address4.SelectedIndex == -1) { _Address4 = ""; } else { _Address4 = CB_Address4.SelectedItem.ToString(); }
-            if (CB_WorkType.SelectedIndex == -1) { _WorkType = ""; } else { _WorkType = CB_WorkType.SelectedItem.ToString(); }
-            if (CB_Tax.SelectedIndex == -1) { _Tax = ""; } else { _Tax = CB_Tax.SelectedItem.ToString(); }
-            if (CB_ShiharaiType.SelectedIndex == -1) { _ShiharaiType = ""; } else { _ShiharaiType = CB_ShiharaiType.SelectedItem.ToString(); }
-            if (CB_Sex.SelectedIndex == -1) { _Sex = ""; } else { _Sex = CB_Sex.SelectedItem.ToString(); }
-            if (CB_TravelType.SelectedIndex == -1) { _TravelType = ""; } else { _TravelType = CB_TravelType.SelectedItem.ToString(); }
-            if (CB_CardType.SelectedIndex == -1) { _CardType = ""; } else { _CardType = CB_CardType.SelectedItem.ToString(); }
-            if (CB_ClosingDate.SelectedIndex == -1) { _ClosingDate = ""; } else { _ClosingDate = CB_ClosingDate.SelectedItem.ToString(); }
-            if (CB_HakenRyokinType.SelectedIndex == -1) { _HakenRyokinType = ""; } else { _HakenRyokinType = CB_HakenRyokinType.SelectedItem.ToString(); }
-            if (CB_ChinginType.SelectedIndex == -1) { _ChinginType = ""; } else { _ChinginType = CB_ChinginType.SelectedItem.ToString(); }
-            if (CB_TeateType.SelectedIndex == -1) { _TeateType = ""; } else { _TeateType = CB_TeateType.SelectedItem.ToString(); }
-            if (CB_BankNameType.SelectedIndex == -1) { _BankNameType = ""; } else { _BankNameType = CB_BankNameType.SelectedItem.ToString(); }
-            if (CB_BranchNameType.SelectedIndex == -1) { _BranchNameType = ""; } else { _BranchNameType = CB_BranchNameType.SelectedItem.ToString(); }
+            if (CB_Address2.SelectedIndex == -1) { _Address2 = string.Empty; } else { _Address2 = CB_Address2.SelectedItem.ToString(); }
+            if (CB_Address4.SelectedIndex == -1) { _Address4 = string.Empty; } else { _Address4 = CB_Address4.SelectedItem.ToString(); }
+            if (CB_WorkType.SelectedIndex == -1) { _WorkType = string.Empty; } else { _WorkType = CB_WorkType.SelectedItem.ToString(); }
+            if (CB_Tax.SelectedIndex == -1) { _Tax = string.Empty; } else { _Tax = CB_Tax.SelectedItem.ToString(); }
+            if (CB_ShiharaiType.SelectedIndex == -1) { _ShiharaiType = string.Empty; } else { _ShiharaiType = CB_ShiharaiType.SelectedItem.ToString(); }
+            if (CB_Sex.SelectedIndex == -1) { _Sex = string.Empty; } else { _Sex = CB_Sex.SelectedItem.ToString(); }
+            if (CB_TravelType.SelectedIndex == -1) { _TravelType = string.Empty; } else { _TravelType = CB_TravelType.SelectedItem.ToString(); }
+            if (CB_CardType.SelectedIndex == -1) { _CardType = string.Empty; } else { _CardType = CB_CardType.SelectedItem.ToString(); }
+            if (CB_ClosingDate.SelectedIndex == -1) { _ClosingDate = string.Empty; } else { _ClosingDate = CB_ClosingDate.SelectedItem.ToString(); }
+            if (CB_HakenRyokinType.SelectedIndex == -1) { _HakenRyokinType = string.Empty; } else { _HakenRyokinType = CB_HakenRyokinType.SelectedItem.ToString(); }
+            if (CB_ChinginType.SelectedIndex == -1) { _ChinginType = string.Empty; } else { _ChinginType = CB_ChinginType.SelectedItem.ToString(); }
+            if (CB_TeateType.SelectedIndex == -1) { _TeateType = string.Empty; } else { _TeateType = CB_TeateType.SelectedItem.ToString(); }
+            if (CB_BankNameType.SelectedIndex == -1) { _BankNameType = string.Empty; } else { _BankNameType = CB_BankNameType.SelectedItem.ToString(); }
+            if (CB_BranchNameType.SelectedIndex == -1) { _BranchNameType = string.Empty; } else { _BranchNameType = CB_BranchNameType.SelectedItem.ToString(); }
 
             DTO_Edit dto_edit = new DTO_Edit(_RomajiName, _IDCode, _FuriganaName, _CompanyName, _CompanyCode, _Sex, _ShiharaiType, _Tax, _Birth, _Reason,
-            _ChangeDate, _ChangeDateFrom, _ZipCode, _Address, _Address2, _Address3, _Address4, _Address5, _TravelType, _EmployTime1, _EmployTime2, _CardType, _CardTimeOver,
+            _ChangeDate, _ChangeDateFrom, _ZipCode, _Address1, _Address2, _Address3, _Address4, _Address5, _TravelType, _EmployTime1, _EmployTime2, _CardType, _CardTimeOver,
             _CardTimeStart, _WorkType, _ClosingDate, _HakenRyokin, _ChinginType, _HakenRyokinType, _Chingin, _TsukinTeate, _TeateType, _Genkaritsu,
             _TeateGaku, _KyuyoKojoGaku, _WorkTime, _BankName, _BankNameType, _BranchName, _BranchNameType, _AccountName, _BankCode,
             _BranchCode, _AccountCode, _CompanyInsureDate, _KoyoHokenDate, _DependentPeople, _ResidentPeople, _HealthInsurancePeople);
@@ -505,7 +506,7 @@ namespace ExportApplication
             DialogResult dialogResult = MessageBox.Show("保存を行います。よろしいですか？", "確認", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                if (bll_edit.Insert(updateData()))
+                if (bll_edit.Update(updateData()))
                 {
                     MessageBox.Show("保存しました。");
                     GUI_Main obj = (GUI_Main)Application.OpenForms["GUI_Main"];
@@ -523,59 +524,64 @@ namespace ExportApplication
             }
         }
 
+        public string CheckDateTime(DateTimePicker dtp)
+        {
+            string d;
+            if (dtp.Text.Trim() == string.Empty)
+            {
+                d = " ";
+            }
+            else
+            {
+                d = bll_handleFunc.ConvertFromDatetimePicker_ToYYMMDD(dtp);
+            }
+            return d;
+        }
+
         // envent hiển thị ngày tháng như được chọn
         private void DTP_EmployTime1_ValueChanged(object sender, EventArgs e)
         {
-            DTP_EmployTime1.Format = DateTimePickerFormat.Custom;
-            DTP_EmployTime1.CustomFormat = "yyyy年MM月dd日";
+            DTP_EmployTime1.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_Birth_ValueChanged(object sender, EventArgs e)
         {
-            DTP_Birth.Format = DateTimePickerFormat.Custom;
-            DTP_Birth.CustomFormat = "yyyy年MM月dd日";
+            DTP_Birth.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_ChangeDate_ValueChanged(object sender, EventArgs e)
         {
-            DTP_ChangeDate.Format = DateTimePickerFormat.Custom;
-            DTP_ChangeDate.CustomFormat = "yyyy年MM月dd日";
+            DTP_ChangeDate.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_ChangeDateFrom_ValueChanged(object sender, EventArgs e)
         {
-            DTP_ChangeDateFrom.Format = DateTimePickerFormat.Custom;
-            DTP_ChangeDateFrom.CustomFormat = "yyyy年MM月dd日";
+            DTP_ChangeDateFrom.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_EmployTime2_ValueChanged(object sender, EventArgs e)
         {
-            DTP_EmployTime2.Format = DateTimePickerFormat.Custom;
-            DTP_EmployTime2.CustomFormat = "yyyy年MM月dd日";
+            DTP_EmployTime2.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_CardTimeStart_ValueChanged(object sender, EventArgs e)
         {
-            DTP_CardTimeStart.Format = DateTimePickerFormat.Custom;
-            DTP_CardTimeStart.CustomFormat = "yyyy年MM月dd日";
+            DTP_CardTimeStart.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_CardTimeOver_ValueChanged(object sender, EventArgs e)
         {
-            DTP_CardTimeOver.Format = DateTimePickerFormat.Custom;
-            DTP_CardTimeOver.CustomFormat = "yyyy年MM月dd日";
+            DTP_CardTimeOver.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_KoyoHokenDate_ValueChanged(object sender, EventArgs e)
         {
-            DTP_KoyoHokenDate.Format = DateTimePickerFormat.Custom;
-            DTP_KoyoHokenDate.CustomFormat = "yyyy年MM月dd日";
+            DTP_KoyoHokenDate.Format = DateTimePickerFormat.Long;
         }
 
         private void DTP_CompanyInsureDate_ValueChanged(object sender, EventArgs e)
         {
-            DTP_CompanyInsureDate.Format = DateTimePickerFormat.Custom;
-            DTP_CompanyInsureDate.CustomFormat = "yyyy年MM月dd日";
+            DTP_CompanyInsureDate.Format = DateTimePickerFormat.Long;
         }
         private void TB_TsukinTeate_Click(object sender, EventArgs e)
         {

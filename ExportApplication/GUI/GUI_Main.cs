@@ -32,36 +32,39 @@ namespace ExportApplication
             dtGridView.DataSource = dt;
         }
 
-        //Click Nút 新規登録
-        private void bt_addNew_Click(object sender, EventArgs e)
+        //Double click vao mỗi Nhân viên
+        private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            GUI_AddNew gui_addnew = new GUI_AddNew();
-            gui_addnew.Show();
+            
         }
 
-        //Click nút 終了
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+
+            base.WndProc(ref m);
+        }
+
         private void bt_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //Double click vao mỗi Nhân viên
-        private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void bt_print_Click(object sender, EventArgs e)
         {
-            if (dtGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                MessageBox.Show(dtGridView.Rows[e.RowIndex].Cells["氏名"].Value.ToString());
-                GUI_AddNew gui_view = new GUI_AddNew();
-
-            }
+            string name = dtGridView.SelectedCells[0].Value.ToString();
+            GUI_Print gui_print = new GUI_Print(name);
+            gui_print.Show();
         }
 
-
-        //public delegate void delPassData(string text);
-
-        // Click Add Button and get name of people who was clicked
         public delegate void delPassData(string text);
-
         private void btEdit_Click(object sender, EventArgs e)
         {
             GUI_EditOption gui_editoption = new GUI_EditOption();
@@ -77,15 +80,12 @@ namespace ExportApplication
                 del(a);
 
             }
-
         }
 
-        private void bt_print_Click(object sender, EventArgs e)
+        private void bt_addNew_Click(object sender, EventArgs e)
         {
-            string name = dtGridView.SelectedCells[0].Value.ToString();
-            GUI_Print gui_print = new GUI_Print(name);
-            gui_print.Show();
+            GUI_AddNew gui_addnew = new GUI_AddNew();
+            gui_addnew.Show();
         }
-
     }
 }
