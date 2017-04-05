@@ -144,6 +144,27 @@ namespace DTO
         private string _AccountCode;
         public string AccountCode { get { return _AccountCode; } set { _AccountCode = value; } }
 
+        private string _AccountCode1;
+        public string AccountCode1 { get { return _AccountCode1; } set { _AccountCode1 = value; } }
+
+        private string _AccountCode2;
+        public string AccountCode2 { get { return _AccountCode2; } set { _AccountCode2 = value; } }
+
+        private string _AccountCode3;
+        public string AccountCode3 { get { return _AccountCode3; } set { _AccountCode3 = value; } }
+
+        private string _AccountCode4;
+        public string AccountCode4 { get { return _AccountCode4; } set { _AccountCode4 = value; } }
+
+        private string _AccountCode5;
+        public string AccountCode5 { get { return _AccountCode5; } set { _AccountCode5 = value; } }
+
+        private string _AccountCode6;
+        public string AccountCode6 { get { return _AccountCode6; } set { _AccountCode6 = value; } }
+
+        private string _AccountCode7;
+        public string AccountCode7 { get { return _AccountCode7; } set { _AccountCode7 = value; } }
+
         private string _CompanyInsureDate;
         public string CompanyInsureDate { get { return _CompanyInsureDate; } set { _CompanyInsureDate = value; } }
 
@@ -160,16 +181,17 @@ namespace DTO
         public int HealthInsurancePeople { get { return _HealthInsurancePeople; } set { _HealthInsurancePeople = value; } }
 
         public DTO_Edit(string eRomajiName, string eIDCode, string eFuriganaName, string eCompanyName,
-            string eCompanyCode, string eSex, string eShiharaiType, string eTax, string eBirth, string eReason,
-            string eChangeDate, string eChangeDateFrom, int eZipCode, string eAddress, string eAddress2,
-            string eAddress3, string eAddress4, string eAddress5, string eTravelType,
-            string eEmployTime1, string eEmployTime2, string eCardType, string eCardTimeOut,
-            string eCardTime, string eWorkType, string eClosingDate, int eHakenRyokin, string eChinginType,
-            string eHakenRyokinType, int eChingin, int eTsukinTeate, string eTeateType, float eGenkaritsu,
-            string eTeateGaku, int eKyuyoKojoGaku, int eWorkTime, string eBankName, string eBankNameType,
-            string eBranchName, string eBranchNameType, string eAccountName, string eBankCode,
-            string eBranchCode, string eAccountCode, string eCompanyInsureDate, string eKoyoHokenDate,
-            int eDependentPeople, int eResidentPeople, int eHealthInsurancePeople)
+             string eCompanyCode, string eSex, string eShiharaiType, string eTax, string eBirth, string eReason,
+             string eChangeDate, string eChangeDateFrom, int eZipCode, string eAddress, string eAddress2,
+             string eAddress3, string eAddress4, string eAddress5, string eTravelType,
+             string eEmployTime1, string eEmployTime2, string eCardType, string eCardTimeOut,
+             string eCardTime, string eWorkType, string eClosingDate, int eHakenRyokin, string eChinginType,
+             string eHakenRyokinType, int eChingin, int eTsukinTeate, string eTeateType, float eGenkaritsu,
+             string eTeateGaku, int eKyuyoKojoGaku, int eWorkTime, string eBankName, string eBankNameType,
+             string eBranchName, string eBranchNameType, string eAccountName, string eBankCode,
+             string eBranchCode, string eAccountCode, string eAccountCode1, string eAccountCode2, string eAccountCode3,
+             string eAccountCode4, string eAccountCode5, string eAccountCode6, string eAccountCode7, string eCompanyInsureDate, string eKoyoHokenDate,
+             int eDependentPeople, int eResidentPeople, int eHealthInsurancePeople)
         {
             this._Genkaritsu = eGenkaritsu;
             this._RomajiName = eRomajiName;
@@ -215,6 +237,13 @@ namespace DTO
             this._BankCode = eBankCode;
             this._BranchCode = eBranchCode;
             this._AccountCode = eAccountCode;
+            this._AccountCode1 = eAccountCode1;
+            this._AccountCode2 = eAccountCode2;
+            this._AccountCode3 = eAccountCode3;
+            this._AccountCode4 = eAccountCode4;
+            this._AccountCode5 = eAccountCode5;
+            this._AccountCode6 = eAccountCode6;
+            this._AccountCode7 = eAccountCode7;
             this._CompanyInsureDate = eCompanyInsureDate;
             this._KoyoHokenDate = eKoyoHokenDate;
             this._DependentPeople = eDependentPeople;

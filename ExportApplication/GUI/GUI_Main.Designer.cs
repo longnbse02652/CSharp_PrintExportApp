@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtGridView = new System.Windows.Forms.DataGridView();
             this.bt_print = new System.Windows.Forms.Button();
             this.bt_Exit = new System.Windows.Forms.Button();
@@ -36,36 +39,60 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtGridView
             // 
             this.dtGridView.AllowUserToAddRows = false;
             this.dtGridView.AllowUserToDeleteRows = false;
+            this.dtGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.dtGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(155)))), ((int)(((byte)(158)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtGridView.ColumnHeadersHeight = 20;
-            this.dtGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtGridView.Location = new System.Drawing.Point(218, 147);
+            this.dtGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtGridView.EnableHeadersVisualStyles = false;
+            this.dtGridView.Location = new System.Drawing.Point(1, 1);
             this.dtGridView.Name = "dtGridView";
             this.dtGridView.ReadOnly = true;
-            this.dtGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            this.dtGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtGridView.RowTemplate.Height = 21;
+            this.dtGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dtGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridView.Size = new System.Drawing.Size(334, 257);
+            this.dtGridView.Size = new System.Drawing.Size(332, 235);
             this.dtGridView.TabIndex = 5;
             this.dtGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGridView_CellMouseDoubleClick);
             // 
             // bt_print
             // 
-            this.bt_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bt_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.bt_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_print.Font = new System.Drawing.Font("MS PMincho", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.bt_print.ForeColor = System.Drawing.Color.White;
-            this.bt_print.Location = new System.Drawing.Point(66, 264);
+            this.bt_print.Location = new System.Drawing.Point(66, 244);
             this.bt_print.Name = "bt_print";
-            this.bt_print.Size = new System.Drawing.Size(86, 40);
+            this.bt_print.Size = new System.Drawing.Size(86, 37);
             this.bt_print.TabIndex = 11;
             this.bt_print.Text = "印刷";
             this.bt_print.UseVisualStyleBackColor = false;
@@ -73,12 +100,13 @@
             // 
             // bt_Exit
             // 
-            this.bt_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bt_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.bt_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Exit.Font = new System.Drawing.Font("MS PMincho", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.bt_Exit.ForeColor = System.Drawing.Color.White;
-            this.bt_Exit.Location = new System.Drawing.Point(66, 364);
+            this.bt_Exit.Location = new System.Drawing.Point(66, 336);
             this.bt_Exit.Name = "bt_Exit";
-            this.bt_Exit.Size = new System.Drawing.Size(86, 40);
+            this.bt_Exit.Size = new System.Drawing.Size(86, 37);
             this.bt_Exit.TabIndex = 10;
             this.bt_Exit.Text = "終了";
             this.bt_Exit.UseVisualStyleBackColor = false;
@@ -86,12 +114,13 @@
             // 
             // btEdit
             // 
-            this.btEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.btEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.btEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEdit.Font = new System.Drawing.Font("MS PMincho", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btEdit.ForeColor = System.Drawing.Color.White;
-            this.btEdit.Location = new System.Drawing.Point(66, 207);
+            this.btEdit.Location = new System.Drawing.Point(66, 191);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(86, 40);
+            this.btEdit.Size = new System.Drawing.Size(86, 37);
             this.btEdit.TabIndex = 9;
             this.btEdit.Text = "編集";
             this.btEdit.UseVisualStyleBackColor = false;
@@ -99,12 +128,13 @@
             // 
             // bt_addNew
             // 
-            this.bt_addNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bt_addNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.bt_addNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_addNew.Font = new System.Drawing.Font("MS PMincho", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.bt_addNew.ForeColor = System.Drawing.Color.White;
-            this.bt_addNew.Location = new System.Drawing.Point(66, 147);
+            this.bt_addNew.Location = new System.Drawing.Point(66, 136);
             this.bt_addNew.Name = "bt_addNew";
-            this.bt_addNew.Size = new System.Drawing.Size(86, 40);
+            this.bt_addNew.Size = new System.Drawing.Size(86, 37);
             this.bt_addNew.TabIndex = 8;
             this.bt_addNew.Text = "新入登録";
             this.bt_addNew.UseVisualStyleBackColor = false;
@@ -112,7 +142,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(155)))), ((int)(((byte)(158)))));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.54817F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.45183F));
@@ -123,8 +153,9 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 77);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 71);
             this.tableLayoutPanel1.TabIndex = 12;
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
             // label1
             // 
@@ -135,7 +166,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(216, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 77);
+            this.label1.Size = new System.Drawing.Size(267, 71);
             this.label1.TabIndex = 0;
             this.label1.Text = "書類印刷アプリケーション";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,27 +177,40 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 71);
+            this.panel1.Size = new System.Drawing.Size(207, 65);
             this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(66)))), ((int)(((byte)(55)))));
+            this.panel2.Controls.Add(this.dtGridView);
+            this.panel2.Location = new System.Drawing.Point(220, 136);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(1);
+            this.panel2.Size = new System.Drawing.Size(334, 237);
+            this.panel2.TabIndex = 13;
             // 
             // GUI_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 459);
+            this.ClientSize = new System.Drawing.Size(602, 424);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.bt_addNew);
             this.Controls.Add(this.bt_print);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.bt_Exit);
-            this.Controls.Add(this.dtGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Main_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GUI_Main_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -181,6 +225,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

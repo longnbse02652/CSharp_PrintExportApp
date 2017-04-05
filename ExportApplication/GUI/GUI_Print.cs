@@ -32,29 +32,6 @@ namespace ExportApplication
             //dt.Rows[0].Field<string>("RomajiName");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                    nyushanaiyousho();
-                    break;
-                case 1:
-                    keiyakusho();
-                    break;
-                case 2:
-                    hoken();
-                    break;
-                case 3:
-                    koutsu();
-                    break;
-                case -1:
-                    MessageBox.Show("印刷したい書類を選んでください！");
-                    break;
-
-            }
-        }
-
         private object ValueOrDBNullIfZero(int val)
         {
             if (val == 0) return DBNull.Value;
@@ -765,6 +742,48 @@ namespace ExportApplication
             }
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+
+            base.WndProc(ref m);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    nyushanaiyousho();
+                    break;
+                case 1:
+                    keiyakusho();
+                    break;
+                case 2:
+                    hoken();
+                    break;
+                case 3:
+                    koutsu();
+                    break;
+                case -1:
+                    MessageBox.Show("印刷したい書類を選んでください！");
+                    break;
+
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -786,13 +805,13 @@ namespace ExportApplication
                 {
                     xlWorkSheet.Cells[7, "DK"] = dt.Rows[0].Field<string>("Birth");
                 }
-                
-                if (dt.Rows[0].Field<string>("InCompanyDate")!= string.Empty)
+
+                if (dt.Rows[0].Field<string>("InCompanyDate") != string.Empty)
                 {
                     xlWorkSheet.Cells[11, "DK"] = dt.Rows[0].Field<string>("InCompanyDate");
                 }
-                
-                
+
+
                 if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
                 {
                     xlWorkSheet.Cells[11, "H"] = "日本以外は国名記入";
@@ -806,12 +825,15 @@ namespace ExportApplication
                 if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
                 {
                     string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
-                    string[] temps = temp_zairyuukigen.Split('/');
-                    xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[12, "BP"] = temps[1];
-                    xlWorkSheet.Cells[12, "BT"] = temps[2];
+                    if (temp_zairyuukigen != " ")
+                    {
+                        string[] temps = temp_zairyuukigen.Split('/');
+                        xlWorkSheet.Cells[12, "BL"] = (Convert.ToInt32(temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[12, "BP"] = temps[1];
+                        xlWorkSheet.Cells[12, "BT"] = temps[2];
+                    }
                 }
-                
+
                 xlWorkSheet.Cells[12, "BX"] = dt.Rows[0].Field<string>("OutTime");
                 xlWorkSheet.Cells[17, "Y"] = dt.Rows[0].Field<string>("CompanyName");
                 xlWorkSheet.Cells[19, "BI"] = dt.Rows[0].Field<string>("WorkType");
@@ -842,7 +864,7 @@ namespace ExportApplication
                 if (dt.Rows[0].Field<string>("EmployStatus") != "正社員")
                 {
                     string temp_time1 = dt.Rows[0].Field<string>("EmployTime1");
-                    if (temp_time1!= string.Empty)
+                    if (temp_time1 != string.Empty)
                     {
                         string[] Time1_temps = temp_time1.Split('/');
                         xlWorkSheet.Cells[41, "AG"] = (Convert.ToInt32(Time1_temps[0]) - 1988).ToString();
@@ -850,7 +872,7 @@ namespace ExportApplication
                         xlWorkSheet.Cells[41, "AP"] = Time1_temps[2];
                     }
                     string temp_time2 = dt.Rows[0].Field<string>("EmployTime2");
-                    if (temp_time2!= string.Empty)
+                    if (temp_time2 != string.Empty)
                     {
                         string[] Time2_temps = temp_time2.Split('/');
                         xlWorkSheet.Cells[41, "AX"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
@@ -912,7 +934,7 @@ namespace ExportApplication
 
 
                 ////////////////////////Export keiyaku
-                //xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(3);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(3);
                 //Zipcode
                 string zipcode = (dt.Rows[0].Field<int?>("ZipCode")).ToString();
                 if (zipcode.Length == 7)
@@ -953,24 +975,27 @@ namespace ExportApplication
                 }
                 //Join company Date
                 string joindate = dt.Rows[0].Field<string>("InCompanyDate");
-                if (joindate!= " ")
+                if (joindate != " ")
                 {
                     string[] joindate_temps = joindate.Split('/');
                     xlWorkSheet.Cells[10, "I"] = (Convert.ToInt32(joindate_temps[0]) - 1988).ToString();
                     xlWorkSheet.Cells[10, "K"] = joindate_temps[1];
                     xlWorkSheet.Cells[10, "M"] = joindate_temps[2];
                 }
-                
+
                 //keiyaku time
                 if (dt.Rows[0].Field<string>("EmployStatus") != "正社員")
                 {
                     xlWorkSheet.Cells[10, "Q"] = "□";
                     xlWorkSheet.Cells[10, "V"] = "☑";
                     string temp_time2 = dt.Rows[0].Field<string>("EmployTime2");
-                    string[] Time2_temps = temp_time2.Split('/');
-                    xlWorkSheet.Cells[10, "AB"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
-                    xlWorkSheet.Cells[10, "AD"] = Time2_temps[1];
-                    xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
+                    if (temp_time2 != " ")
+                    {
+                        string[] Time2_temps = temp_time2.Split('/');
+                        xlWorkSheet.Cells[10, "AB"] = (Convert.ToInt32(Time2_temps[0]) - 1988).ToString();
+                        xlWorkSheet.Cells[10, "AD"] = Time2_temps[1];
+                        xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
+                    }
                 }
                 ////ContracType
                 ////ContractRequire
@@ -991,10 +1016,10 @@ namespace ExportApplication
                 string koyouhoken = dt.Rows[0].Field<string>("Kouyouhoken");
                 if (koyouhoken != " ")
                 {
-                string[] koyouhoken_temp = koyouhoken.Split('/');
-                xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
-                xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
-                xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
+                    string[] koyouhoken_temp = koyouhoken.Split('/');
+                    xlWorkSheet.Cells[21, "P"] = (Convert.ToInt32(koyouhoken_temp[0]) - 1988).ToString();
+                    xlWorkSheet.Cells[21, "X"] = koyouhoken_temp[1];
+                    xlWorkSheet.Cells[21, "AF"] = koyouhoken_temp[2];
                 }
 
                 //ko co ng bao chung
@@ -1018,7 +1043,7 @@ namespace ExportApplication
                 }
                 //shakaihoken
                 string shakaihoken = dt.Rows[0].Field<string>("Shakaihoken");
-                if (shakaihoken!= " ")
+                if (shakaihoken != " ")
                 {
                     string[] shakaihoken_temp = koyouhoken.Split('/');
                     xlWorkSheet.Cells[45, "P"] = (Convert.ToInt32(shakaihoken_temp[0]) - 1988).ToString();
@@ -1077,7 +1102,7 @@ namespace ExportApplication
                     xlWorkSheet.Cells[57, "AX"] = dt.Rows[0].Field<string>("Living2");
                 }
 
-                
+
                 xlWorkSheet.Cells[60, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana3");
                 xlWorkSheet.Cells[61, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei3");
                 if (dt.Rows[0].Field<string>("DependentPeopleBirth3") != " ")
@@ -1093,7 +1118,7 @@ namespace ExportApplication
                     xlWorkSheet.Cells[60, "AX"] = dt.Rows[0].Field<string>("Living3");
                 }
 
-                
+
                 xlWorkSheet.Cells[63, "K"] = dt.Rows[0].Field<string>("DependentPeopleKana4");
                 xlWorkSheet.Cells[64, "K"] = dt.Rows[0].Field<string>("DependentPeopleShimei4");
                 if (dt.Rows[0].Field<string>("DependentPeopleBirth4") != " ")
@@ -1191,7 +1216,7 @@ namespace ExportApplication
                     Marshal.FinalReleaseComObject(xlApp);
                     MessageBox.Show("出力完了");
                 }
-               
+
             }
             catch (Exception error)
             {

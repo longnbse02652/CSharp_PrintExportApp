@@ -124,11 +124,12 @@
             this.tableLayoutPanel75.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel75.Size = new System.Drawing.Size(536, 227);
             this.tableLayoutPanel75.TabIndex = 1;
+            this.tableLayoutPanel75.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel75_MouseDown);
             // 
             // tb_EndTrain4
             // 
             this.tb_EndTrain4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_EndTrain4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_EndTrain4.BackColor = System.Drawing.SystemColors.Window;
             this.tb_EndTrain4.Location = new System.Drawing.Point(278, 194);
             this.tb_EndTrain4.Margin = new System.Windows.Forms.Padding(0);
             this.tb_EndTrain4.MaxLength = 100;
@@ -140,7 +141,7 @@
             // tb_BeginTrain4
             // 
             this.tb_BeginTrain4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_BeginTrain4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_BeginTrain4.BackColor = System.Drawing.SystemColors.Window;
             this.tb_BeginTrain4.Location = new System.Drawing.Point(145, 194);
             this.tb_BeginTrain4.Margin = new System.Windows.Forms.Padding(0);
             this.tb_BeginTrain4.MaxLength = 100;
@@ -152,7 +153,7 @@
             // tb_Trainsportation4
             // 
             this.tb_Trainsportation4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_Trainsportation4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_Trainsportation4.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Trainsportation4.Location = new System.Drawing.Point(12, 194);
             this.tb_Trainsportation4.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Trainsportation4.MaxLength = 100;
@@ -164,7 +165,7 @@
             // tb_EndTrain3
             // 
             this.tb_EndTrain3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_EndTrain3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_EndTrain3.BackColor = System.Drawing.SystemColors.Window;
             this.tb_EndTrain3.Location = new System.Drawing.Point(278, 148);
             this.tb_EndTrain3.Margin = new System.Windows.Forms.Padding(0);
             this.tb_EndTrain3.MaxLength = 100;
@@ -176,7 +177,7 @@
             // tb_BeginTrain3
             // 
             this.tb_BeginTrain3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_BeginTrain3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_BeginTrain3.BackColor = System.Drawing.SystemColors.Window;
             this.tb_BeginTrain3.Location = new System.Drawing.Point(145, 148);
             this.tb_BeginTrain3.Margin = new System.Windows.Forms.Padding(0);
             this.tb_BeginTrain3.MaxLength = 100;
@@ -188,7 +189,7 @@
             // tb_Trainsportation3
             // 
             this.tb_Trainsportation3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_Trainsportation3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_Trainsportation3.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Trainsportation3.Location = new System.Drawing.Point(12, 148);
             this.tb_Trainsportation3.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Trainsportation3.MaxLength = 100;
@@ -200,7 +201,7 @@
             // tb_EndTrain2
             // 
             this.tb_EndTrain2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_EndTrain2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_EndTrain2.BackColor = System.Drawing.SystemColors.Window;
             this.tb_EndTrain2.Location = new System.Drawing.Point(278, 103);
             this.tb_EndTrain2.Margin = new System.Windows.Forms.Padding(0);
             this.tb_EndTrain2.MaxLength = 100;
@@ -212,7 +213,7 @@
             // tb_BeginTrain2
             // 
             this.tb_BeginTrain2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_BeginTrain2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_BeginTrain2.BackColor = System.Drawing.SystemColors.Window;
             this.tb_BeginTrain2.Location = new System.Drawing.Point(145, 103);
             this.tb_BeginTrain2.Margin = new System.Windows.Forms.Padding(0);
             this.tb_BeginTrain2.MaxLength = 100;
@@ -224,7 +225,7 @@
             // tb_Trainsportation2
             // 
             this.tb_Trainsportation2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_Trainsportation2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_Trainsportation2.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Trainsportation2.Location = new System.Drawing.Point(12, 103);
             this.tb_Trainsportation2.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Trainsportation2.MaxLength = 100;
@@ -236,7 +237,7 @@
             // tb_EndTrain1
             // 
             this.tb_EndTrain1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_EndTrain1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_EndTrain1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_EndTrain1.Location = new System.Drawing.Point(278, 58);
             this.tb_EndTrain1.Margin = new System.Windows.Forms.Padding(0);
             this.tb_EndTrain1.MaxLength = 100;
@@ -248,7 +249,7 @@
             // tb_BeginTrain1
             // 
             this.tb_BeginTrain1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_BeginTrain1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_BeginTrain1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_BeginTrain1.Location = new System.Drawing.Point(145, 58);
             this.tb_BeginTrain1.Margin = new System.Windows.Forms.Padding(0);
             this.tb_BeginTrain1.MaxLength = 100;
@@ -260,7 +261,7 @@
             // tb_Trainsportation1
             // 
             this.tb_Trainsportation1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_Trainsportation1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_Trainsportation1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Trainsportation1.Location = new System.Drawing.Point(12, 58);
             this.tb_Trainsportation1.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Trainsportation1.MaxLength = 100;
@@ -275,7 +276,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label156.AutoSize = true;
-            this.label156.BackColor = System.Drawing.Color.LightGreen;
+            this.label156.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.label156.Location = new System.Drawing.Point(1, 1);
             this.label156.Margin = new System.Windows.Forms.Padding(0);
             this.label156.Name = "label156";
@@ -283,6 +284,7 @@
             this.label156.TabIndex = 26;
             this.label156.Text = "交通機関";
             this.label156.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label156.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label157_MouseDown);
             // 
             // label157
             // 
@@ -290,7 +292,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label157.AutoSize = true;
-            this.label157.BackColor = System.Drawing.Color.LightGreen;
+            this.label157.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.label157.Location = new System.Drawing.Point(267, 1);
             this.label157.Margin = new System.Windows.Forms.Padding(0);
             this.label157.Name = "label157";
@@ -298,6 +300,7 @@
             this.label157.TabIndex = 27;
             this.label157.Text = "着駅";
             this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label157.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label157_MouseDown);
             // 
             // label158
             // 
@@ -305,7 +308,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label158.AutoSize = true;
-            this.label158.BackColor = System.Drawing.Color.LightGreen;
+            this.label158.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.label158.Location = new System.Drawing.Point(400, 1);
             this.label158.Margin = new System.Windows.Forms.Padding(0);
             this.label158.Name = "label158";
@@ -313,6 +316,7 @@
             this.label158.TabIndex = 28;
             this.label158.Text = "一ヶ月定期";
             this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label158.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label157_MouseDown);
             // 
             // tableLayoutPanel79
             // 
@@ -334,7 +338,7 @@
             // tb_MonthRegular1
             // 
             this.tb_MonthRegular1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_MonthRegular1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_MonthRegular1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_MonthRegular1.Location = new System.Drawing.Point(7, 9);
             this.tb_MonthRegular1.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MonthRegular1.MaxLength = 7;
@@ -379,7 +383,7 @@
             // tb_MonthRegular2
             // 
             this.tb_MonthRegular2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_MonthRegular2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_MonthRegular2.BackColor = System.Drawing.SystemColors.Window;
             this.tb_MonthRegular2.Location = new System.Drawing.Point(7, 9);
             this.tb_MonthRegular2.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MonthRegular2.MaxLength = 7;
@@ -424,7 +428,7 @@
             // tb_MonthRegular3
             // 
             this.tb_MonthRegular3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_MonthRegular3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_MonthRegular3.BackColor = System.Drawing.SystemColors.Window;
             this.tb_MonthRegular3.Location = new System.Drawing.Point(7, 9);
             this.tb_MonthRegular3.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MonthRegular3.MaxLength = 7;
@@ -455,7 +459,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label159.AutoSize = true;
-            this.label159.BackColor = System.Drawing.Color.LightGreen;
+            this.label159.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.label159.Location = new System.Drawing.Point(134, 1);
             this.label159.Margin = new System.Windows.Forms.Padding(0);
             this.label159.Name = "label159";
@@ -463,6 +467,7 @@
             this.label159.TabIndex = 29;
             this.label159.Text = "発駅";
             this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label159.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label157_MouseDown);
             // 
             // tableLayoutPanel82
             // 
@@ -485,7 +490,7 @@
             // tb_MonthRegular4
             // 
             this.tb_MonthRegular4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_MonthRegular4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_MonthRegular4.BackColor = System.Drawing.SystemColors.Window;
             this.tb_MonthRegular4.Location = new System.Drawing.Point(7, 10);
             this.tb_MonthRegular4.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MonthRegular4.MaxLength = 7;
@@ -545,14 +550,14 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(129, 23);
             this.tableLayoutPanel1.TabIndex = 46;
             // 
             // tb_CarMoney
             // 
             this.tb_CarMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_CarMoney.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_CarMoney.BackColor = System.Drawing.SystemColors.Window;
             this.tb_CarMoney.Location = new System.Drawing.Point(7, 2);
             this.tb_CarMoney.Margin = new System.Windows.Forms.Padding(0);
             this.tb_CarMoney.MaxLength = 7;
@@ -597,7 +602,7 @@
             this.cb_Carkm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb_Carkm.BackColor = System.Drawing.SystemColors.Window;
+            this.cb_Carkm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.cb_Carkm.FormattingEnabled = true;
             this.cb_Carkm.Items.AddRange(new object[] {
             "\t2キロ未満",
@@ -651,7 +656,7 @@
             // tb_TotalMoneyTrans
             // 
             this.tb_TotalMoneyTrans.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb_TotalMoneyTrans.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tb_TotalMoneyTrans.BackColor = System.Drawing.SystemColors.Window;
             this.tb_TotalMoneyTrans.Enabled = false;
             this.tb_TotalMoneyTrans.Location = new System.Drawing.Point(7, 7);
             this.tb_TotalMoneyTrans.Margin = new System.Windows.Forms.Padding(0);
@@ -706,22 +711,28 @@
             // 
             // BT_Save
             // 
-            this.BT_Save.Location = new System.Drawing.Point(42, 299);
+            this.BT_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            this.BT_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Save.ForeColor = System.Drawing.Color.White;
+            this.BT_Save.Location = new System.Drawing.Point(120, 299);
             this.BT_Save.Name = "BT_Save";
             this.BT_Save.Size = new System.Drawing.Size(127, 31);
             this.BT_Save.TabIndex = 30;
             this.BT_Save.Text = "保存";
-            this.BT_Save.UseVisualStyleBackColor = true;
+            this.BT_Save.UseVisualStyleBackColor = false;
             this.BT_Save.Click += new System.EventHandler(this.BT_Save_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(287, 300);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(287, 299);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 31);
             this.button1.TabIndex = 31;
             this.button1.Text = "キャンセル";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GUI_Travel
@@ -735,9 +746,11 @@
             this.Controls.Add(this.lb_TotalMoneyTrans);
             this.Controls.Add(this.tableLayoutPanel77);
             this.Controls.Add(this.tableLayoutPanel75);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_Travel";
             this.Text = "Travel";
             this.Load += new System.EventHandler(this.GUI_Travel_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GUI_Travel_MouseDown);
             this.tableLayoutPanel75.ResumeLayout(false);
             this.tableLayoutPanel75.PerformLayout();
             this.tableLayoutPanel79.ResumeLayout(false);

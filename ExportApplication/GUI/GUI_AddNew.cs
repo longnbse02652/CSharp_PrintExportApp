@@ -55,6 +55,7 @@ namespace ExportApplication
             dtp_DependentPeopleBirth5.Format = DateTimePickerFormat.Custom;
             dtp_DependentPeopleBirth6.CustomFormat = " ";
             dtp_DependentPeopleBirth6.Format = DateTimePickerFormat.Custom;
+          //  groupBox2.Paint += PaintBorderlessGroupBox;
         }
 
         //nút này để lưu dữ liệu vào database
@@ -147,7 +148,7 @@ namespace ExportApplication
                 bool result_zipcode = int.TryParse(tb_ZipCode.Text, out _zipCode);
                 string _address1 = tb_Address1.Text;
                 string _address2;
-                if (cb_Address2.SelectedIndex != -1 && cb_Address2.SelectedText != "")
+                if (cb_Address2.SelectedIndex != -1)
                 {
                     _address2 = cb_Address2.SelectedItem.ToString();
                 }
@@ -157,7 +158,7 @@ namespace ExportApplication
                 }
                 string _address3 = tb_Address3.Text;
                 string _address4;
-                if (cb_Address4.SelectedIndex != -1 && cb_Address4.SelectedText != "")
+                if (cb_Address4.SelectedIndex != -1)
                 {
                     _address4 = cb_Address4.SelectedItem.ToString();
                 }
@@ -363,8 +364,8 @@ namespace ExportApplication
                 int _totalMoneyTrans = _monthRegular1 + _monthRegular2 + _monthRegular3 + _monthRegular4;
                
                 string _reason = string.Empty;
-                string _changeDateFrom = string.Empty;
-                string _changeDate = string.Empty;
+                string _changeDateFrom = " ";
+                string _changeDate = " ";
                 double _genkaritsu;
                 bool result_genkaritsu = double.TryParse("", out _genkaritsu);
                 int _teateGaku;
@@ -667,5 +668,12 @@ namespace ExportApplication
             }
         }
 
+        //Xu ly border cho cac Groupbox 
+        private void PaintBorderlessGroupBox(object sender, PaintEventArgs p)
+        {
+            GroupBox box = (GroupBox)sender;
+            p.Graphics.Clear(SystemColors.Control);
+            p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
+        }
     }
 }

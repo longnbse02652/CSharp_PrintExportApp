@@ -82,7 +82,14 @@ namespace DAL
                 command.Parameters.AddWithValue("@AccountName", dto_Edit.AccountName);
                 command.Parameters.AddWithValue("@BankCode", dto_Edit.BankCode);
                 command.Parameters.AddWithValue("@BranchCode", dto_Edit.BranchCode);
-                command.Parameters.AddWithValue("@AccountCode", dto_Edit.AccountCode);
+                command.Parameters.AddWithValue("@AccountCode1", dto_Edit.AccountCode);
+                command.Parameters.AddWithValue("@AccountCode2", dto_Edit.AccountCode1);
+                command.Parameters.AddWithValue("@AccountCode3", dto_Edit.AccountCode2);
+                command.Parameters.AddWithValue("@AccountCode4", dto_Edit.AccountCode3);
+                command.Parameters.AddWithValue("@AccountCode5", dto_Edit.AccountCode4);
+                command.Parameters.AddWithValue("@AccountCode6", dto_Edit.AccountCode5);
+                command.Parameters.AddWithValue("@AccountCode7", dto_Edit.AccountCode6);
+                command.Parameters.AddWithValue("@AccountCode8", dto_Edit.AccountCode7);
                 command.Parameters.AddWithValue("@CompanyInsureDate", dto_Edit.CompanyInsureDate);
                 command.Parameters.AddWithValue("@KoyoHokenDate", dto_Edit.KoyoHokenDate);
                 command.Parameters.AddWithValue("@DependentPeople", dto_Edit.DependentPeople);

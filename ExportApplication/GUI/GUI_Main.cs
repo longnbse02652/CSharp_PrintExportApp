@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using System.Runtime.InteropServices;
 
 namespace ExportApplication
 {
@@ -16,7 +17,7 @@ namespace ExportApplication
     {
         BLL_AllInfor bll_infor = new BLL_AllInfor();
         BLL_HandleFunc bll_handleFunc = new BLL_HandleFunc();
-       
+
         public GUI_Main()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace ExportApplication
         {
             LoadGridView();
         }
-        public void LoadGridView() {
+        public void LoadGridView()
+        {
             DataTable dt = bll_infor.GetToListView();
             dtGridView.DataSource = dt;
         }
@@ -35,21 +37,7 @@ namespace ExportApplication
         //Double click vao mỗi Nhân viên
         private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
-        }
 
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
         }
 
         private void bt_Exit_Click(object sender, EventArgs e)
@@ -86,6 +74,25 @@ namespace ExportApplication
         {
             GUI_AddNew gui_addnew = new GUI_AddNew();
             gui_addnew.Show();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
+        }
+
+        private void GUI_Main_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
         }
     }
 }
