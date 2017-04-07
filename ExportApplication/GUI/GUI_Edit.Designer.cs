@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btCancel1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -139,7 +140,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TB_IDCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -159,6 +159,20 @@
             this.panel1.Size = new System.Drawing.Size(706, 660);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("MS PMincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(281, 611);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 37);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "変更印刷";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btSave
             // 
@@ -345,7 +359,7 @@
             // TB_Address5
             // 
             this.TB_Address5.Enabled = false;
-            this.TB_Address5.Location = new System.Drawing.Point(504, 11);
+            this.TB_Address5.Location = new System.Drawing.Point(504, 14);
             this.TB_Address5.Name = "TB_Address5";
             this.TB_Address5.Size = new System.Drawing.Size(140, 19);
             this.TB_Address5.TabIndex = 91;
@@ -359,7 +373,7 @@
             "市",
             "区",
             "郡"});
-            this.CB_Address4.Location = new System.Drawing.Point(456, 11);
+            this.CB_Address4.Location = new System.Drawing.Point(456, 14);
             this.CB_Address4.Name = "CB_Address4";
             this.CB_Address4.Size = new System.Drawing.Size(42, 20);
             this.CB_Address4.TabIndex = 90;
@@ -374,7 +388,7 @@
             "都",
             "道",
             "府"});
-            this.CB_Address2.Location = new System.Drawing.Point(331, 12);
+            this.CB_Address2.Location = new System.Drawing.Point(331, 15);
             this.CB_Address2.Name = "CB_Address2";
             this.CB_Address2.Size = new System.Drawing.Size(42, 20);
             this.CB_Address2.TabIndex = 89;
@@ -382,7 +396,7 @@
             // TB_Address3
             // 
             this.TB_Address3.Enabled = false;
-            this.TB_Address3.Location = new System.Drawing.Point(379, 12);
+            this.TB_Address3.Location = new System.Drawing.Point(379, 15);
             this.TB_Address3.Name = "TB_Address3";
             this.TB_Address3.Size = new System.Drawing.Size(71, 19);
             this.TB_Address3.TabIndex = 88;
@@ -444,6 +458,7 @@
             this.TB_DependentPeople.Size = new System.Drawing.Size(68, 19);
             this.TB_DependentPeople.TabIndex = 83;
             this.TB_DependentPeople.Text = "0";
+            this.TB_DependentPeople.Click += new System.EventHandler(this.TB_DependentPeople_Click);
             this.TB_DependentPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_DependentPeople_KeyPress);
             // 
             // label49
@@ -759,11 +774,11 @@
             "時給",
             "選択",
             ""});
-            this.CB_ChinginType.Location = new System.Drawing.Point(593, 199);
+            this.CB_ChinginType.Location = new System.Drawing.Point(593, 200);
             this.CB_ChinginType.Name = "CB_ChinginType";
             this.CB_ChinginType.Size = new System.Drawing.Size(51, 20);
             this.CB_ChinginType.TabIndex = 45;
-            this.CB_ChinginType.Text = "月給";
+            this.CB_ChinginType.Text = "時";
             // 
             // label31
             // 
@@ -827,7 +842,7 @@
             this.CB_HakenRyokinType.Name = "CB_HakenRyokinType";
             this.CB_HakenRyokinType.Size = new System.Drawing.Size(49, 20);
             this.CB_HakenRyokinType.TabIndex = 39;
-            this.CB_HakenRyokinType.Text = "選択";
+            this.CB_HakenRyokinType.Text = "時";
             // 
             // TB_HakenRyokin
             // 
@@ -942,7 +957,7 @@
             // TB_Address1
             // 
             this.TB_Address1.Enabled = false;
-            this.TB_Address1.Location = new System.Drawing.Point(252, 13);
+            this.TB_Address1.Location = new System.Drawing.Point(252, 15);
             this.TB_Address1.Name = "TB_Address1";
             this.TB_Address1.Size = new System.Drawing.Size(73, 19);
             this.TB_Address1.TabIndex = 25;
@@ -1072,6 +1087,7 @@
             // 
             this.TB_ZipCode1.Enabled = false;
             this.TB_ZipCode1.Location = new System.Drawing.Point(152, 36);
+            this.TB_ZipCode1.MaxLength = 7;
             this.TB_ZipCode1.Name = "TB_ZipCode1";
             this.TB_ZipCode1.Size = new System.Drawing.Size(94, 19);
             this.TB_ZipCode1.TabIndex = 3;
@@ -1090,6 +1106,7 @@
             // 
             this.TB_ZipCode.Enabled = false;
             this.TB_ZipCode.Location = new System.Drawing.Point(152, 15);
+            this.TB_ZipCode.MaxLength = 7;
             this.TB_ZipCode.Name = "TB_ZipCode";
             this.TB_ZipCode.Size = new System.Drawing.Size(94, 19);
             this.TB_ZipCode.TabIndex = 1;
@@ -1372,20 +1389,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "社員ＣＤ";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MS PMincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(281, 611);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 37);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "保存と印刷";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // GUI_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1412,9 +1415,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TB_HealthInsurancePeople;
-        private System.Windows.Forms.TextBox TB_ResidentPeople;
-        private System.Windows.Forms.TextBox TB_DependentPeople;
+        public System.Windows.Forms.TextBox TB_HealthInsurancePeople;
+        public System.Windows.Forms.TextBox TB_ResidentPeople;
+        public System.Windows.Forms.TextBox TB_DependentPeople;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;

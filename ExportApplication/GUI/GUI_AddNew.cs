@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using System.Diagnostics;
+using System.IO;
+using Microsoft.VisualBasic;
 
 namespace ExportApplication
 {
@@ -171,7 +174,7 @@ namespace ExportApplication
                 string _phone = tb_Phone.Text;
                 string _createPeople = tb_CreatePeople.Text;
                 string _position;
-                if (cb_Position.SelectedIndex != -1 && cb_Position.SelectedText !="")
+                if (cb_Position.SelectedIndex != -1)
                 {
                     _position = cb_Position.SelectedItem.ToString();
                 }
@@ -373,7 +376,7 @@ namespace ExportApplication
                 string _accountCode = string.Empty;
                 int _chingin = _basicSalary + _seikinTeate + _gaikinTeate + _gijutsuTeate + _shikakuTeate + _yakushokuTeate + _eigyoTeate;;
                 
-                string _chinginType = string.Empty;
+                string _chinginType = "月";
                 int _kyuyoKojoGaku ;
                 bool result_kyuyoKojoGaku = int.TryParse("", out _kyuyoKojoGaku);
                 int _workTime ;
@@ -674,6 +677,186 @@ namespace ExportApplication
             GroupBox box = (GroupBox)sender;
             p.Graphics.Clear(SystemColors.Control);
             p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
+        }
+
+        private void cb_InsureCard_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_InsureCard.SelectedIndex == 0)
+            {
+                tableLayoutPanel63.Enabled = false;
+                tb_PastCompany1.Text = "";
+                cb_Nienhieu1.Text = "平成";
+                tb_BeginYear1.Text = null;
+                tb_BeginMonth1.Text = null;
+                tb_EndYear1.Text = null;
+                tb_EndMonth1.Text = null;
+
+                tb_PastCompany2.Text = "";
+                cb_Nienhieu2.Text = "平成";
+                tb_BeginYear2.Text = null;
+                tb_BeginMonth2.Text = null;
+                tb_EndYear2.Text = null;
+                tb_EndMonth2.Text = null;
+
+                
+            }
+            else
+            {
+                tableLayoutPanel63.Enabled = true;
+            }
+        }
+       
+        private void tb_MonthRegular1_TextChanged(object sender, EventArgs e)
+        {
+            int regular1;
+            bool result_regular1 = int.TryParse(tb_MonthRegular1.Text, out regular1);
+            int regular2;
+            bool result_regular2 = int.TryParse(tb_MonthRegular2.Text, out regular2);
+            int regular3;
+            bool result_regular3 = int.TryParse(tb_MonthRegular3.Text, out regular3);
+            int regular4;
+            bool result_regular4 = int.TryParse(tb_MonthRegular4.Text, out regular4);
+            int car;
+            bool result_car = int.TryParse(tb_CarMoney.Text, out car);
+            lb_TotalMoneyTrans.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+            tb_TsukinTeate.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+        }
+
+        private void tb_MonthRegular2_TextChanged(object sender, EventArgs e)
+        {
+            int regular1;
+            bool result_regular1 = int.TryParse(tb_MonthRegular1.Text, out regular1);
+            int regular2;
+            bool result_regular2 = int.TryParse(tb_MonthRegular2.Text, out regular2);
+            int regular3;
+            bool result_regular3 = int.TryParse(tb_MonthRegular3.Text, out regular3);
+            int regular4;
+            bool result_regular4 = int.TryParse(tb_MonthRegular4.Text, out regular4);
+            int car;
+            bool result_car = int.TryParse(tb_CarMoney.Text, out car);
+            lb_TotalMoneyTrans.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+            tb_TsukinTeate.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+        }
+
+        private void tb_MonthRegular3_TextChanged(object sender, EventArgs e)
+        {
+            int regular1;
+            bool result_regular1 = int.TryParse(tb_MonthRegular1.Text, out regular1);
+            int regular2;
+            bool result_regular2 = int.TryParse(tb_MonthRegular2.Text, out regular2);
+            int regular3;
+            bool result_regular3 = int.TryParse(tb_MonthRegular3.Text, out regular3);
+            int regular4;
+            bool result_regular4 = int.TryParse(tb_MonthRegular4.Text, out regular4);
+            int car;
+            bool result_car = int.TryParse(tb_CarMoney.Text, out car);
+            lb_TotalMoneyTrans.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+            tb_TsukinTeate.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+        }
+
+        private void tb_MonthRegular4_TextChanged(object sender, EventArgs e)
+        {
+            int regular1;
+            bool result_regular1 = int.TryParse(tb_MonthRegular1.Text, out regular1);
+            int regular2;
+            bool result_regular2 = int.TryParse(tb_MonthRegular2.Text, out regular2);
+            int regular3;
+            bool result_regular3 = int.TryParse(tb_MonthRegular3.Text, out regular3);
+            int regular4;
+            bool result_regular4 = int.TryParse(tb_MonthRegular4.Text, out regular4);
+            int car;
+            bool result_car = int.TryParse(tb_CarMoney.Text, out car);
+            lb_TotalMoneyTrans.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+            tb_TsukinTeate.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+        }
+
+        private void tb_CarMoney_TextChanged(object sender, EventArgs e)
+        {
+            int regular1;
+            bool result_regular1 = int.TryParse(tb_MonthRegular1.Text, out regular1);
+            int regular2;
+            bool result_regular2 = int.TryParse(tb_MonthRegular2.Text, out regular2);
+            int regular3;
+            bool result_regular3 = int.TryParse(tb_MonthRegular3.Text, out regular3);
+            int regular4;
+            bool result_regular4 = int.TryParse(tb_MonthRegular4.Text, out regular4);
+            int car;
+            bool result_car = int.TryParse(tb_CarMoney.Text, out car);
+            lb_TotalMoneyTrans.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+            tb_TsukinTeate.Text = (regular1 + regular2 + regular3 + regular4 + car).ToString();
+        }
+
+        private void AutoShowAddress(){
+            string Address;         
+            Boolean blnFlag = false;  
+
+            Stopwatch sw = new Stopwatch();
+
+            sw.Start();
+
+            Cursor.Current = Cursors.WaitCursor;
+            string sKey = tb_ZipCode.Text;
+            sKey = sKey.Trim(' ');
+            sKey = Strings.StrConv(sKey, VbStrConv.Narrow, 0);
+            // 文字列の長さを取得する
+            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            try
+            {
+                //StreamReaderオブジェクトの作成
+                StreamReader sr = new StreamReader(path + @"\File\KEN_ALL.csv", Encoding.Default);
+                //1行ずつ読み込み
+                string dat;
+                while ((dat = sr.ReadLine()) != null)
+                {
+                    string tmpZip;
+
+                    //カンマで区切られた文字列を取得
+                    string[] sbuf = dat.Split(',');
+                    //配列の3番目が郵便番号
+                    tmpZip = sbuf[2].Trim();
+
+                    //入力された郵便番号と比較
+                    if (sKey == tmpZip)
+                    {
+                        //住所を作成
+                        //都道府県名+市区町村名+町域名
+                        Address = sbuf[6].Trim() +
+                                  sbuf[7].Trim() +
+                                  sbuf[8].Trim();
+
+                        sw.Stop();  
+
+                        TimeSpan ts = sw.Elapsed;
+
+                        tb_CompanyName.Text = Address;
+                        blnFlag = true; //フラグをTrueにして
+                        break;          //ループを抜ける
+                    }
+                    Application.DoEvents();
+                }
+                //ファイルを閉じる
+                sr.Close();
+            }
+            catch (Exception ex)
+            {
+                //ファイルエラーが発生
+                MessageBox.Show(ex.Message, "ファイルエラー",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return; //処理を抜ける
+            }
+            finally
+            {
+                //マウスカーソルをデフォルトにする
+                Cursor.Current = Cursors.Default;
+
+            }
+           
+        }
+
+        private void tb_ZipCode_TextChanged(object sender, EventArgs e)
+        {
+            AutoShowAddress();
         }
     }
 }

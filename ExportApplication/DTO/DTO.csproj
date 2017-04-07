@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_AllInfor.cs" />
+    <Compile Include="DTO_Dependent.cs" />
     <Compile Include="DTO_Edit.cs" />
     <Compile Include="DTO_Travel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

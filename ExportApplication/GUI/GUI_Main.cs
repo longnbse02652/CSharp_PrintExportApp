@@ -37,6 +37,10 @@ namespace ExportApplication
         //Double click vao mỗi Nhân viên
         private void dtGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            string name = dtGridView.SelectedCells[0].Value.ToString();
+            //MessageBox.Show(name);
+            GUI_View gui_view = new GUI_View(name);
+            gui_view.Show();
 
         }
 
@@ -90,6 +94,18 @@ namespace ExportApplication
         }
 
         private void GUI_Main_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 

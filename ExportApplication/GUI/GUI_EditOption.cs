@@ -58,13 +58,14 @@ namespace ExportApplication
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void clbEditOption_MouseDown(object sender, MouseEventArgs e)
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void label1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 

@@ -75,15 +75,12 @@
             "口座番号",
             "雇用保険",
             "社会保険",
-            "所得扶養数",
-            "住民扶養数",
-            "健保扶養数"});
+            "扶養人数"});
             this.clbEditOption.Location = new System.Drawing.Point(0, 43);
             this.clbEditOption.MultiColumn = true;
             this.clbEditOption.Name = "clbEditOption";
             this.clbEditOption.Size = new System.Drawing.Size(392, 224);
             this.clbEditOption.TabIndex = 0;
-            this.clbEditOption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.clbEditOption_MouseDown);
             // 
             // btNext
             // 
@@ -136,6 +133,7 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "変更してほしい項目を選んでください！";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // GUI_EditOption
             // 

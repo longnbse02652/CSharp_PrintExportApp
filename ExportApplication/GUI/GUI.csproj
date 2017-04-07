@@ -50,6 +50,7 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="GUI_AddNew.Designer.cs">
       <DependentUpon>GUI_AddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Dependent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Dependent.Designer.cs">
+      <DependentUpon>GUI_Dependent.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_Edit.cs">
       <SubType>Form</SubType>
@@ -93,11 +100,23 @@
     <Compile Include="GUI_Print.Designer.cs">
       <DependentUpon>GUI_Print.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SplashScreen.Designer.cs">
+      <DependentUpon>GUI_SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Travel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_Travel.Designer.cs">
       <DependentUpon>GUI_Travel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_View.Designer.cs">
+      <DependentUpon>GUI_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,8 +135,14 @@
     <EmbeddedResource Include="GUI_Print.resx">
       <DependentUpon>GUI_Print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_SplashScreen.resx">
+      <DependentUpon>GUI_SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Travel.resx">
       <DependentUpon>GUI_Travel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_View.resx">
+      <DependentUpon>GUI_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +154,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="File\KEN_ALL.CSV" />
     <None Include="File\template.xls" />
     <None Include="File\template_export.xls" />
     <None Include="Properties\Settings.settings">
@@ -174,7 +200,9 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\waiting_gif.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print64x3.png" />
   </ItemGroup>
