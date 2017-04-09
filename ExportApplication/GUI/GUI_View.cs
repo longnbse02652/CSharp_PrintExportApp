@@ -317,18 +317,10 @@ namespace ExportApplication
                 }
 
 
-                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
+                if (dt.Rows[0].Field<string>("Nationality") != "日本")
                 {
                     xlWorkSheet.Cells[11, "H"] = "日本以外は国名記入";
                     xlWorkSheet.Cells[13, "H"] = dt.Rows[0].Field<string>("Nationality");
-                }
-                else
-                {
-                    xlWorkSheet.Cells[11, "H"] = "日本";
-                }
-
-                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
-                {
                     string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
                     if (temp_zairyuukigen != " ")
                     {
@@ -337,6 +329,49 @@ namespace ExportApplication
                         xlWorkSheet.Cells[12, "BP"] = temps[1];
                         xlWorkSheet.Cells[12, "BT"] = temps[2];
                     }
+                    switch (dt.Rows[0].Field<string>("CardType"))
+                    {
+                        case "定住者":
+                            xlWorkSheet.Cells[11, "AB"] = "☑ 定住者・永住者・特別永住・日本人配・永住配・技術";
+                            break;
+                        case "永住者":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・☑ 永住者・特別永住・日本人配・永住配・技術";
+                            break;
+                        case "特別永住":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・☑ 特別永住・日本人配・永住配・技術";
+                            break;
+                        case "日本人配":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・☑ 日本人配・永住配・技術";
+                            break;
+                        case "永住配":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・日本人配・☑ 永住配・技術";
+                            break;
+                        case "技術人文知識国際業務":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・日本人配・永住配・☑ 技術";
+                            break;
+                        case "留学":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・☑ 留学・就学・短期・家族・研修";
+                            break;
+                        case "就学":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・☑ 就学・短期・家族・研修";
+                            break;
+                        case "短期":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・☑ 短期・家族・研修";
+                            break;
+                        case "家族":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・短期・☑ 家族・研修";
+                            break;
+                        case "研修":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・短期・家族・☑ 研修";
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                else
+                {
+                    xlWorkSheet.Cells[11, "H"] = "日本";
                 }
 
                 xlWorkSheet.Cells[12, "BX"] = dt.Rows[0].Field<string>("OutTime");
@@ -502,8 +537,43 @@ namespace ExportApplication
                         xlWorkSheet.Cells[10, "AF"] = Time2_temps[2];
                     }
                 }
-                ////ContracType
-                ////ContractRequire
+                switch (dt.Rows[0].Field<string>("ContractType"))
+                {
+                    case "自動的に更新する":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［☑ 自動的に更新する　・　更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                    case "更新する場合があり得る":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　☑ 更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                    case "契約の更新はしない":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　更新する場合があり得る　・　☑ 契約の更新はしない］";
+                        break;
+                    default:
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                }
+                //ContractRequire
+                switch (dt.Rows[0].Field<string>("ContractRequire"))
+                {
+                    case "契約期間満了時の業務量":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[☑ 契約期間満了時の業務量　　・勤務成績、態度 ・能力";
+                        break;
+                    case "勤務成績、態度":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[契約期間満了時の業務量　・☑ 勤務成績、態度 ・能力";
+                        break;
+                    case "能力":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[契約期間満了時の業務量　・勤務成績、態度 ・☑ 能力";
+                        break;
+                    case "会社の経営状況":
+                        xlWorkSheet.Cells[13, "H"] = "　・☑ 会社の経営状況 ・従事している業務の進捗状況　　・その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                    case "従事している業務の進歩状況":
+                        xlWorkSheet.Cells[13, "H"] = "　・会社の経営状況 ・☑ 従事している業務の進捗状況　　・☑ その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                    default:
+                        xlWorkSheet.Cells[13, "H"] = "　・会社の経営状況 ・従事している業務の進捗状況　　・その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                }
 
                 //My company
                 xlWorkSheet.Cells[14, "N"] = dt.Rows[0].Field<string>("MyCompany");
@@ -706,7 +776,7 @@ namespace ExportApplication
                 saveDlg.FilterIndex = 0;
                 saveDlg.RestoreDirectory = true;
                 saveDlg.Title = "データ保存";
-                saveDlg.FileName = dt.Rows[0].Field<string>("RomajiName") + "_" + DateTime.Now.ToString("yyyy/MM/dd") + "_";
+                saveDlg.FileName = dt.Rows[0].Field<string>("RomajiName") + "_" + DateTime.Now.ToString("yyyy-MM-dd") + "_";
                 if (saveDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     string path1 = saveDlg.FileName;

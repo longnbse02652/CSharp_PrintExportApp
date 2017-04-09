@@ -154,7 +154,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="File\KEN_ALL.CSV" />
     <None Include="File\template.xls" />
     <None Include="File\template_export.xls" />
     <None Include="Properties\Settings.settings">
@@ -205,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print64x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="File\KEN_ALL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

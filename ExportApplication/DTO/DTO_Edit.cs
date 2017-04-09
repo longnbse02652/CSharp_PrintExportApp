@@ -107,8 +107,8 @@ namespace DTO
         private float _Genkaritsu;
         public float Genkaritsu { get { return _Genkaritsu; } set { _Genkaritsu = value; } }
 
-        private string _TeateGaku;
-        public string TeateGaku { get { return _TeateGaku; } set { _TeateGaku = value; } }
+        private int _TeateGaku;
+        public int TeateGaku { get { return _TeateGaku; } set { _TeateGaku = value; } }
 
         private string _TeateType;
         public string TeateType { get { return _TeateType; } set { _TeateType = value; } }
@@ -180,6 +180,26 @@ namespace DTO
         private int _HealthInsurancePeople;
         public int HealthInsurancePeople { get { return _HealthInsurancePeople; } set { _HealthInsurancePeople = value; } }
 
+        private int _SeikinTeate;
+        public int SeikinTeate { get { return _SeikinTeate; } set { _SeikinTeate = value; } }
+        private int _GaikinTeate;
+        public int GaikinTeate { get { return _GaikinTeate; } set { _GaikinTeate = value; } }
+        private int _GijutsuTeate;
+        public int GijutsuTeate { get { return _GijutsuTeate; } set { _GijutsuTeate = value; } }
+        private int _ShikakuTeate;
+        public int ShikakuTeate { get { return _ShikakuTeate; } set { _ShikakuTeate = value; } }
+        private int _YakushokuTeate;
+        public int YakushokuTeate { get { return _YakushokuTeate; } set { _YakushokuTeate = value; } }
+        private int _JutakuTeate;
+        public int JutakuTeate { get { return _JutakuTeate; } set { _JutakuTeate = value; } }
+        private int _BekkyoTeate;
+        public int BekkyoTeate { get { return _BekkyoTeate; } set { _BekkyoTeate = value; } }
+        private int _KazokuTeate;
+        public int KazokuTeate { get { return _KazokuTeate; } set { _KazokuTeate = value; } }
+        private int _EigyoTeate;
+        public int EigyoTeate { get { return _EigyoTeate; } set { _EigyoTeate = value; } }
+
+
         public DTO_Edit(string eRomajiName, string eIDCode, string eFuriganaName, string eCompanyName,
              string eCompanyCode, string eSex, string eShiharaiType, string eTax, string eBirth, string eReason,
              string eChangeDate, string eChangeDateFrom, int eZipCode, string eAddress, string eAddress2,
@@ -187,11 +207,12 @@ namespace DTO
              string eEmployTime1, string eEmployTime2, string eCardType, string eCardTimeOut,
              string eCardTime, string eWorkType, string eClosingDate, int eHakenRyokin, string eChinginType,
              string eHakenRyokinType, int eChingin, int eTsukinTeate, string eTeateType, float eGenkaritsu,
-             string eTeateGaku, int eKyuyoKojoGaku, int eWorkTime, string eBankName, string eBankNameType,
+             int eKyuyoKojoGaku, int eWorkTime, string eBankName, string eBankNameType,
              string eBranchName, string eBranchNameType, string eAccountName, string eBankCode,
              string eBranchCode, string eAccountCode, string eAccountCode1, string eAccountCode2, string eAccountCode3,
              string eAccountCode4, string eAccountCode5, string eAccountCode6, string eAccountCode7, string eCompanyInsureDate, string eKoyoHokenDate,
-             int eDependentPeople, int eResidentPeople, int eHealthInsurancePeople)
+             int eDependentPeople, int eResidentPeople, int eHealthInsurancePeople, int eSeikinTeate, int eGaikinTeate, int eGijutsuTeate, int eShikakuTeate,
+             int eYakushokuTeate, int eJutakuTeate, int eBekkyoTeate, int eKazokuTeate, int eEigyoTeate)
         {
             this._Genkaritsu = eGenkaritsu;
             this._RomajiName = eRomajiName;
@@ -226,7 +247,7 @@ namespace DTO
             this._ChinginType = eChinginType;
             this._TsukinTeate = eTsukinTeate;
             this._TeateType = eTeateType;
-            this._TeateGaku = eTeateGaku;
+            // this._TeateGaku = eTeateGaku;
             this._KyuyoKojoGaku = eKyuyoKojoGaku;
             this._WorkTime = eWorkTime;
             this._BankName = eBankName;
@@ -249,6 +270,15 @@ namespace DTO
             this._DependentPeople = eDependentPeople;
             this._ResidentPeople = eResidentPeople;
             this._HealthInsurancePeople = eHealthInsurancePeople;
+            this._SeikinTeate = eSeikinTeate;
+            this._GaikinTeate = eGaikinTeate;
+            this._GijutsuTeate = eGijutsuTeate;
+            this._ShikakuTeate = eShikakuTeate;
+            this._YakushokuTeate = eYakushokuTeate;
+            this._JutakuTeate = eJutakuTeate;
+            this._BekkyoTeate = eBekkyoTeate;
+            this._KazokuTeate = eKazokuTeate;
+            this._EigyoTeate = eEigyoTeate;
         }
     }
 }

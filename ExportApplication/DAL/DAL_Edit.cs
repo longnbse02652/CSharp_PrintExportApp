@@ -72,7 +72,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@ChinginType", dto_Edit.ChinginType);
                 command.Parameters.AddWithValue("@TsukinTeate", dto_Edit.TsukinTeate);
                 command.Parameters.AddWithValue("@Genkaritsu", dto_Edit.Genkaritsu);
-                command.Parameters.AddWithValue("@TeateGaku", dto_Edit.TeateGaku);
+                // command.Parameters.AddWithValue("@TeateGaku", dto_Edit.TeateGaku);
                 command.Parameters.AddWithValue("@KyuyoKojoGaku", dto_Edit.KyuyoKojoGaku);
                 command.Parameters.AddWithValue("@WorkTime", dto_Edit.WorkTime);
                 command.Parameters.AddWithValue("@BankName", dto_Edit.BankName);
@@ -95,6 +95,15 @@ namespace DAL
                 command.Parameters.AddWithValue("@DependentPeople", dto_Edit.DependentPeople);
                 command.Parameters.AddWithValue("@ResidentPeople", dto_Edit.ResidentPeople);
                 command.Parameters.AddWithValue("@HealthInsurancePeople", dto_Edit.HealthInsurancePeople);
+                command.Parameters.AddWithValue("@SeikinTeate", dto_Edit.SeikinTeate);
+                command.Parameters.AddWithValue("@GaikinTeate", dto_Edit.GaikinTeate);
+                command.Parameters.AddWithValue("@GijutsuTeate", dto_Edit.GijutsuTeate);
+                command.Parameters.AddWithValue("@ShikakuTeate", dto_Edit.ShikakuTeate);
+                command.Parameters.AddWithValue("@YakushokuTeate", dto_Edit.YakushokuTeate);
+                command.Parameters.AddWithValue("@JutakuTeate", dto_Edit.JutakuTeate);
+                command.Parameters.AddWithValue("@BekkyoTeate", dto_Edit.BekkyoTeate);
+                command.Parameters.AddWithValue("@KazokuTeate", dto_Edit.KazokuTeate);
+                command.Parameters.AddWithValue("@EigyoTeate", dto_Edit.EigyoTeate);
                 _cn.Open();
                 command.ExecuteNonQuery();
                 _cn.Close();

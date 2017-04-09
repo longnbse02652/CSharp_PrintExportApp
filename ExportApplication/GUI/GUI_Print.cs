@@ -40,16 +40,7 @@ namespace ExportApplication
 
         private void nyushanaiyousho()
         {
-            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-
-            try
-            {
-                
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Open(path+@"\File\template.xls", 
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+           
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                 xlWorkSheet.Cells[8, "G"] = dt.Rows[0].Field<string>("IDCode");
@@ -67,18 +58,10 @@ namespace ExportApplication
                 }
 
 
-                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
+                if (dt.Rows[0].Field<string>("Nationality") != "日本")
                 {
                     xlWorkSheet.Cells[11, "H"] = "日本以外は国名記入";
                     xlWorkSheet.Cells[13, "H"] = dt.Rows[0].Field<string>("Nationality");
-                }
-                else
-                {
-                    xlWorkSheet.Cells[11, "H"] = "日本";
-                }
-
-                if (dt.Rows[0].Field<string>("Nationality") != string.Empty)
-                {
                     string temp_zairyuukigen = dt.Rows[0].Field<string>("CardTimeOut");
                     if (temp_zairyuukigen != " ")
                     {
@@ -87,6 +70,48 @@ namespace ExportApplication
                         xlWorkSheet.Cells[12, "BP"] = temps[1];
                         xlWorkSheet.Cells[12, "BT"] = temps[2];
                     }
+                    switch (dt.Rows[0].Field<string>("CardType"))
+                    {
+                        case "定住者":
+                            xlWorkSheet.Cells[11, "AB"] = "☑ 定住者・永住者・特別永住・日本人配・永住配・技術";
+                            break;
+                        case "永住者":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・☑ 永住者・特別永住・日本人配・永住配・技術";
+                            break;
+                        case "特別永住":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・☑ 特別永住・日本人配・永住配・技術";
+                            break;
+                        case "日本人配":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・☑ 日本人配・永住配・技術";
+                            break;
+                        case "永住配":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・日本人配・☑ 永住配・技術";
+                            break;
+                        case "技術人文知識国際業務":
+                            xlWorkSheet.Cells[11, "AB"] = "定住者・永住者・特別永住・日本人配・永住配・☑ 技術";
+                            break;
+                        case "留学":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・☑ 留学・就学・短期・家族・研修";
+                            break;
+                        case "就学":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・☑ 就学・短期・家族・研修";
+                            break;
+                        case "短期":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・☑ 短期・家族・研修";
+                            break;
+                        case "家族":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・短期・☑ 家族・研修";
+                            break;
+                        case "研修":
+                            xlWorkSheet.Cells[12, "AB"] = "人文知識国際業務・留学・就学・短期・家族・☑ 研修";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    xlWorkSheet.Cells[11, "H"] = "日本";
                 }
 
                 xlWorkSheet.Cells[12, "BX"] = dt.Rows[0].Field<string>("OutTime");
@@ -187,63 +212,46 @@ namespace ExportApplication
                 xlWorkSheet.Cells[4, "BG"] = dt.Rows[0].Field<string>("CreatePeople");
                 xlWorkSheet.Cells[3, "BG"] = dt.Rows[0].Field<string>("Position");
 
-                //cho nay de xu ly may in default
-                var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
-                int printerIndex = 0;
-                foreach (String s in printers)
-                {
-                    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
-                    {
-                        break;
-                    }
-                    printerIndex++;
-                }
+            //    //cho nay de xu ly may in default
+            //    var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+            //    int printerIndex = 0;
+            //    foreach (String s in printers)
+            //    {
+            //        if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+            //        {
+            //            break;
+            //        }
+            //        printerIndex++;
+            //    }
 
-                // Print out 1 copy to the default printer:
-                xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+            //    // Print out 1 copy to the default printer:
+            //    xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //                         printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
 
-                // Cleanup:
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+            //    // Cleanup:
+            //    GC.Collect();
+            //    GC.WaitForPendingFinalizers();
 
-                Marshal.FinalReleaseComObject(xlWorkSheet);
+            //    Marshal.FinalReleaseComObject(xlWorkSheet);
 
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
+            //    xlWorkBook.Close(false, Type.Missing, Type.Missing);
+            //    Marshal.FinalReleaseComObject(xlWorkBook);
 
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show("印刷準備完了");
-            }
-            catch (Exception e)
-            {
-                // Cleanup Memory
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-
-                Marshal.FinalReleaseComObject(xlWorkSheet);
-
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
-
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー！印刷できません！");
-            }
+            //    xlApp.Quit();
+            //    Marshal.FinalReleaseComObject(xlApp);
+            //    MessageBox.Show("印刷準備完了");
+            //}
+            //catch (Exception e)
+            //{
+            //    // Cleanup Memory
+            //    xlWorkBook.Close(0);
+            //    xlApp.Quit();
+            //    MessageBox.Show(e.Message, "エラー！印刷できません！");
+            //}
         }
 
-        private void keiyakusho(){
-            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-
-            try
-            {
-                
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Open(path+@"\File\template.xls", 
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+        private void keiyakusho()
+        {
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(2);
 
                 xlWorkSheet.Cells[5, "G"] = dt.Rows[0].Field<string>("RomajiName");
@@ -320,7 +328,43 @@ namespace ExportApplication
                     }
                 }
                 //ContracType
+                switch (dt.Rows[0].Field<string>("ContractType"))
+                {
+                    case "自動的に更新する":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［☑ 自動的に更新する　・　更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                    case "更新する場合があり得る":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　☑ 更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                    case "契約の更新はしない":
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　更新する場合があり得る　・　☑ 契約の更新はしない］";
+                        break;
+                    default:
+                        xlWorkSheet.Cells[11, "H"] = "1. 契約の更新の有無   ［自動的に更新する　・　更新する場合があり得る　・　契約の更新はしない］";
+                        break;
+                }
                 //ContractRequire
+                switch (dt.Rows[0].Field<string>("ContractRequire"))
+                {
+                    case "契約期間満了時の業務量":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[☑ 契約期間満了時の業務量　　・勤務成績、態度 ・能力";
+                        break;
+                    case "勤務成績、態度":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[契約期間満了時の業務量　・☑ 勤務成績、態度 ・能力";
+                        break;
+                    case "能力":
+                        xlWorkSheet.Cells[12, "H"] = "2.契約の更新は次により判断する　　[契約期間満了時の業務量　・勤務成績、態度 ・☑ 能力";
+                        break;
+                    case "会社の経営状況":
+                        xlWorkSheet.Cells[13, "H"] = "　・☑ 会社の経営状況 ・従事している業務の進捗状況　　・その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                    case "従事している業務の進歩状況":
+                        xlWorkSheet.Cells[13, "H"] = "　・会社の経営状況 ・☑ 従事している業務の進捗状況　　・☑ その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                    default:
+                        xlWorkSheet.Cells[13, "H"] = "　・会社の経営状況 ・従事している業務の進捗状況　　・その他 (　　　　　　　　　　　　　　　　　　　　)　]";
+                        break;
+                }
 
                 //My company
                 xlWorkSheet.Cells[14, "N"] = dt.Rows[0].Field<string>("MyCompany");
@@ -349,62 +393,46 @@ namespace ExportApplication
                 xlWorkSheet.Cells[40, "P"] = dt.Rows[0].Field<int?>("DormitoryFee");
 
                 //cho nay de xu ly may in default
-                var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
-                int printerIndex = 0;
-                foreach (String s in printers)
-                {
-                    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
-                    {
-                        break;
-                    }
-                    printerIndex++;
-                }
+            //    var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+            //    int printerIndex = 0;
+            //    foreach (String s in printers)
+            //    {
+            //        if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+            //        {
+            //            break;
+            //        }
+            //        printerIndex++;
+            //    }
 
-                // Print out 1 copy to the default printer:
-                xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+            //    // Print out 1 copy to the default printer:
+            //    xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //                         printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
 
-                // Cleanup:
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+            //    // Cleanup:
+            //    GC.Collect();
+            //    GC.WaitForPendingFinalizers();
 
-                Marshal.FinalReleaseComObject(xlWorkSheet);
+            //    Marshal.FinalReleaseComObject(xlWorkSheet);
 
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
+            //    xlWorkBook.Close(false, Type.Missing, Type.Missing);
+            //    Marshal.FinalReleaseComObject(xlWorkBook);
 
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show("印刷準備完了");
-            }
-            catch (Exception e)
-            {
-                // Cleanup Memory
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-
-                Marshal.FinalReleaseComObject(xlWorkSheet);
-
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
-
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー!印刷できません！");
-            }
+            //    xlApp.Quit();
+            //    Marshal.FinalReleaseComObject(xlApp);
+            //    MessageBox.Show("印刷準備完了");
+            //}
+            //catch (Exception e)
+            //{
+            //    // Cleanup Memory
+            //    xlWorkBook.Close(0);
+            //    xlApp.Quit();
+            //    MessageBox.Show(e.Message, "エラー!印刷できません！");
+            //}
         }
 
-        private void hoken() {
-            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-
-            try
-            {
-
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Open(path + @"\File\template.xls",
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+        private void hoken() 
+        {
+            
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(3);
 
                 xlWorkSheet.Cells[2, "AP"] = dt.Rows[0].Field<string>("Position");
@@ -607,62 +635,46 @@ namespace ExportApplication
                 }
                 
                 //cho nay de xu ly may in default
-                var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
-                int printerIndex = 0;
-                foreach (String s in printers)
-                {
-                    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
-                    {
-                        break;
-                    }
-                    printerIndex++;
-                }
+            //    var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+            //    int printerIndex = 0;
+            //    foreach (String s in printers)
+            //    {
+            //        if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+            //        {
+            //            break;
+            //        }
+            //        printerIndex++;
+            //    }
 
-                // Print out 1 copy to the default printer:
-                xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+            //    // Print out 1 copy to the default printer:
+            //    xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //                         printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
 
-                // Cleanup:
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+            //    // Cleanup:
+            //    GC.Collect();
+            //    GC.WaitForPendingFinalizers();
 
-                Marshal.FinalReleaseComObject(xlWorkSheet);
+            //    Marshal.FinalReleaseComObject(xlWorkSheet);
 
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
+            //    xlWorkBook.Close(false, Type.Missing, Type.Missing);
+            //    Marshal.FinalReleaseComObject(xlWorkBook);
 
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show("印刷準備完了");
-            }
-            catch (Exception e)
-            {
-                // Cleanup Memory
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-
-                Marshal.FinalReleaseComObject(xlWorkSheet);
-
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
-
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー！印刷できません！");
-            }
+            //    xlApp.Quit();
+            //    Marshal.FinalReleaseComObject(xlApp);
+            //    MessageBox.Show("印刷準備完了");
+            //}
+            //catch (Exception e)
+            //{
+            //    // Cleanup Memory
+            //    xlWorkBook.Close(0);
+            //    xlApp.Quit();
+            //    MessageBox.Show(e.Message, "エラー！印刷できません！");
+            //}
         }
 
-        public void koutsu() {
-            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-
-            try
-            {
-
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Open(path + @"\File\template.xls",
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+        public void koutsu() 
+        {
+           
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(4);
 
                 xlWorkSheet.Cells[3, "BC"] = dt.Rows[0].Field<string>("Position");
@@ -697,63 +709,41 @@ namespace ExportApplication
 
 
                 //cho nay de xu ly may in default
-                var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
-                int printerIndex = 0;
-                foreach (String s in printers)
-                {
-                    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
-                    {
-                        break;
-                    }
-                    printerIndex++;
-                }
+            //    var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+            //    int printerIndex = 0;
+            //    foreach (String s in printers)
+            //    {
+            //        if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+            //        {
+            //            break;
+            //        }
+            //        printerIndex++;
+            //    }
 
-                // Print out 1 copy to the default printer:
-                xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+            //    // Print out 1 copy to the default printer:
+            //    xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //                         printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
 
-                // Cleanup:
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+            //    // Cleanup:
+            //    GC.Collect();
+            //    GC.WaitForPendingFinalizers();
 
-                Marshal.FinalReleaseComObject(xlWorkSheet);
+            //    Marshal.FinalReleaseComObject(xlWorkSheet);
 
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
+            //    xlWorkBook.Close(false, Type.Missing, Type.Missing);
+            //    Marshal.FinalReleaseComObject(xlWorkBook);
 
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show("印刷準備完了");
-            }
-            catch (Exception e)
-            {
-                // Cleanup Memory
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-
-                Marshal.FinalReleaseComObject(xlWorkSheet);
-
-                xlWorkBook.Close(false, Type.Missing, Type.Missing);
-                Marshal.FinalReleaseComObject(xlWorkBook);
-
-                xlApp.Quit();
-                Marshal.FinalReleaseComObject(xlApp);
-                MessageBox.Show(e.Message, "エラー！印刷できません！");
-            }
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
+            //    xlApp.Quit();
+            //    Marshal.FinalReleaseComObject(xlApp);
+            //    MessageBox.Show("印刷準備完了");
+            //}
+            //catch (Exception e)
+            //{
+            //    // Cleanup Memory
+            //    xlWorkBook.Close(0);
+            //    xlApp.Quit();
+            //    MessageBox.Show(e.Message, "エラー！印刷できません！");
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -763,25 +753,98 @@ namespace ExportApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                    nyushanaiyousho();
-                    break;
-                case 1:
-                    keiyakusho();
-                    break;
-                case 2:
-                    hoken();
-                    break;
-                case 3:
-                    koutsu();
-                    break;
-                case -1:
-                    MessageBox.Show("印刷したい書類を選んでください！");
-                    break;
+            String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Open(path+@"\File\template.xls", 
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                                 Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            try
+            {
+                if (checkBox1.Checked == true)
+                {
+                    nyushanaiyousho();
+                }
+                if (checkBox2.Checked == true)
+                {
+                    keiyakusho();
+                }
+                if (checkBox3.Checked == true)
+                {
+                    hoken();
+                }
+                if (checkBox4.Checked == true)
+                {
+                    koutsu();
+                }
+                 ///cho nay de xu ly may in default
+                //var printers = System.Drawing.Printing.PrinterSettings.InstalledPrinters;
+                //int printerIndex = 0;
+                //foreach (String s in printers)
+                //{
+                //    if (s.Equals("白黒　SHARP MX-2650FN SPDL2-c"))
+                //    {
+                //        break;
+                //    }
+                //    printerIndex++;
+                //}
+
+                //// Print out 1 copy to the default printer:
+                //xlWorkSheet.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                //                     printers[printerIndex], Type.Missing, Type.Missing, Type.Missing);
+
+                //// Cleanup:
+                //GC.Collect();
+                //GC.WaitForPendingFinalizers();
+
+                //Marshal.FinalReleaseComObject(xlWorkSheet);
+
+                //xlWorkBook.Close(false, Type.Missing, Type.Missing);
+                //Marshal.FinalReleaseComObject(xlWorkBook);
+
+                //xlApp.Quit();
+                //Marshal.FinalReleaseComObject(xlApp);
+                //MessageBox.Show("印刷準備完了");
+
+                System.Windows.Forms.SaveFileDialog saveDlg = new System.Windows.Forms.SaveFileDialog();
+                saveDlg.InitialDirectory = @"C:\";
+                saveDlg.Filter = "Excel files (*.xls)|*.xls";
+                saveDlg.FilterIndex = 0;
+                saveDlg.RestoreDirectory = true;
+                saveDlg.Title = "データ保存";
+                saveDlg.FileName = dt.Rows[0].Field<string>("RomajiName") + "_" + DateTime.Now.ToString("yyyy-MM-dd") + "_";
+                if (saveDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string path1 = saveDlg.FileName;
+                    xlWorkBook.SaveCopyAs(path1);
+                    xlWorkBook.Saved = true;
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+
+                    Marshal.FinalReleaseComObject(xlWorkSheet);
+
+                    xlWorkBook.Close(true, Type.Missing, Type.Missing);
+                    Marshal.FinalReleaseComObject(xlWorkBook);
+
+                    xlApp.Quit();
+                    Marshal.FinalReleaseComObject(xlApp);
+                    MessageBox.Show("出力完了");
+                }
+                else
+                {
+                    xlWorkBook.Close(0);
+                    xlApp.Quit();
+                }
             }
+            catch (Exception ex)
+            {
+                // Cleanup Memory
+                xlWorkBook.Close(0);
+                xlApp.Quit();
+                MessageBox.Show(ex.Message, "エラー！印刷できません！");
+            }
+            
         }
 
     }

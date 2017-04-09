@@ -49,13 +49,6 @@ namespace ExportApplication
             this.Close();
         }
 
-        private void bt_print_Click(object sender, EventArgs e)
-        {
-            string name = dtGridView.SelectedCells[0].Value.ToString();
-            GUI_Print gui_print = new GUI_Print(name);
-            gui_print.Show();
-        }
-
         public delegate void delPassData(string text);
         private void btEdit_Click(object sender, EventArgs e)
         {

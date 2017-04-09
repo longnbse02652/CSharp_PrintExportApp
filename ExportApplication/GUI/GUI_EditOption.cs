@@ -20,14 +20,13 @@ namespace ExportApplication
 
         public void btNext_Click(object sender, EventArgs e)
         {
-
-            // Lay tung gia tri da duoc selected trong listcheckbox
-            IList<int> list = new List<int>();
-            for (int i = 0; i < clbEditOption.CheckedIndices.Count; i++)
+            //Lay tung gia tri da duoc selected trong checkbox in panel
+            IList<string> list = new List<string>();
+            foreach (Control c in panel2.Controls)
             {
-                list.Add(clbEditOption.CheckedIndices[i]);
+                if ((c is CheckBox) && ((CheckBox)c).Checked)
+                    list.Add(c.Text);
             }
-            // Khai bao va get list sang form edit
             GUI_Edit gui_edit = new GUI_Edit();
             gui_edit.TakeThis(list);
             gui_edit.Show();
@@ -62,13 +61,13 @@ namespace ExportApplication
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
     }
 }

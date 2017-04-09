@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +55,60 @@ namespace BLL
             else
                 errorProvider.SetError(control, "");
             return bStatus;
+        }
+
+        //ham nay de show dia chi thong qua zipcode
+        public void AutoShowAddress(TextBox tb_ZipCode, TextBox tb_Address1, ComboBox cb_Address2, TextBox tb_Address3,
+                                    ComboBox cb_Address4, TextBox tb_Address5)
+        {
+
+            string sKey = tb_ZipCode.Text;
+            if (sKey.Length == 7)
+            {
+               
+                Cursor.Current = Cursors.WaitCursor;
+                sKey = sKey.Trim();
+                //  sKey = Strings.StrConv(sKey, VbStrConv.Narrow, 0);
+                String path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                try
+                {
+                    StreamReader sr = new StreamReader(path + @"\File\KEN_ALL.txt", Encoding.Default);
+
+                    string dat;
+                    while ((dat = sr.ReadLine()) != null)
+                    {
+                        string tmpZip;
+                        string[] sbuf = dat.Split(',');
+                        tmpZip = sbuf[2].Trim();
+
+                        if (sKey == tmpZip)
+                        {
+                            tb_Address1.Text = sbuf[6].Substring(0, sbuf[6].Length - 1);
+                            cb_Address2.Text = sbuf[6].Last().ToString();
+                            tb_Address3.Text = sbuf[7].Substring(0, sbuf[7].Length - 1);
+                            cb_Address4.Text = sbuf[7].Last().ToString();
+                            tb_Address5.Text = sbuf[8].Trim();
+                            break;
+                        }
+                        Application.DoEvents();
+                    }
+
+                    sr.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "ファイルエラー",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                    return; 
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+
         }
 
     }
