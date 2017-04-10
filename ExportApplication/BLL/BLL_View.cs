@@ -16,5 +16,6 @@ namespace BLL
         {
             return dal_view.GetDataToView(name);
         }
+        //testt
     }
 }
