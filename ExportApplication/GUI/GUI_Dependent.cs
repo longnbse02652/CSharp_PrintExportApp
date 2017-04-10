@@ -196,26 +196,34 @@ namespace ExportApplication
 
         private void BT_Save_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("保存を行います。よろしいですか？", "確認", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (Int32.Parse(TB_DependentPeople.Text) > Int32.Parse(TB_ResidentPeople.Text) || Int32.Parse(TB_DependentPeople.Text) > Int32.Parse(TB_HealthInsurancePeople.Text)
+           || Int32.Parse(TB_ResidentPeople.Text) > Int32.Parse(TB_HealthInsurancePeople.Text))
             {
-                if (bll_dependent.Insert(Dependent()))
-                {
-                    MessageBox.Show("保存しました。");
-                    GUI_Edit obj = (GUI_Edit)Application.OpenForms["GUI_Edit"];
-                    obj.TB_DependentPeople.Text = TB_DependentPeople.Text;
-                    obj.TB_ResidentPeople.Text = TB_ResidentPeople.Text;
-                    obj.TB_HealthInsurancePeople.Text = TB_HealthInsurancePeople.Text;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("保存は失敗しました。");
-                }
-
+                MessageBox.Show("所得扶養数,住民扶養数,健保扶養数は違うので保存できない");
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
+                DialogResult dialogResult = MessageBox.Show("保存を行います。よろしいですか？", "確認", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (bll_dependent.Insert(Dependent()))
+                    {
+                        MessageBox.Show("保存しました。");
+                        GUI_Edit obj = (GUI_Edit)Application.OpenForms["GUI_Edit"];
+                        obj.TB_DependentPeople.Text = TB_DependentPeople.Text;
+                        obj.TB_ResidentPeople.Text = TB_ResidentPeople.Text;
+                        obj.TB_HealthInsurancePeople.Text = TB_HealthInsurancePeople.Text;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("保存は失敗しました。");
+                    }
+
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
             }
         }
 
@@ -253,6 +261,33 @@ namespace ExportApplication
         private void dtp_DependentPeopleBirth6_ValueChanged(object sender, EventArgs e)
         {
             dtp_DependentPeopleBirth6.Format = DateTimePickerFormat.Long;
+        }
+
+        private void TB_DependentPeople_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TB_ResidentPeople_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TB_HealthInsurancePeople_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

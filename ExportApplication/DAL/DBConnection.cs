@@ -9,6 +9,6 @@ namespace DAL
 {
     public class DBConnection
     {
-        public SqlConnection _cn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=dbExportExcelApp;Integrated Security=True");
+        public SqlConnection _cn = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\File\Database1.mdf;Integrated Security=True");
     }
 }

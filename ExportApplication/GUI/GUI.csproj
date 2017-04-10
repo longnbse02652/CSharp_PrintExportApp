@@ -11,6 +11,7 @@
     <AssemblyName>GUI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -123,6 +123,9 @@
     <EmbeddedResource Include="GUI_AddNew.resx">
       <DependentUpon>GUI_AddNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Dependent.resx">
+      <DependentUpon>GUI_Dependent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Edit.resx">
       <DependentUpon>GUI_Edit.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +209,13 @@
     <None Include="Resources\print64x3.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="File\Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="File\Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="File\KEN_ALL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

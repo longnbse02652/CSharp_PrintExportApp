@@ -164,7 +164,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 667);
+            this.panel1.Size = new System.Drawing.Size(725, 616);
             this.panel1.TabIndex = 0;
             // 
             // panel7
@@ -179,39 +179,39 @@
             this.panel7.Controls.Add(this.label46);
             this.panel7.Controls.Add(this.DTP_KoyoHokenDate);
             this.panel7.Controls.Add(this.label45);
-            this.panel7.Location = new System.Drawing.Point(29, 550);
+            this.panel7.Location = new System.Drawing.Point(29, 508);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(660, 66);
+            this.panel7.Size = new System.Drawing.Size(660, 61);
             this.panel7.TabIndex = 31;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // TB_HealthInsurancePeople
             // 
             this.TB_HealthInsurancePeople.Enabled = false;
-            this.TB_HealthInsurancePeople.Location = new System.Drawing.Point(460, 36);
+            this.TB_HealthInsurancePeople.Location = new System.Drawing.Point(460, 33);
             this.TB_HealthInsurancePeople.MaxLength = 1;
             this.TB_HealthInsurancePeople.Name = "TB_HealthInsurancePeople";
-            this.TB_HealthInsurancePeople.Size = new System.Drawing.Size(39, 20);
+            this.TB_HealthInsurancePeople.Size = new System.Drawing.Size(39, 19);
             this.TB_HealthInsurancePeople.TabIndex = 95;
             this.TB_HealthInsurancePeople.Text = "0";
             // 
             // TB_ResidentPeople
             // 
             this.TB_ResidentPeople.Enabled = false;
-            this.TB_ResidentPeople.Location = new System.Drawing.Point(280, 34);
+            this.TB_ResidentPeople.Location = new System.Drawing.Point(280, 31);
             this.TB_ResidentPeople.MaxLength = 1;
             this.TB_ResidentPeople.Name = "TB_ResidentPeople";
-            this.TB_ResidentPeople.Size = new System.Drawing.Size(49, 20);
+            this.TB_ResidentPeople.Size = new System.Drawing.Size(49, 19);
             this.TB_ResidentPeople.TabIndex = 94;
             this.TB_ResidentPeople.Text = "0";
             // 
             // TB_DependentPeople
             // 
             this.TB_DependentPeople.Enabled = false;
-            this.TB_DependentPeople.Location = new System.Drawing.Point(127, 36);
+            this.TB_DependentPeople.Location = new System.Drawing.Point(127, 33);
             this.TB_DependentPeople.MaxLength = 1;
             this.TB_DependentPeople.Name = "TB_DependentPeople";
-            this.TB_DependentPeople.Size = new System.Drawing.Size(48, 20);
+            this.TB_DependentPeople.Size = new System.Drawing.Size(48, 19);
             this.TB_DependentPeople.TabIndex = 93;
             this.TB_DependentPeople.Text = "0";
             this.TB_DependentPeople.Click += new System.EventHandler(this.TB_DependentPeople_Click);
@@ -219,27 +219,27 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(387, 43);
+            this.label49.Location = new System.Drawing.Point(387, 40);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(67, 13);
+            this.label49.Size = new System.Drawing.Size(65, 12);
             this.label49.TabIndex = 92;
             this.label49.Text = "健保扶養数";
             // 
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(205, 40);
+            this.label48.Location = new System.Drawing.Point(205, 37);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(67, 13);
+            this.label48.Size = new System.Drawing.Size(65, 12);
             this.label48.TabIndex = 91;
             this.label48.Text = "住民扶養数";
             // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(36, 41);
+            this.label47.Location = new System.Drawing.Point(36, 38);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(67, 13);
+            this.label47.Size = new System.Drawing.Size(65, 12);
             this.label47.TabIndex = 90;
             this.label47.Text = "所得扶養数";
             // 
@@ -248,9 +248,9 @@
             this.DTP_CompanyInsureDate.CustomFormat = " ";
             this.DTP_CompanyInsureDate.Enabled = false;
             this.DTP_CompanyInsureDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_CompanyInsureDate.Location = new System.Drawing.Point(448, 9);
+            this.DTP_CompanyInsureDate.Location = new System.Drawing.Point(448, 8);
             this.DTP_CompanyInsureDate.Name = "DTP_CompanyInsureDate";
-            this.DTP_CompanyInsureDate.Size = new System.Drawing.Size(203, 20);
+            this.DTP_CompanyInsureDate.Size = new System.Drawing.Size(203, 19);
             this.DTP_CompanyInsureDate.TabIndex = 89;
             this.DTP_CompanyInsureDate.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_CompanyInsureDate.ValueChanged += new System.EventHandler(this.DTP_CompanyInsureDate_ValueChanged);
@@ -258,9 +258,9 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(387, 15);
+            this.label46.Location = new System.Drawing.Point(387, 14);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(55, 13);
+            this.label46.Size = new System.Drawing.Size(53, 12);
             this.label46.TabIndex = 88;
             this.label46.Text = "社会保険";
             // 
@@ -269,9 +269,9 @@
             this.DTP_KoyoHokenDate.CustomFormat = " ";
             this.DTP_KoyoHokenDate.Enabled = false;
             this.DTP_KoyoHokenDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_KoyoHokenDate.Location = new System.Drawing.Point(127, 9);
+            this.DTP_KoyoHokenDate.Location = new System.Drawing.Point(127, 8);
             this.DTP_KoyoHokenDate.Name = "DTP_KoyoHokenDate";
-            this.DTP_KoyoHokenDate.Size = new System.Drawing.Size(202, 20);
+            this.DTP_KoyoHokenDate.Size = new System.Drawing.Size(202, 19);
             this.DTP_KoyoHokenDate.TabIndex = 87;
             this.DTP_KoyoHokenDate.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_KoyoHokenDate.ValueChanged += new System.EventHandler(this.DTP_KoyoHokenDate_ValueChanged);
@@ -279,9 +279,9 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(36, 16);
+            this.label45.Location = new System.Drawing.Point(36, 15);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(55, 13);
+            this.label45.Size = new System.Drawing.Size(53, 12);
             this.label45.TabIndex = 86;
             this.label45.Text = "雇用保険";
             // 
@@ -291,11 +291,11 @@
             this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSave.Font = new System.Drawing.Font("MS PMincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btSave.ForeColor = System.Drawing.Color.White;
-            this.btSave.Location = new System.Drawing.Point(96, 622);
+            this.btSave.Location = new System.Drawing.Point(96, 574);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(94, 40);
+            this.btSave.Size = new System.Drawing.Size(94, 37);
             this.btSave.TabIndex = 1;
-            this.btSave.Text = "保存";
+            this.btSave.Text = "保存と出力";
             this.btSave.UseVisualStyleBackColor = false;
             this.btSave.Click += new System.EventHandler(this.btSave_Click_1);
             // 
@@ -305,11 +305,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("MS PMincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(300, 622);
+            this.button1.Location = new System.Drawing.Point(300, 574);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.Size = new System.Drawing.Size(94, 37);
             this.button1.TabIndex = 27;
-            this.button1.Text = "変更印刷";
+            this.button1.Text = "保存と印刷";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -336,115 +336,115 @@
             this.panel6.Controls.Add(this.label40);
             this.panel6.Controls.Add(this.TB_BankCode);
             this.panel6.Controls.Add(this.label39);
-            this.panel6.Location = new System.Drawing.Point(29, 455);
+            this.panel6.Location = new System.Drawing.Point(29, 420);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(660, 89);
+            this.panel6.Size = new System.Drawing.Size(660, 82);
             this.panel6.TabIndex = 30;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // TB_AccountCode7
             // 
             this.TB_AccountCode7.Enabled = false;
-            this.TB_AccountCode7.Location = new System.Drawing.Point(601, 62);
+            this.TB_AccountCode7.Location = new System.Drawing.Point(601, 57);
             this.TB_AccountCode7.MaxLength = 1;
             this.TB_AccountCode7.Name = "TB_AccountCode7";
-            this.TB_AccountCode7.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode7.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode7.TabIndex = 119;
             this.TB_AccountCode7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode7_KeyPress);
             // 
             // TB_AccountCode6
             // 
             this.TB_AccountCode6.Enabled = false;
-            this.TB_AccountCode6.Location = new System.Drawing.Point(579, 62);
+            this.TB_AccountCode6.Location = new System.Drawing.Point(579, 57);
             this.TB_AccountCode6.MaxLength = 1;
             this.TB_AccountCode6.Name = "TB_AccountCode6";
-            this.TB_AccountCode6.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode6.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode6.TabIndex = 118;
             this.TB_AccountCode6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode6_KeyPress);
             // 
             // TB_AccountCode5
             // 
             this.TB_AccountCode5.Enabled = false;
-            this.TB_AccountCode5.Location = new System.Drawing.Point(557, 62);
+            this.TB_AccountCode5.Location = new System.Drawing.Point(557, 57);
             this.TB_AccountCode5.MaxLength = 1;
             this.TB_AccountCode5.Name = "TB_AccountCode5";
-            this.TB_AccountCode5.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode5.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode5.TabIndex = 117;
             this.TB_AccountCode5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode5_KeyPress);
             // 
             // TB_AccountCode4
             // 
             this.TB_AccountCode4.Enabled = false;
-            this.TB_AccountCode4.Location = new System.Drawing.Point(535, 62);
+            this.TB_AccountCode4.Location = new System.Drawing.Point(535, 57);
             this.TB_AccountCode4.MaxLength = 1;
             this.TB_AccountCode4.Name = "TB_AccountCode4";
-            this.TB_AccountCode4.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode4.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode4.TabIndex = 116;
             this.TB_AccountCode4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode4_KeyPress);
             // 
             // TB_AccountCode3
             // 
             this.TB_AccountCode3.Enabled = false;
-            this.TB_AccountCode3.Location = new System.Drawing.Point(513, 62);
+            this.TB_AccountCode3.Location = new System.Drawing.Point(513, 57);
             this.TB_AccountCode3.MaxLength = 1;
             this.TB_AccountCode3.Name = "TB_AccountCode3";
-            this.TB_AccountCode3.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode3.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode3.TabIndex = 115;
             this.TB_AccountCode3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode3_KeyPress);
             // 
             // TB_AccountCode2
             // 
             this.TB_AccountCode2.Enabled = false;
-            this.TB_AccountCode2.Location = new System.Drawing.Point(490, 62);
+            this.TB_AccountCode2.Location = new System.Drawing.Point(490, 57);
             this.TB_AccountCode2.MaxLength = 1;
             this.TB_AccountCode2.Name = "TB_AccountCode2";
-            this.TB_AccountCode2.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode2.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode2.TabIndex = 114;
             this.TB_AccountCode2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode2_KeyPress);
             // 
             // TB_AccountCode1
             // 
             this.TB_AccountCode1.Enabled = false;
-            this.TB_AccountCode1.Location = new System.Drawing.Point(470, 62);
+            this.TB_AccountCode1.Location = new System.Drawing.Point(470, 57);
             this.TB_AccountCode1.MaxLength = 1;
             this.TB_AccountCode1.Name = "TB_AccountCode1";
-            this.TB_AccountCode1.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode1.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode1.TabIndex = 113;
             this.TB_AccountCode1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode1_KeyPress);
             // 
             // TB_AccountCode
             // 
             this.TB_AccountCode.Enabled = false;
-            this.TB_AccountCode.Location = new System.Drawing.Point(449, 62);
+            this.TB_AccountCode.Location = new System.Drawing.Point(449, 57);
             this.TB_AccountCode.MaxLength = 1;
             this.TB_AccountCode.Name = "TB_AccountCode";
-            this.TB_AccountCode.Size = new System.Drawing.Size(18, 20);
+            this.TB_AccountCode.Size = new System.Drawing.Size(18, 19);
             this.TB_AccountCode.TabIndex = 112;
             this.TB_AccountCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_AccountCode_KeyPress);
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(387, 69);
+            this.label44.Location = new System.Drawing.Point(387, 64);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(55, 13);
+            this.label44.Size = new System.Drawing.Size(53, 12);
             this.label44.TabIndex = 111;
             this.label44.Text = "口座番号";
             // 
             // TB_AccountName
             // 
             this.TB_AccountName.Enabled = false;
-            this.TB_AccountName.Location = new System.Drawing.Point(127, 62);
+            this.TB_AccountName.Location = new System.Drawing.Point(127, 57);
             this.TB_AccountName.Name = "TB_AccountName";
-            this.TB_AccountName.Size = new System.Drawing.Size(202, 20);
+            this.TB_AccountName.Size = new System.Drawing.Size(202, 19);
             this.TB_AccountName.TabIndex = 110;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(36, 69);
+            this.label43.Location = new System.Drawing.Point(36, 64);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(86, 13);
+            this.label43.Size = new System.Drawing.Size(84, 12);
             this.label43.TabIndex = 109;
             this.label43.Text = "口座名義（カナ）";
             // 
@@ -457,26 +457,26 @@
             "支店",
             "出張所",
             "営業部"});
-            this.CB_BranchNameType.Location = new System.Drawing.Point(584, 31);
+            this.CB_BranchNameType.Location = new System.Drawing.Point(584, 29);
             this.CB_BranchNameType.Name = "CB_BranchNameType";
-            this.CB_BranchNameType.Size = new System.Drawing.Size(67, 21);
+            this.CB_BranchNameType.Size = new System.Drawing.Size(67, 20);
             this.CB_BranchNameType.TabIndex = 108;
             this.CB_BranchNameType.Text = "支店";
             // 
             // TB_BranchName
             // 
             this.TB_BranchName.Enabled = false;
-            this.TB_BranchName.Location = new System.Drawing.Point(448, 33);
+            this.TB_BranchName.Location = new System.Drawing.Point(448, 30);
             this.TB_BranchName.Name = "TB_BranchName";
-            this.TB_BranchName.Size = new System.Drawing.Size(136, 20);
+            this.TB_BranchName.Size = new System.Drawing.Size(136, 19);
             this.TB_BranchName.TabIndex = 107;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(387, 40);
+            this.label42.Location = new System.Drawing.Point(387, 37);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(43, 13);
+            this.label42.Size = new System.Drawing.Size(41, 12);
             this.label42.TabIndex = 106;
             this.label42.Text = "支店名";
             // 
@@ -488,26 +488,26 @@
             this.CB_BankNameType.Items.AddRange(new object[] {
             "銀行",
             "信金"});
-            this.CB_BankNameType.Location = new System.Drawing.Point(254, 32);
+            this.CB_BankNameType.Location = new System.Drawing.Point(254, 30);
             this.CB_BankNameType.Name = "CB_BankNameType";
-            this.CB_BankNameType.Size = new System.Drawing.Size(75, 21);
+            this.CB_BankNameType.Size = new System.Drawing.Size(75, 20);
             this.CB_BankNameType.TabIndex = 105;
             this.CB_BankNameType.Text = "銀行";
             // 
             // TB_BankName
             // 
             this.TB_BankName.Enabled = false;
-            this.TB_BankName.Location = new System.Drawing.Point(127, 32);
+            this.TB_BankName.Location = new System.Drawing.Point(127, 30);
             this.TB_BankName.Name = "TB_BankName";
-            this.TB_BankName.Size = new System.Drawing.Size(121, 20);
+            this.TB_BankName.Size = new System.Drawing.Size(121, 19);
             this.TB_BankName.TabIndex = 104;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(36, 40);
+            this.label41.Location = new System.Drawing.Point(36, 37);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(43, 13);
+            this.label41.Size = new System.Drawing.Size(41, 12);
             this.label41.TabIndex = 103;
             this.label41.Text = "銀行名";
             // 
@@ -517,15 +517,15 @@
             this.TB_BranchCode.Location = new System.Drawing.Point(448, 4);
             this.TB_BranchCode.MaxLength = 10;
             this.TB_BranchCode.Name = "TB_BranchCode";
-            this.TB_BranchCode.Size = new System.Drawing.Size(203, 20);
+            this.TB_BranchCode.Size = new System.Drawing.Size(203, 19);
             this.TB_BranchCode.TabIndex = 102;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(387, 11);
+            this.label40.Location = new System.Drawing.Point(387, 10);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(46, 13);
+            this.label40.Size = new System.Drawing.Size(45, 12);
             this.label40.TabIndex = 101;
             this.label40.Text = "支店CD";
             // 
@@ -535,15 +535,15 @@
             this.TB_BankCode.Location = new System.Drawing.Point(127, 4);
             this.TB_BankCode.MaxLength = 10;
             this.TB_BankCode.Name = "TB_BankCode";
-            this.TB_BankCode.Size = new System.Drawing.Size(202, 20);
+            this.TB_BankCode.Size = new System.Drawing.Size(202, 19);
             this.TB_BankCode.TabIndex = 100;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(36, 11);
+            this.label39.Location = new System.Drawing.Point(36, 10);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(46, 13);
+            this.label39.Size = new System.Drawing.Size(45, 12);
             this.label39.TabIndex = 99;
             this.label39.Text = "銀行CD";
             // 
@@ -553,9 +553,9 @@
             this.btCancel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancel1.Font = new System.Drawing.Font("MS PMincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btCancel1.ForeColor = System.Drawing.Color.White;
-            this.btCancel1.Location = new System.Drawing.Point(494, 622);
+            this.btCancel1.Location = new System.Drawing.Point(494, 574);
             this.btCancel1.Name = "btCancel1";
-            this.btCancel1.Size = new System.Drawing.Size(94, 40);
+            this.btCancel1.Size = new System.Drawing.Size(94, 37);
             this.btCancel1.TabIndex = 2;
             this.btCancel1.Text = "キャンセル";
             this.btCancel1.UseVisualStyleBackColor = false;
@@ -591,9 +591,9 @@
             this.panel5.Controls.Add(this.label37);
             this.panel5.Controls.Add(this.label38);
             this.panel5.Controls.Add(this.TB_WorkTime);
-            this.panel5.Location = new System.Drawing.Point(27, 322);
+            this.panel5.Location = new System.Drawing.Point(27, 297);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(660, 127);
+            this.panel5.Size = new System.Drawing.Size(660, 117);
             this.panel5.TabIndex = 29;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -604,18 +604,18 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "寮費"});
-            this.comboBox1.Location = new System.Drawing.Point(129, 99);
+            this.comboBox1.Location = new System.Drawing.Point(129, 91);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(90, 21);
+            this.comboBox1.Size = new System.Drawing.Size(90, 20);
             this.comboBox1.TabIndex = 88;
             this.comboBox1.Text = "寮費";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(38, 8);
+            this.label15.Location = new System.Drawing.Point(38, 7);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 18;
             this.label15.Text = "就労形態";
             // 
@@ -629,15 +629,15 @@
             "派遣"});
             this.CB_WorkType.Location = new System.Drawing.Point(129, 0);
             this.CB_WorkType.Name = "CB_WorkType";
-            this.CB_WorkType.Size = new System.Drawing.Size(202, 21);
+            this.CB_WorkType.Size = new System.Drawing.Size(202, 20);
             this.CB_WorkType.TabIndex = 31;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 32);
+            this.label7.Location = new System.Drawing.Point(38, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 12;
             this.label7.Text = "支払";
             // 
@@ -649,18 +649,18 @@
             this.CB_ShiharaiType.Items.AddRange(new object[] {
             "週払",
             "月払"});
-            this.CB_ShiharaiType.Location = new System.Drawing.Point(129, 24);
+            this.CB_ShiharaiType.Location = new System.Drawing.Point(129, 22);
             this.CB_ShiharaiType.Name = "CB_ShiharaiType";
-            this.CB_ShiharaiType.Size = new System.Drawing.Size(203, 21);
+            this.CB_ShiharaiType.Size = new System.Drawing.Size(203, 20);
             this.CB_ShiharaiType.TabIndex = 13;
             this.CB_ShiharaiType.Text = "月払";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(389, 32);
+            this.label26.Location = new System.Drawing.Point(389, 30);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(31, 13);
+            this.label26.Size = new System.Drawing.Size(29, 12);
             this.label26.TabIndex = 34;
             this.label26.Text = "税適";
             // 
@@ -673,37 +673,37 @@
             "甲",
             "乙",
             "丙"});
-            this.CB_Tax.Location = new System.Drawing.Point(450, 24);
+            this.CB_Tax.Location = new System.Drawing.Point(450, 22);
             this.CB_Tax.Name = "CB_Tax";
-            this.CB_Tax.Size = new System.Drawing.Size(203, 21);
+            this.CB_Tax.Size = new System.Drawing.Size(203, 20);
             this.CB_Tax.TabIndex = 35;
             this.CB_Tax.Text = "甲";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(38, 57);
+            this.label27.Location = new System.Drawing.Point(38, 53);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(73, 13);
+            this.label27.Size = new System.Drawing.Size(71, 12);
             this.label27.TabIndex = 37;
             this.label27.Text = "派遣・請金①";
             // 
             // TB_HakenRyokin
             // 
             this.TB_HakenRyokin.Enabled = false;
-            this.TB_HakenRyokin.Location = new System.Drawing.Point(129, 50);
+            this.TB_HakenRyokin.Location = new System.Drawing.Point(129, 46);
             this.TB_HakenRyokin.MaxLength = 10;
             this.TB_HakenRyokin.Name = "TB_HakenRyokin";
-            this.TB_HakenRyokin.Size = new System.Drawing.Size(121, 20);
+            this.TB_HakenRyokin.Size = new System.Drawing.Size(121, 19);
             this.TB_HakenRyokin.TabIndex = 38;
             this.TB_HakenRyokin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_HakenRyokin_KeyPress);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(253, 57);
+            this.label29.Location = new System.Drawing.Point(253, 53);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(24, 13);
+            this.label29.Size = new System.Drawing.Size(23, 12);
             this.label29.TabIndex = 41;
             this.label29.Text = "円/";
             // 
@@ -721,27 +721,27 @@
             "日",
             "時",
             "選択"});
-            this.CB_HakenRyokinType.Location = new System.Drawing.Point(282, 50);
+            this.CB_HakenRyokinType.Location = new System.Drawing.Point(282, 46);
             this.CB_HakenRyokinType.Name = "CB_HakenRyokinType";
-            this.CB_HakenRyokinType.Size = new System.Drawing.Size(49, 21);
+            this.CB_HakenRyokinType.Size = new System.Drawing.Size(49, 20);
             this.CB_HakenRyokinType.TabIndex = 39;
             this.CB_HakenRyokinType.Text = "時";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(536, 82);
+            this.label13.Location = new System.Drawing.Point(536, 76);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(31, 13);
+            this.label13.Size = new System.Drawing.Size(29, 12);
             this.label13.TabIndex = 87;
             this.label13.Text = "手当";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(389, 58);
+            this.label30.Location = new System.Drawing.Point(389, 54);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(31, 13);
+            this.label30.Size = new System.Drawing.Size(29, 12);
             this.label30.TabIndex = 42;
             this.label30.Text = "賃金";
             // 
@@ -760,28 +760,28 @@
             "家族手当",
             "住宅手当",
             "別居手当"});
-            this.CB_TeateType.Location = new System.Drawing.Point(450, 74);
+            this.CB_TeateType.Location = new System.Drawing.Point(450, 68);
             this.CB_TeateType.Name = "CB_TeateType";
-            this.CB_TeateType.Size = new System.Drawing.Size(88, 21);
+            this.CB_TeateType.Size = new System.Drawing.Size(88, 20);
             this.CB_TeateType.TabIndex = 86;
             this.CB_TeateType.SelectedValueChanged += new System.EventHandler(this.CB_TeateType_SelectedValueChanged);
             // 
             // TB_Chingin
             // 
             this.TB_Chingin.Enabled = false;
-            this.TB_Chingin.Location = new System.Drawing.Point(450, 51);
+            this.TB_Chingin.Location = new System.Drawing.Point(450, 47);
             this.TB_Chingin.MaxLength = 10;
             this.TB_Chingin.Name = "TB_Chingin";
-            this.TB_Chingin.Size = new System.Drawing.Size(122, 20);
+            this.TB_Chingin.Size = new System.Drawing.Size(122, 19);
             this.TB_Chingin.TabIndex = 43;
             this.TB_Chingin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Chingin_KeyPress);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(570, 55);
+            this.label31.Location = new System.Drawing.Point(570, 51);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(24, 13);
+            this.label31.Size = new System.Drawing.Size(23, 12);
             this.label31.TabIndex = 44;
             this.label31.Text = "円/";
             // 
@@ -795,102 +795,102 @@
             "時給",
             "選択",
             ""});
-            this.CB_ChinginType.Location = new System.Drawing.Point(600, 49);
+            this.CB_ChinginType.Location = new System.Drawing.Point(600, 45);
             this.CB_ChinginType.Name = "CB_ChinginType";
-            this.CB_ChinginType.Size = new System.Drawing.Size(53, 21);
+            this.CB_ChinginType.Size = new System.Drawing.Size(53, 20);
             this.CB_ChinginType.TabIndex = 45;
             this.CB_ChinginType.Text = "時給";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(38, 79);
+            this.label32.Location = new System.Drawing.Point(38, 73);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.Size = new System.Drawing.Size(53, 12);
             this.label32.TabIndex = 46;
             this.label32.Text = "通勤手当";
             // 
             // TB_TsukinTeate
             // 
             this.TB_TsukinTeate.Enabled = false;
-            this.TB_TsukinTeate.Location = new System.Drawing.Point(129, 72);
+            this.TB_TsukinTeate.Location = new System.Drawing.Point(129, 66);
             this.TB_TsukinTeate.MaxLength = 10;
             this.TB_TsukinTeate.Name = "TB_TsukinTeate";
-            this.TB_TsukinTeate.Size = new System.Drawing.Size(160, 20);
+            this.TB_TsukinTeate.Size = new System.Drawing.Size(160, 19);
             this.TB_TsukinTeate.TabIndex = 47;
             this.TB_TsukinTeate.Click += new System.EventHandler(this.TB_TsukinTeate_Click);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(295, 78);
+            this.label33.Location = new System.Drawing.Point(295, 72);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(36, 13);
+            this.label33.Size = new System.Drawing.Size(35, 12);
             this.label33.TabIndex = 48;
             this.label33.Text = "円/月";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(389, 82);
+            this.label34.Location = new System.Drawing.Point(389, 76);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(55, 13);
+            this.label34.Size = new System.Drawing.Size(53, 12);
             this.label34.TabIndex = 49;
             this.label34.Text = "手当額①";
             // 
             // TB_TeateGaku
             // 
             this.TB_TeateGaku.Enabled = false;
-            this.TB_TeateGaku.Location = new System.Drawing.Point(569, 75);
+            this.TB_TeateGaku.Location = new System.Drawing.Point(569, 69);
             this.TB_TeateGaku.MaxLength = 10;
             this.TB_TeateGaku.Name = "TB_TeateGaku";
-            this.TB_TeateGaku.Size = new System.Drawing.Size(64, 20);
+            this.TB_TeateGaku.Size = new System.Drawing.Size(64, 19);
             this.TB_TeateGaku.TabIndex = 50;
             this.TB_TeateGaku.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_TeateGaku_KeyPress);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(638, 82);
+            this.label35.Location = new System.Drawing.Point(638, 76);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(19, 13);
+            this.label35.Size = new System.Drawing.Size(17, 12);
             this.label35.TabIndex = 51;
             this.label35.Text = "円";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(38, 108);
+            this.label36.Location = new System.Drawing.Point(38, 100);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(67, 13);
+            this.label36.Size = new System.Drawing.Size(65, 12);
             this.label36.TabIndex = 52;
             this.label36.Text = "給与控除額";
             // 
             // TB_KyuyoKojoGaku
             // 
             this.TB_KyuyoKojoGaku.Enabled = false;
-            this.TB_KyuyoKojoGaku.Location = new System.Drawing.Point(225, 100);
+            this.TB_KyuyoKojoGaku.Location = new System.Drawing.Point(225, 92);
             this.TB_KyuyoKojoGaku.MaxLength = 10;
             this.TB_KyuyoKojoGaku.Name = "TB_KyuyoKojoGaku";
-            this.TB_KyuyoKojoGaku.Size = new System.Drawing.Size(89, 20);
+            this.TB_KyuyoKojoGaku.Size = new System.Drawing.Size(89, 19);
             this.TB_KyuyoKojoGaku.TabIndex = 53;
             this.TB_KyuyoKojoGaku.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_KyuyoKojoGaku_KeyPress);
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(313, 104);
+            this.label37.Location = new System.Drawing.Point(313, 96);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(19, 13);
+            this.label37.Size = new System.Drawing.Size(17, 12);
             this.label37.TabIndex = 54;
             this.label37.Text = "円";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(389, 107);
+            this.label38.Location = new System.Drawing.Point(389, 99);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(55, 13);
+            this.label38.Size = new System.Drawing.Size(53, 12);
             this.label38.TabIndex = 55;
             this.label38.Text = "労働時間";
             // 
@@ -898,7 +898,7 @@
             // 
             this.TB_WorkTime.Enabled = false;
             this.TB_WorkTime.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TB_WorkTime.Location = new System.Drawing.Point(450, 101);
+            this.TB_WorkTime.Location = new System.Drawing.Point(450, 93);
             this.TB_WorkTime.Name = "TB_WorkTime";
             this.TB_WorkTime.Size = new System.Drawing.Size(203, 20);
             this.TB_WorkTime.TabIndex = 56;
@@ -932,37 +932,37 @@
             this.panel4.Controls.Add(this.DTP_CardTimeStart);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.DTP_CardTimeOver);
-            this.panel4.Location = new System.Drawing.Point(29, 181);
+            this.panel4.Location = new System.Drawing.Point(29, 167);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(658, 135);
+            this.panel4.Size = new System.Drawing.Size(658, 125);
             this.panel4.TabIndex = 28;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(28, 19);
+            this.label24.Location = new System.Drawing.Point(28, 18);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
+            this.label24.Size = new System.Drawing.Size(65, 12);
             this.label24.TabIndex = 0;
             this.label24.Text = "住民票住所";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(103, 18);
+            this.label25.Location = new System.Drawing.Point(103, 17);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 13);
+            this.label25.Size = new System.Drawing.Size(17, 12);
             this.label25.TabIndex = 24;
             this.label25.Text = "〒";
             // 
             // TB_ZipCode
             // 
             this.TB_ZipCode.Enabled = false;
-            this.TB_ZipCode.Location = new System.Drawing.Point(127, 11);
+            this.TB_ZipCode.Location = new System.Drawing.Point(127, 10);
             this.TB_ZipCode.MaxLength = 7;
             this.TB_ZipCode.Name = "TB_ZipCode";
-            this.TB_ZipCode.Size = new System.Drawing.Size(94, 20);
+            this.TB_ZipCode.Size = new System.Drawing.Size(94, 19);
             this.TB_ZipCode.TabIndex = 1;
             this.TB_ZipCode.TextChanged += new System.EventHandler(this.TB_ZipCode_TextChanged);
             this.TB_ZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_ZipCode_KeyPress);
@@ -970,9 +970,9 @@
             // TB_Address1
             // 
             this.TB_Address1.Enabled = false;
-            this.TB_Address1.Location = new System.Drawing.Point(223, 11);
+            this.TB_Address1.Location = new System.Drawing.Point(223, 10);
             this.TB_Address1.Name = "TB_Address1";
-            this.TB_Address1.Size = new System.Drawing.Size(73, 20);
+            this.TB_Address1.Size = new System.Drawing.Size(73, 19);
             this.TB_Address1.TabIndex = 25;
             // 
             // CB_Address2
@@ -985,17 +985,17 @@
             "都",
             "道",
             "府"});
-            this.CB_Address2.Location = new System.Drawing.Point(296, 11);
+            this.CB_Address2.Location = new System.Drawing.Point(296, 10);
             this.CB_Address2.Name = "CB_Address2";
-            this.CB_Address2.Size = new System.Drawing.Size(42, 21);
+            this.CB_Address2.Size = new System.Drawing.Size(42, 20);
             this.CB_Address2.TabIndex = 89;
             // 
             // TB_Address3
             // 
             this.TB_Address3.Enabled = false;
-            this.TB_Address3.Location = new System.Drawing.Point(341, 11);
+            this.TB_Address3.Location = new System.Drawing.Point(341, 10);
             this.TB_Address3.Name = "TB_Address3";
-            this.TB_Address3.Size = new System.Drawing.Size(71, 20);
+            this.TB_Address3.Size = new System.Drawing.Size(71, 19);
             this.TB_Address3.TabIndex = 88;
             // 
             // CB_Address4
@@ -1007,61 +1007,61 @@
             "市",
             "区",
             "郡"});
-            this.CB_Address4.Location = new System.Drawing.Point(416, 11);
+            this.CB_Address4.Location = new System.Drawing.Point(416, 10);
             this.CB_Address4.Name = "CB_Address4";
-            this.CB_Address4.Size = new System.Drawing.Size(42, 21);
+            this.CB_Address4.Size = new System.Drawing.Size(42, 20);
             this.CB_Address4.TabIndex = 90;
             // 
             // TB_Address5
             // 
             this.TB_Address5.Enabled = false;
-            this.TB_Address5.Location = new System.Drawing.Point(464, 10);
+            this.TB_Address5.Location = new System.Drawing.Point(464, 9);
             this.TB_Address5.Name = "TB_Address5";
-            this.TB_Address5.Size = new System.Drawing.Size(187, 20);
+            this.TB_Address5.Size = new System.Drawing.Size(187, 19);
             this.TB_Address5.TabIndex = 91;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(36, 42);
+            this.label23.Location = new System.Drawing.Point(36, 39);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(55, 13);
+            this.label23.Size = new System.Drawing.Size(53, 12);
             this.label23.TabIndex = 2;
             this.label23.Text = "居所住所";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(102, 47);
+            this.label19.Location = new System.Drawing.Point(102, 43);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 13);
+            this.label19.Size = new System.Drawing.Size(17, 12);
             this.label19.TabIndex = 26;
             this.label19.Text = "〒";
             // 
             // TB_ZipCode1
             // 
             this.TB_ZipCode1.Enabled = false;
-            this.TB_ZipCode1.Location = new System.Drawing.Point(127, 40);
+            this.TB_ZipCode1.Location = new System.Drawing.Point(127, 37);
             this.TB_ZipCode1.MaxLength = 7;
             this.TB_ZipCode1.Name = "TB_ZipCode1";
-            this.TB_ZipCode1.Size = new System.Drawing.Size(94, 20);
+            this.TB_ZipCode1.Size = new System.Drawing.Size(94, 19);
             this.TB_ZipCode1.TabIndex = 3;
             this.TB_ZipCode1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_ZipCode1_KeyPress);
             // 
             // TB_Address11
             // 
             this.TB_Address11.Enabled = false;
-            this.TB_Address11.Location = new System.Drawing.Point(223, 39);
+            this.TB_Address11.Location = new System.Drawing.Point(223, 36);
             this.TB_Address11.Name = "TB_Address11";
-            this.TB_Address11.Size = new System.Drawing.Size(428, 20);
+            this.TB_Address11.Size = new System.Drawing.Size(428, 19);
             this.TB_Address11.TabIndex = 27;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(36, 70);
+            this.label22.Location = new System.Drawing.Point(36, 65);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 13);
+            this.label22.Size = new System.Drawing.Size(53, 12);
             this.label22.TabIndex = 4;
             this.label22.Text = "通勤形態";
             // 
@@ -1073,18 +1073,18 @@
             this.CB_TravelType.Items.AddRange(new object[] {
             "通勤",
             "入寮"});
-            this.CB_TravelType.Location = new System.Drawing.Point(127, 64);
+            this.CB_TravelType.Location = new System.Drawing.Point(127, 59);
             this.CB_TravelType.Name = "CB_TravelType";
-            this.CB_TravelType.Size = new System.Drawing.Size(202, 21);
+            this.CB_TravelType.Size = new System.Drawing.Size(202, 20);
             this.CB_TravelType.TabIndex = 15;
             this.CB_TravelType.Text = "入寮";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(36, 94);
+            this.label21.Location = new System.Drawing.Point(36, 87);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(55, 13);
+            this.label21.Size = new System.Drawing.Size(53, 12);
             this.label21.TabIndex = 6;
             this.label21.Text = "雇用期間";
             // 
@@ -1093,9 +1093,9 @@
             this.DTP_EmployTime1.CustomFormat = " ";
             this.DTP_EmployTime1.Enabled = false;
             this.DTP_EmployTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_EmployTime1.Location = new System.Drawing.Point(127, 87);
+            this.DTP_EmployTime1.Location = new System.Drawing.Point(127, 80);
             this.DTP_EmployTime1.Name = "DTP_EmployTime1";
-            this.DTP_EmployTime1.Size = new System.Drawing.Size(202, 20);
+            this.DTP_EmployTime1.Size = new System.Drawing.Size(202, 19);
             this.DTP_EmployTime1.TabIndex = 17;
             this.DTP_EmployTime1.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_EmployTime1.ValueChanged += new System.EventHandler(this.DTP_EmployTime1_ValueChanged);
@@ -1103,9 +1103,9 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(387, 93);
+            this.label16.Location = new System.Drawing.Point(387, 86);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(25, 13);
+            this.label16.Size = new System.Drawing.Size(23, 12);
             this.label16.TabIndex = 16;
             this.label16.Text = "から";
             // 
@@ -1114,9 +1114,9 @@
             this.DTP_EmployTime2.CustomFormat = " ";
             this.DTP_EmployTime2.Enabled = false;
             this.DTP_EmployTime2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_EmployTime2.Location = new System.Drawing.Point(448, 87);
+            this.DTP_EmployTime2.Location = new System.Drawing.Point(448, 80);
             this.DTP_EmployTime2.Name = "DTP_EmployTime2";
-            this.DTP_EmployTime2.Size = new System.Drawing.Size(203, 20);
+            this.DTP_EmployTime2.Size = new System.Drawing.Size(203, 19);
             this.DTP_EmployTime2.TabIndex = 28;
             this.DTP_EmployTime2.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_EmployTime2.ValueChanged += new System.EventHandler(this.DTP_EmployTime2_ValueChanged);
@@ -1124,9 +1124,9 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(387, 67);
+            this.label20.Location = new System.Drawing.Point(387, 62);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(55, 13);
+            this.label20.Size = new System.Drawing.Size(53, 12);
             this.label20.TabIndex = 8;
             this.label20.Text = "在留資格";
             // 
@@ -1148,17 +1148,17 @@
             "家族",
             "研修",
             "-"});
-            this.CB_CardType.Location = new System.Drawing.Point(448, 62);
+            this.CB_CardType.Location = new System.Drawing.Point(448, 57);
             this.CB_CardType.Name = "CB_CardType";
-            this.CB_CardType.Size = new System.Drawing.Size(203, 21);
+            this.CB_CardType.Size = new System.Drawing.Size(203, 20);
             this.CB_CardType.TabIndex = 29;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(36, 118);
+            this.label14.Location = new System.Drawing.Point(36, 109);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 20;
             this.label14.Text = "在留期間";
             // 
@@ -1167,9 +1167,9 @@
             this.DTP_CardTimeStart.CustomFormat = " ";
             this.DTP_CardTimeStart.Enabled = false;
             this.DTP_CardTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_CardTimeStart.Location = new System.Drawing.Point(127, 112);
+            this.DTP_CardTimeStart.Location = new System.Drawing.Point(127, 103);
             this.DTP_CardTimeStart.Name = "DTP_CardTimeStart";
-            this.DTP_CardTimeStart.Size = new System.Drawing.Size(202, 20);
+            this.DTP_CardTimeStart.Size = new System.Drawing.Size(202, 19);
             this.DTP_CardTimeStart.TabIndex = 21;
             this.DTP_CardTimeStart.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_CardTimeStart.ValueChanged += new System.EventHandler(this.DTP_CardTimeStart_ValueChanged);
@@ -1177,9 +1177,9 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(387, 119);
+            this.label18.Location = new System.Drawing.Point(387, 110);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(25, 13);
+            this.label18.Size = new System.Drawing.Size(23, 12);
             this.label18.TabIndex = 30;
             this.label18.Text = "から";
             // 
@@ -1188,9 +1188,9 @@
             this.DTP_CardTimeOver.CustomFormat = " ";
             this.DTP_CardTimeOver.Enabled = false;
             this.DTP_CardTimeOver.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_CardTimeOver.Location = new System.Drawing.Point(448, 111);
+            this.DTP_CardTimeOver.Location = new System.Drawing.Point(448, 102);
             this.DTP_CardTimeOver.Name = "DTP_CardTimeOver";
-            this.DTP_CardTimeOver.Size = new System.Drawing.Size(203, 20);
+            this.DTP_CardTimeOver.Size = new System.Drawing.Size(203, 19);
             this.DTP_CardTimeOver.TabIndex = 23;
             this.DTP_CardTimeOver.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_CardTimeOver.ValueChanged += new System.EventHandler(this.DTP_CardTimeOver_ValueChanged);
@@ -1221,7 +1221,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(29, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(658, 172);
+            this.panel3.Size = new System.Drawing.Size(658, 159);
             this.panel3.TabIndex = 25;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -1229,9 +1229,9 @@
             // 
             this.DTP_ChangeDateFrom.CustomFormat = "";
             this.DTP_ChangeDateFrom.Enabled = false;
-            this.DTP_ChangeDateFrom.Location = new System.Drawing.Point(448, 122);
+            this.DTP_ChangeDateFrom.Location = new System.Drawing.Point(448, 113);
             this.DTP_ChangeDateFrom.Name = "DTP_ChangeDateFrom";
-            this.DTP_ChangeDateFrom.Size = new System.Drawing.Size(203, 20);
+            this.DTP_ChangeDateFrom.Size = new System.Drawing.Size(203, 19);
             this.DTP_ChangeDateFrom.TabIndex = 23;
             this.DTP_ChangeDateFrom.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_ChangeDateFrom.ValueChanged += new System.EventHandler(this.DTP_ChangeDateFrom_ValueChanged);
@@ -1239,9 +1239,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(387, 129);
+            this.label12.Location = new System.Drawing.Point(387, 119);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
+            this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 22;
             this.label12.Text = "変更締日";
             // 
@@ -1250,9 +1250,9 @@
             this.DTP_ChangeDate.CustomFormat = " ";
             this.DTP_ChangeDate.Enabled = false;
             this.DTP_ChangeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_ChangeDate.Location = new System.Drawing.Point(448, 146);
+            this.DTP_ChangeDate.Location = new System.Drawing.Point(448, 135);
             this.DTP_ChangeDate.Name = "DTP_ChangeDate";
-            this.DTP_ChangeDate.Size = new System.Drawing.Size(203, 20);
+            this.DTP_ChangeDate.Size = new System.Drawing.Size(203, 19);
             this.DTP_ChangeDate.TabIndex = 21;
             this.DTP_ChangeDate.Value = new System.DateTime(2017, 3, 21, 10, 52, 58, 0);
             this.DTP_ChangeDate.ValueChanged += new System.EventHandler(this.DTP_ChangeDate_ValueChanged);
@@ -1260,26 +1260,26 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(387, 153);
+            this.label11.Location = new System.Drawing.Point(387, 141);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 13);
+            this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 20;
             this.label11.Text = "変更日";
             // 
             // TB_Reason
             // 
             this.TB_Reason.Enabled = false;
-            this.TB_Reason.Location = new System.Drawing.Point(448, 91);
+            this.TB_Reason.Location = new System.Drawing.Point(448, 84);
             this.TB_Reason.Name = "TB_Reason";
-            this.TB_Reason.Size = new System.Drawing.Size(203, 20);
+            this.TB_Reason.Size = new System.Drawing.Size(203, 19);
             this.TB_Reason.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(387, 98);
+            this.label10.Location = new System.Drawing.Point(387, 90);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 18;
             this.label10.Text = "変更理由";
             // 
@@ -1288,9 +1288,9 @@
             this.DTP_Birth.CustomFormat = " ";
             this.DTP_Birth.Enabled = false;
             this.DTP_Birth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_Birth.Location = new System.Drawing.Point(448, 65);
+            this.DTP_Birth.Location = new System.Drawing.Point(448, 60);
             this.DTP_Birth.Name = "DTP_Birth";
-            this.DTP_Birth.Size = new System.Drawing.Size(203, 20);
+            this.DTP_Birth.Size = new System.Drawing.Size(203, 19);
             this.DTP_Birth.TabIndex = 17;
             this.DTP_Birth.Value = new System.DateTime(2017, 3, 27, 0, 0, 0, 0);
             this.DTP_Birth.ValueChanged += new System.EventHandler(this.DTP_Birth_ValueChanged);
@@ -1298,9 +1298,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(387, 72);
+            this.label9.Location = new System.Drawing.Point(387, 66);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 16;
             this.label9.Text = "生年月日";
             // 
@@ -1314,17 +1314,17 @@
             "20",
             "25",
             "末"});
-            this.CB_ClosingDate.Location = new System.Drawing.Point(448, 41);
+            this.CB_ClosingDate.Location = new System.Drawing.Point(448, 38);
             this.CB_ClosingDate.Name = "CB_ClosingDate";
-            this.CB_ClosingDate.Size = new System.Drawing.Size(203, 21);
+            this.CB_ClosingDate.Size = new System.Drawing.Size(203, 20);
             this.CB_ClosingDate.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(387, 49);
+            this.label8.Location = new System.Drawing.Point(387, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 14;
             this.label8.Text = "締日";
             // 
@@ -1336,113 +1336,112 @@
             this.CB_Sex.Items.AddRange(new object[] {
             "女",
             "男"});
-            this.CB_Sex.Location = new System.Drawing.Point(448, 14);
+            this.CB_Sex.Location = new System.Drawing.Point(448, 13);
             this.CB_Sex.Name = "CB_Sex";
-            this.CB_Sex.Size = new System.Drawing.Size(203, 21);
+            this.CB_Sex.Size = new System.Drawing.Size(203, 20);
             this.CB_Sex.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(387, 22);
+            this.label6.Location = new System.Drawing.Point(387, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 10;
             this.label6.Text = "性別";
             // 
             // TB_CompanyName
             // 
             this.TB_CompanyName.Enabled = false;
-            this.TB_CompanyName.Location = new System.Drawing.Point(127, 121);
+            this.TB_CompanyName.Location = new System.Drawing.Point(127, 112);
             this.TB_CompanyName.Name = "TB_CompanyName";
-            this.TB_CompanyName.Size = new System.Drawing.Size(202, 20);
+            this.TB_CompanyName.Size = new System.Drawing.Size(202, 19);
             this.TB_CompanyName.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 128);
+            this.label5.Location = new System.Drawing.Point(36, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 8;
             this.label5.Text = "企業名";
             // 
             // TB_CompanyCode
             // 
             this.TB_CompanyCode.Enabled = false;
-            this.TB_CompanyCode.Location = new System.Drawing.Point(127, 91);
+            this.TB_CompanyCode.Location = new System.Drawing.Point(127, 84);
             this.TB_CompanyCode.Name = "TB_CompanyCode";
-            this.TB_CompanyCode.Size = new System.Drawing.Size(202, 20);
+            this.TB_CompanyCode.Size = new System.Drawing.Size(202, 19);
             this.TB_CompanyCode.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 98);
+            this.label4.Location = new System.Drawing.Point(36, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(47, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "企業ＣＤ";
             // 
             // TB_FuriganaName
             // 
             this.TB_FuriganaName.Enabled = false;
-            this.TB_FuriganaName.Location = new System.Drawing.Point(127, 65);
+            this.TB_FuriganaName.Location = new System.Drawing.Point(127, 60);
             this.TB_FuriganaName.Name = "TB_FuriganaName";
-            this.TB_FuriganaName.Size = new System.Drawing.Size(202, 20);
+            this.TB_FuriganaName.Size = new System.Drawing.Size(202, 19);
             this.TB_FuriganaName.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 72);
+            this.label3.Location = new System.Drawing.Point(36, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(24, 12);
             this.label3.TabIndex = 4;
             this.label3.Text = "カナ";
             // 
             // TB_RomajiName
             // 
             this.TB_RomajiName.Enabled = false;
-            this.TB_RomajiName.Location = new System.Drawing.Point(127, 41);
+            this.TB_RomajiName.Location = new System.Drawing.Point(127, 38);
             this.TB_RomajiName.Name = "TB_RomajiName";
-            this.TB_RomajiName.Size = new System.Drawing.Size(202, 20);
+            this.TB_RomajiName.Size = new System.Drawing.Size(202, 19);
             this.TB_RomajiName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 48);
+            this.label2.Location = new System.Drawing.Point(36, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "氏名";
             // 
             // TB_IDCode
             // 
             this.TB_IDCode.Enabled = false;
-            this.TB_IDCode.Location = new System.Drawing.Point(127, 16);
+            this.TB_IDCode.Location = new System.Drawing.Point(127, 15);
             this.TB_IDCode.Name = "TB_IDCode";
-            this.TB_IDCode.Size = new System.Drawing.Size(202, 20);
+            this.TB_IDCode.Size = new System.Drawing.Size(202, 19);
             this.TB_IDCode.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 23);
+            this.label1.Location = new System.Drawing.Point(36, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "社員ＣＤ";
             // 
             // GUI_Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(725, 667);
+            this.ClientSize = new System.Drawing.Size(725, 616);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUI_Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit";
